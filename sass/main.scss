@@ -36,7 +36,7 @@ body {
 }
 
 .flex-container {
-  @include flex($direction: column ,$justify: null , $align: center);
+  @include flex($direction: column ,$justify: flex-start, $align: flex-start);
   @include media($bp_m);
   width: 1000px;
   height: auto;
