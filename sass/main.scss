@@ -1,0 +1,56 @@
+@import 'variables';
+
+// =========================================
+// VARIABLES
+// =========================================
+
+$pink: rgb(209, 101, 186);
+
+// =========================================
+// MIXINS
+// =========================================
+
+@mixin flex ($direction: row, $justify: center, $align: null) { // default for row
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  @content;
+}
+
+@mixin media ($bp) {
+  @media screen and (min-width: $bp_s) {
+    @include flex();
+    width: 400px;
+    background-color: #2dd;
+    @content;
+  }
+}
+
+// =========================================
+// STYLES
+// =========================================
+
+body {
+  background-color: $pink;
+}
+
+.flex-container {
+  @include flex($direction: column ,$justify: null , $align: center);
+  @include media($bp_m);
+  width: 1000px;
+  height: auto;
+  background-color: #999;
+}
+
+.flex-item {
+  align-self: center;
+  background-color: #66d;
+  border: 2px solid $pink;
+  
+  & p {
+    color: #beb;
+    text-transform: capitalize;
+    padding-inline: 2rem;
+  }
+}
