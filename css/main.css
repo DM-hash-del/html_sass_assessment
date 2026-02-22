@@ -7,41 +7,57 @@ body {
   box-sizing: border-box;
 }
 
-.container {
+.about {
+  background-color: #323544;
+  color: #fff;
   margin-right: auto;
   margin-left: auto;
   padding-left: 15px;
   padding-right: 15px;
 }
 @media (min-width: 768px) {
-  .container {
+  .about {
     width: 750px;
   }
 }
 @media (min-width: 992px) {
-  .container {
+  .about {
     width: 970px;
   }
 }
 @media (min-width: 1260px) {
-  .container {
+  .about {
     width: 1200px;
   }
 }
 
-.about {
-  background-color: #323544;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
+.footer {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
 }
-
+@media (min-width: 768px) {
+  .footer {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .footer {
+    width: 970px;
+  }
+}
+@media (min-width: 1260px) {
+  .footer {
+    width: 1200px;
+  }
+}
 .footer {
   background-color: #323544;
   color: #fff;
   font-size: 0.7rem;
   font-family: sans-serif;
-  padding: 30px 0 0;
+  padding-top: 30px;
   position: relative;
 }
 .footer__row {
@@ -62,7 +78,6 @@ body {
 .footer__menu a {
   color: #fff;
   text-decoration: none;
-  line-height: 1em;
 }
 @media (min-width: 768px) {
   .footer__menu {
@@ -74,7 +89,7 @@ body {
     flex: 25%;
   }
 }
-@media (min-width: bp_l) {
+@media (min-width: 1260px) {
   .footer__menu {
     margin-bottom: 40px;
   }
@@ -86,13 +101,34 @@ body {
 }
 
 .footers__footer {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  .footers__footer {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .footers__footer {
+    width: 970px;
+  }
+}
+@media (min-width: 1260px) {
+  .footers__footer {
+    width: 1200px;
+  }
+}
+.footers__footer {
   background-color: rgb(28.3898305085, 30.093220339, 38.6101694915);
+  padding-block: 0.75em;
 }
 .footers__footer p {
-  font-weight: 400;
-  font-size: .75em;
   margin: 0;
   padding-block-start: 0.5em;
   padding-block-end: 0;
   color: #fff;
+  font-size: 0.7em;
 }/*# sourceMappingURL=main.css.map */
