@@ -1,6 +1,5 @@
 // Container is in _layout -> not concerned with footer specific layout/styles
 .footer {
-  @include container;
   background-color: $primary_bg_clr;
   color: $white;
   font-size: .7rem;
@@ -11,6 +10,12 @@
   &__row {
     display: flex;
     flex-wrap: wrap;
+  }
+  
+  &__heading {
+    text-transform: uppercase;
+    font-size: .75rem;
+    margin-bottom: 26px;
   }
 
   &__menu {
@@ -44,14 +49,8 @@
     }
   }
 
-  &__heading {
-    text-transform: uppercase;
-    font-size: .75rem;
-    margin-bottom: 26px;
-  }
 }
-.footers__footer {
-  @include container;
+.footer__bottom {
   background-color: darken($primary_bg_clr, 10%);
   padding-block: .75em;
   
