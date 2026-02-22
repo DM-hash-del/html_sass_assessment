@@ -1,34 +1,61 @@
-footer {
-  background-color: #323544;
-  color: #fff;
+// Container is in _layout -> not concerned with footer specific layout/styles
+.footer {
+  background-color: $primary_bg_clr;
+  color: $white;
+  font-size: .7rem;
+  font-family: sans-serif;
   padding: 30px 0 0;
   position: relative;
 
-  .footer-row {
+  &__row {
     display: flex;
     flex-wrap: wrap;
+  }
 
-    .footer-menu {
-      flex: 100%;
-      margin-bottom: 30px;
+  &__menu {
+    flex: 100%;
+    margin-bottom: 30px;
 
-      @media (min-width: 768px) {
-        flex: 50%;
-      }
-
-      @media (min-width: 992px) {
-        flex: 25%;
-      }
-
-      @media (min-width: 1260px) {
-        margin-bottom: 40px;
-      }
-
-      h4 {
-        text-transform: uppercase;
-        font-size: 1rem;
-        margin-bottom: 26px;
-      }
+    & ul {
+      list-style-type: none;
+      padding-inline-start: 0;
     }
+
+    & li {
+      padding-block-start: .75em;
+    }
+
+    & a {
+      color: $white;
+      text-decoration: none;
+    }
+
+    @media (min-width: $bp_s) {
+      flex: 50%;
+    }
+
+    @media (min-width: $bp_m) {
+      flex: 25%;
+    }
+
+    @media (min-width: bp_l) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__heading {
+    text-transform: uppercase;
+    font-size: .75rem;
+    margin-bottom: 26px;
+  }
+}
+.footers__footer {
+  background-color: darken($primary_bg_clr, 10%);
+  
+  & p {
+    margin: 0;
+    padding-block-start: .5em;
+    padding-block-end: 0;
+    color: $white;
   }
 }
