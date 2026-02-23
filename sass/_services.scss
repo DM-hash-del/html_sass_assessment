@@ -1,21 +1,49 @@
-.services-blocks {
-  display: flex;
-  flex-wrap: wrap;
-
-  .service-block-item {
-    flex-grow: 1;
-    box-shadow: 0 0 5px 5px lighten($black, 80%);
-    margin-block-start: 2rem;
-    padding-block: 2rem;
-    padding-inline: 2rem;
-    border-radius: 10px;
-
+.services {
+  .services-title {
+    font-size: 1.5rem;
+  }
+  .services-blocks {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap;
 
-    .service-logo {
-      background-color: rgba(25, 55, 120, .8);
+    .service-block-item {
+      flex-grow: 1;
+      box-shadow: 0 0 8px 2px lighten($black, 80%);
+      margin-block-start: 2rem;
+      padding-block: 2rem;
+      padding-inline: 2rem;
+      border-radius: 10px;
+      border: 1px solid lighten($black, 70%);
+
+      text-decoration: none;
+      color: $black;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .service-logo {
+        background-color: rgba(25, 55, 120, .8);
+        width: 65px;
+        height: 65px;
+        border-radius: 50%;
+        position: relative;
+
+        &::after {
+          content: "";
+          position: absolute;
+          left: 16px;
+          top: 6px;
+        }
+      }
+
+      .service-title {
+        font-size: 1.75rem;
+      }
+      .service-description {
+        font-size: .95rem;
+        text-align: center;
+      }
     }
   }
 }

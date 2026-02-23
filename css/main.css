@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: sans-serif;
+  font-family: "poppins", sans-serif;
 }
 
 * {
@@ -29,23 +29,46 @@ body {
   }
 }
 
-.services-blocks {
+.services .services-title {
+  font-size: 1.5rem;
+}
+.services .services-blocks {
   display: flex;
   flex-wrap: wrap;
 }
-.services-blocks .service-block-item {
+.services .services-blocks .service-block-item {
   flex-grow: 1;
-  box-shadow: 0 0 5px 5px #cccccc;
+  box-shadow: 0 0 8px 2px #cccccc;
   margin-block-start: 2rem;
   padding-block: 2rem;
   padding-inline: 2rem;
   border-radius: 10px;
+  border: 1px solid rgb(178.5, 178.5, 178.5);
+  text-decoration: none;
+  color: #000;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.services-blocks .service-block-item .service-logo {
+.services .services-blocks .service-block-item .service-logo {
   background-color: rgba(25, 55, 120, 0.8);
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  position: relative;
+}
+.services .services-blocks .service-block-item .service-logo::after {
+  content: "";
+  position: absolute;
+  left: 16px;
+  top: 6px;
+}
+.services .services-blocks .service-block-item .service-title {
+  font-size: 1.75rem;
+}
+.services .services-blocks .service-block-item .service-description {
+  font-size: 0.95rem;
+  text-align: center;
 }
 
 .news {
