@@ -11,3 +11,29 @@ $black: #000;
 $primary_bg_clr: #323544;
 
 // fonts
+
+
+// service icons ==depricated==
+$service_icons: (
+  consultancy: ( 
+    bg: #f7b322,
+    ),
+  it: (
+    bg: #4183d7,
+    ),
+  marketing: (
+    bg: #2ecc71,
+  ),
+  telecom: (
+    bg: #d64541,
+    ),
+  web: (
+    bg: #926fb1,
+    ),
+  security: (
+    bg: #f62459,
+    ),
+  school: (
+    bg: #ce4125,
+    ),
+)
