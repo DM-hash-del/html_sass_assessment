@@ -1,0 +1,21 @@
+.services-blocks {
+  display: flex;
+  flex-wrap: wrap;
+
+  .service-block-item {
+    flex-grow: 1;
+    box-shadow: 0 0 5px 5px lighten($black, 80%);
+    margin-block-start: 2rem;
+    padding-block: 2rem;
+    padding-inline: 2rem;
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .service-logo {
+      background-color: rgba(25, 55, 120, .8);
+    }
+  }
+}
