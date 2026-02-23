@@ -30,14 +30,6 @@ body {
   }
 }
 
-.btn {
-  width: -moz-fit-content;
-  width: fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  background-color: pink;
-}
-
 .services .services-title {
   margin: 0;
   margin-block-end: 1rem;
@@ -52,12 +44,12 @@ body {
 }
 .services .services-blocks .service-block-item {
   flex-grow: 1;
-  box-shadow: 0 0 8px 2px #cccccc;
+  box-shadow: 0 0 10px 2px rgb(229.5, 229.5, 229.5);
   margin-block-start: 2rem;
   padding-block: 2rem;
   padding-inline: 2rem;
   border-radius: 15px;
-  border: 1px solid rgb(178.5, 178.5, 178.5);
+  border: 1px solid rgb(216.75, 216.75, 216.75);
   text-decoration: none;
   color: #000;
   display: flex;
@@ -67,8 +59,8 @@ body {
 .services .services-blocks .service-block-item--consultancy .service-logo {
   position: relative;
   background-color: #f7b322;
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
   margin: 0;
   margin-block-end: 1rem;
@@ -76,16 +68,16 @@ body {
 .services .services-blocks .service-block-item--consultancy .service-logo .material-symbols-rounded {
   color: #fff;
   position: absolute;
-  top: 13px;
-  left: 13px;
-  font-size: 3.5rem;
+  top: 12px;
+  left: 12px;
+  font-size: 3rem;
   font-variation-settings: "FILL" 0, "wght" 200, "GRAD" 0, "opsz" 24;
 }
 .services .services-blocks .service-block-item--it .service-logo {
   position: relative;
   background-color: #4183d7;
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
   margin: 0;
   margin-block-end: 1rem;
@@ -93,16 +85,16 @@ body {
 .services .services-blocks .service-block-item--it .service-logo .material-symbols-rounded {
   color: #fff;
   position: absolute;
-  top: 13px;
-  left: 13px;
-  font-size: 3.5rem;
+  top: 12px;
+  left: 12px;
+  font-size: 3rem;
   font-variation-settings: "FILL" 0, "wght" 200, "GRAD" 0, "opsz" 24;
 }
 .services .services-blocks .service-block-item--marketing .service-logo {
   position: relative;
   background-color: #2ecc71;
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
   margin: 0;
   margin-block-end: 1rem;
@@ -110,16 +102,16 @@ body {
 .services .services-blocks .service-block-item--marketing .service-logo .material-symbols-rounded {
   color: #fff;
   position: absolute;
-  top: 13px;
-  left: 13px;
-  font-size: 3.5rem;
+  top: 12px;
+  left: 12px;
+  font-size: 3rem;
   font-variation-settings: "FILL" 0, "wght" 200, "GRAD" 0, "opsz" 24;
 }
 .services .services-blocks .service-block-item--telecom .service-logo {
   position: relative;
   background-color: #d64541;
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
   margin: 0;
   margin-block-end: 1rem;
@@ -127,16 +119,16 @@ body {
 .services .services-blocks .service-block-item--telecom .service-logo .material-symbols-rounded {
   color: #fff;
   position: absolute;
-  top: 13px;
-  left: 13px;
-  font-size: 3.5rem;
+  top: 12px;
+  left: 12px;
+  font-size: 3rem;
   font-variation-settings: "FILL" 0, "wght" 200, "GRAD" 0, "opsz" 24;
 }
 .services .services-blocks .service-block-item--web .service-logo {
   position: relative;
   background-color: #926fb1;
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
   margin: 0;
   margin-block-end: 1rem;
@@ -144,16 +136,16 @@ body {
 .services .services-blocks .service-block-item--web .service-logo .material-symbols-rounded {
   color: #fff;
   position: absolute;
-  top: 13px;
-  left: 13px;
-  font-size: 3.5rem;
+  top: 12px;
+  left: 12px;
+  font-size: 3rem;
   font-variation-settings: "FILL" 0, "wght" 200, "GRAD" 0, "opsz" 24;
 }
 .services .services-blocks .service-block-item--security .service-logo {
   position: relative;
   background-color: #f62459;
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
   margin: 0;
   margin-block-end: 1rem;
@@ -161,16 +153,16 @@ body {
 .services .services-blocks .service-block-item--security .service-logo .material-symbols-rounded {
   color: #fff;
   position: absolute;
-  top: 13px;
-  left: 13px;
-  font-size: 3.5rem;
+  top: 12px;
+  left: 12px;
+  font-size: 3rem;
   font-variation-settings: "FILL" 0, "wght" 200, "GRAD" 0, "opsz" 24;
 }
 .services .services-blocks .service-block-item--school .service-logo {
   position: relative;
   background-color: #ce4125;
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
   margin: 0;
   margin-block-end: 1rem;
@@ -178,9 +170,9 @@ body {
 .services .services-blocks .service-block-item--school .service-logo .material-symbols-rounded {
   color: #fff;
   position: absolute;
-  top: 13px;
-  left: 13px;
-  font-size: 3.5rem;
+  top: 12px;
+  left: 12px;
+  font-size: 3rem;
   font-variation-settings: "FILL" 0, "wght" 200, "GRAD" 0, "opsz" 24;
 }
 .services .services-blocks .service-block-item .service-title {
@@ -197,10 +189,83 @@ body {
   margin: 0;
   margin-block-end: 1rem;
 }
-.services .services-blocks .service-block-item .btn-wrap {
+.services .services-blocks .service-block-item .btn-wrap--consultancy {
   border-radius: 5px;
+  background-color: #f7b322;
 }
-.services .services-blocks .service-block-item .btn-wrap p {
+.services .services-blocks .service-block-item .btn-wrap--consultancy p {
+  color: #fff;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  margin: 0;
+  padding-block: 5px;
+  padding-inline: 15px;
+}
+.services .services-blocks .service-block-item .btn-wrap--it {
+  border-radius: 5px;
+  background-color: #4183d7;
+}
+.services .services-blocks .service-block-item .btn-wrap--it p {
+  color: #fff;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  margin: 0;
+  padding-block: 5px;
+  padding-inline: 15px;
+}
+.services .services-blocks .service-block-item .btn-wrap--marketing {
+  border-radius: 5px;
+  background-color: #2ecc71;
+}
+.services .services-blocks .service-block-item .btn-wrap--marketing p {
+  color: #fff;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  margin: 0;
+  padding-block: 5px;
+  padding-inline: 15px;
+}
+.services .services-blocks .service-block-item .btn-wrap--telecom {
+  border-radius: 5px;
+  background-color: #d64541;
+}
+.services .services-blocks .service-block-item .btn-wrap--telecom p {
+  color: #fff;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  margin: 0;
+  padding-block: 5px;
+  padding-inline: 15px;
+}
+.services .services-blocks .service-block-item .btn-wrap--web {
+  border-radius: 5px;
+  background-color: #926fb1;
+}
+.services .services-blocks .service-block-item .btn-wrap--web p {
+  color: #fff;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  margin: 0;
+  padding-block: 5px;
+  padding-inline: 15px;
+}
+.services .services-blocks .service-block-item .btn-wrap--security {
+  border-radius: 5px;
+  background-color: #f62459;
+}
+.services .services-blocks .service-block-item .btn-wrap--security p {
+  color: #fff;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  margin: 0;
+  padding-block: 5px;
+  padding-inline: 15px;
+}
+.services .services-blocks .service-block-item .btn-wrap--school {
+  border-radius: 5px;
+  background-color: #ce4125;
+}
+.services .services-blocks .service-block-item .btn-wrap--school p {
   color: #fff;
   font-size: 1.1rem;
   text-transform: uppercase;
