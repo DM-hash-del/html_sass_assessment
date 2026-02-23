@@ -29,6 +29,27 @@ body {
   }
 }
 
+.news {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #fff;
+  color: #000;
+}
+.news .card-container {
+  background-color: #fff;
+  color: #000;
+  box-shadow: 0 4px 6px 2px #cccccc;
+  margin-block-end: 3.5rem;
+  padding-block-end: 1.5rem;
+}
+.news .card-container .card-cover-img {
+  width: 100%;
+  padding-inline: 0;
+}
+.news .card-container .card-text {
+  padding-inline: 1.5rem;
+}
+
 .about {
   background-color: #323544;
   color: #fff;
@@ -85,6 +106,7 @@ body {
 .footer__bottom {
   background-color: rgb(28.3898305085, 30.093220339, 38.6101694915);
   padding-block: 0.75em;
+  width: 100vw;
 }
 .footer__bottom p {
   margin: 0;

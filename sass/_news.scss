@@ -1,0 +1,25 @@
+.news {
+  display: flex;
+  flex-wrap: wrap;
+
+  background-color: $white;
+  color: $black;
+  
+  & .card-container {
+    background-color: $white;
+    color: $black;
+    box-shadow: 0 4px 6px 2px lighten($black, 80%);
+    margin-block-end: 3.5rem;
+    padding-block-end: 1.5rem;
+    
+    .card-cover-img {
+      width: 100%;
+      padding-inline: 0;
+    }
+
+    .card-text {
+      padding-inline: 1.5rem;
+    }
+  }
+
+}

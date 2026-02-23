@@ -53,6 +53,7 @@
 .footer__bottom {
   background-color: darken($primary_bg_clr, 10%);
   padding-block: .75em;
+  width: 100vw;
   
   & p {
     margin: 0;
