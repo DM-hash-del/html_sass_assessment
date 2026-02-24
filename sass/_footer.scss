@@ -68,14 +68,18 @@
 }
 .footer__bottom {
   background-color: darken($primary_bg_clr, 10%);
-  padding-block: .75em;
+  padding-block-start: 5px;
+  padding-block-end: 10px;
   width: 100vw;
+
+  .footer__bottom__wrap {
+    width: fit-content;
+  }
   
   & p {
     margin: 0;
-    padding-block-start: .5em;
-    padding-block-end: 0;
     color: $white;
-    font-size: .7em;
+    font-size: .8125em;
+    font-weight: 400;
   }
 }

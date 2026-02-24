@@ -459,13 +459,17 @@ body {
 
 .footer__bottom {
   background-color: rgb(28.3898305085, 30.093220339, 38.6101694915);
-  padding-block: 0.75em;
+  padding-block-start: 5px;
+  padding-block-end: 10px;
   width: 100vw;
+}
+.footer__bottom .footer__bottom__wrap {
+  width: -moz-fit-content;
+  width: fit-content;
 }
 .footer__bottom p {
   margin: 0;
-  padding-block-start: 0.5em;
-  padding-block-end: 0;
   color: #fff;
-  font-size: 0.7em;
+  font-size: 0.8125em;
+  font-weight: 400;
 }/*# sourceMappingURL=main.css.map */
