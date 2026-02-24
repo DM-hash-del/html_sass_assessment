@@ -1,4 +1,4 @@
-// ICON FONTS
+// ICOMOON ICON FONTS
 
 @font-face {
   font-family: 'icomoon';
@@ -12,36 +12,42 @@
   font-display: block;
 }
 
-[class^="icon-"], [class*=" icon-"] {
-  /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'icomoon' !important;
-  // speak: never;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
+// [class^="icon-"], [class*=" icon-"] {
+//   /* use !important to prevent issues with browser extensions that change fonts */
+//   font-family: 'icomoon' !important;
+//   font-style: normal;
+//   font-weight: normal;
+//   font-variant: normal;
+//   text-transform: none;
+//   line-height: 1;
 
-  font-size: 3.5rem;
-  color: $white;
+//   /* Better Font Rendering =========== */
+//   -webkit-font-smoothing: antialiased;
+//   -moz-osx-font-smoothing: grayscale;
+// }
 
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+// ======================================
+// Social media icons
+// ======================================
 
-.icon-x:before {
-  content: "\e900";
-}
-.icon-facebook2:before {
-  content: "\ea91";
-}
-.icon-instagram:before {
-  content: "\ea92";
-}
-.icon-linkedin:before {
-  content: "\eac9";
-}
+// .icon-x:before {
+//   content: "\e900";
+// }
+// .icon-facebook2:before {
+//   content: "\ea91";
+// }
+// .icon-instagram:before {
+//   content: "\ea92";
+// }
+// .icon-linkedin:before {
+//   content: "\eac9";
+// }
+
+// ======================================
+// OTHER ICONS
+// These are just kept as reference to what the font number is, define their own selectors
+// ======================================
+
 // .icon-twitter:before {
 //   content: "\e900";
 // }

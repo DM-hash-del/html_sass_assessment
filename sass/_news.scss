@@ -8,7 +8,7 @@
   & .card-container {
     background-color: $white;
     color: $black;
-    box-shadow: 0 4px 6px 2px lighten($black, 80%);
+    box-shadow: 0 4px 6px 2px #929292;
     margin-block-end: 3.5rem;
     padding-block-end: 1.5rem;
     
@@ -22,24 +22,13 @@
     }
   }
 }
-.news-view-all {
+
+.news-more {
+  display: inline-block;
+  color: $black;
   font-size: 1.625rem;
-  margin-block-end: 20px;
-
-  .icon-arrow-right2 {
-    color: $black;
-    font-size: 1.625rem;
-    margin-inline-start: 5px;
-  }
-
-  .btn {
-    display: inline-block;
-    margin-inline: auto;
-    font-weight: 600;
-    
-    a {
-      text-decoration: none;
-      color: $black;
-    }
-  }
+  font-weight: 600;
+  margin-inline: auto;
+  margin-block: 30px;
+  text-transform: none;
 }

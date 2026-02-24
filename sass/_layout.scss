@@ -11,6 +11,7 @@ body {
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
   letter-spacing: .4px;
+  line-height: 1.425;
   color: $text-grey;
 }
 
@@ -47,16 +48,17 @@ a {
   border-radius: 3px;
   white-space: normal;
 
-  & > span[class^="icon-"]::after, span[class*=" icon-"]::after {
+  & > span[class^="arrow-right"]::after, span[class*=" arrow-right"]::after {
     content: "\ea3c";
-    color: $text-grey;
+    color: inherit;
     font-family: 'icomoon' !important;
-    font-size: 3.5rem;
     font-style: normal;
     font-weight: normal;
     font-variant: normal;
     text-transform: none;
     line-height: 1;
+
+    padding-inline-start: 8px;
 
     /* Better Font Rendering =========== */
     -webkit-font-smoothing: antialiased;
