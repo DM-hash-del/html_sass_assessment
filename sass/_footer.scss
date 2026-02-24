@@ -6,14 +6,19 @@
   font-family: sans-serif;
   padding-top: 30px;
   position: relative;
+
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
   &__info {
-    .footer_info_socials {
-      margin-block-end: 30px;
-    }
+
     img {
       width: 320px;
       height: 65px;
     }
+
     h4 {
       font-size: 1rem;
       text-transform: uppercase;
@@ -21,59 +26,69 @@
       margin-block-end: 26px;
       font-weight: 400;
     }
-    .footer_info_socials__link {
-      display: inline-block;
-      width: 57px;
-      height: 57px;
-      margin-inline-end: 7px;
-      background-color: #212330;
-      border-radius: 1em;
-    }
+    
   }
-  &__row {
-    display: flex;
-    flex-wrap: wrap;
+
+  &__socials__container {
+    margin-block-end: 30px;
   }
-  &__heading {
-    text-transform: uppercase;
-    font-size: 1rem;
-    font-weight: bold;
-    margin: 0;
-    margin-block-end: 26px;
+
+  &__socials__link {
+    display: inline-block;
+    width: 57px;
+    height: 57px;
+    margin-inline-end: 7px;
+    background-color: #212330;
+    border-radius: 1em;
   }
+
   &__menu {
     flex: 100%;
     margin-bottom: 30px;
+
+    &__heading {
+      text-transform: uppercase;
+      font-size: 1rem;
+      font-weight: bold;
+      margin: 0;
+      margin-block-end: 26px;
+    }
+
     & ul {
       list-style-type: none;
       padding-inline-start: 0;
     }
+
     & a {
       color: $white;
       text-decoration: none;
       font-size: .8125rem;
       line-height: 1.375rem;
     }
+
     @media (min-width: $bp_s) {
       flex: 50%;
     }
+
     @media (min-width: $bp_m) {
       flex: 25%;
     }
+
     @media (min-width: $bp_l) {
       margin-bottom: 40px;
     }
+
   }
 
 }
 .footer__bottom {
-  background-color: darken($primary_bg_clr, 10%);
-  padding-block-start: 5px;
+  background-color: #212330;
+  padding-block-start: 15px;
   padding-block-end: 10px;
   width: 100vw;
 
-  .footer__bottom__wrap {
-    width: fit-content;
+  &__wrap {
+    width: auto;
   }
   
   & p {
