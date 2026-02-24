@@ -12,7 +12,11 @@ body {
   font-weight: 400;
   letter-spacing: .4px;
   color: $text-grey;
+}
 
+a {
+  text-decoration: none;
+  color: $text-grey;
 }
 
 .container {
@@ -42,6 +46,26 @@ body {
   font-size: 1rem;
   border-radius: 3px;
   white-space: normal;
+
+  & > span[class^="icon-"]::after, span[class*=" icon-"]::after {
+    content: "\ea3c";
+    color: $text-grey;
+    font-family: 'icomoon' !important;
+    font-size: 3.5rem;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    }
+}
+
+.inline-div {
+  display: inline-block;
 }
 
 @mixin flex-container-row ($wrap: wrap) {
