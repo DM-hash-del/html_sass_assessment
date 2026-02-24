@@ -41,6 +41,7 @@
     background-color: #212330;
     border-radius: 1em;
     position: relative;
+    cursor: pointer;
   }
 
   // This would require a loop
@@ -48,11 +49,11 @@
     &--#{$name}::after {
       content: $icon;
       font-family: 'icomoon' !important;
-      font-size: 26px;
+      font-size: 30px;
       color: $white;
       position: absolute;
-      top: 15px;
-      left: 15px;
+      top: 7px;
+      left: 13px;
     }
   }
 

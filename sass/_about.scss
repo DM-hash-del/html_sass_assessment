@@ -1,4 +1,36 @@
 .about {
   background-color: $primary_bg_clr;
   color: $white;
+  padding-block: 50px;
+}
+
+.container__welcome__title {
+  font-size: 2.25rem;
+  font-weight: 600;
+  line-height: 1.1;
+  margin-block-end: 40px;
+}
+
+.container__welcome__p {
+  margin: 0;
+  margin-block-end: 25px;
+  line-height: 1.875rem;
+}
+
+.container__welcome__btn {
+  @include prime-btn;
+  @include arrow-right;
+  padding: 10px 30px;
+  font-size: 1.25em;
+  color: $white;
+  background-color: $darker_bg_clr;
+  text-transform: uppercase;
+  margin-block-end: 50px;
+  font-weight: 400;
+}
+
+.container__client__quote {
+  color: $white;
+  font-weight: 600;
+  font-size: 1.1rem;
 }

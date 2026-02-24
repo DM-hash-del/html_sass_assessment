@@ -15,9 +15,18 @@ body {
   color: $text-grey;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+  margin: 0;
+}
+
 a {
   text-decoration: none;
   color: $text-grey;
+}
+
+strong {
+  font-weight: inherit;
 }
 
 .container {
@@ -66,9 +75,41 @@ a {
     }
 }
 
-.inline-div {
-  display: inline-block;
+@mixin arrow-right {
+  @content;
+  &::after {
+    content: "\ea3c";
+    font-family: "icomoon" !important;
+    color: inherit;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    padding-inline-start: 8px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 }
+
+@mixin prime-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  font-size: 1rem;
+  line-height: 1;
+  text-decoration: none;
+  border-radius: 6px;
+  cursor: pointer;
+  @content;
+}
+
+
+
+
+
+
 
 @mixin flex-container-row ($wrap: wrap) {
   display: flex;
@@ -78,6 +119,7 @@ a {
   align-items: center;
   align-content: center;
   gap: 0;
+  @content;
 }
 
 @mixin flex-container-column ($wrap: wrap) {
@@ -88,11 +130,12 @@ a {
   align-items: center;
   align-content: center;
   gap: 0;
+  @content;
 }
 
 @mixin flex-item {
   order: initial;
   flex-grow: 1;
   flex-basis: auto;
-  align-self: flex-start;
+  @content;
 }

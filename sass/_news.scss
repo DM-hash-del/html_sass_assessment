@@ -1,6 +1,4 @@
 .news {
-  display: flex;
-  flex-wrap: wrap;
 
   background-color: $white;
   color: $black;
@@ -23,12 +21,32 @@
   }
 }
 
-.news-more {
-  display: inline-block;
+.news__heading {
+  align-self: flex-start;
+  margin-block-end: 28px;
+}
+
+.news__heading > h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.flex-column-container {
+  @include flex-container-column;
+  flex-wrap: nowrap;
+}
+
+.news-link__container {
+  @include flex-item;
+  margin-block-end: 20px;
+  width: 100vw;
+  text-align: center;
+}
+
+.news--link {
+  @include prime-btn;
+  @include arrow-right;
   color: $black;
   font-size: 1.625rem;
   font-weight: 600;
-  margin-inline: auto;
-  margin-block: 30px;
-  text-transform: none;
 }

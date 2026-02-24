@@ -134,9 +134,18 @@ body {
   color: #666;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+  margin: 0;
+}
+
 a {
   text-decoration: none;
   color: #666;
+}
+
+strong {
+  font-weight: inherit;
 }
 
 .container {
@@ -183,10 +192,6 @@ a {
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-.inline-div {
-  display: inline-block;
 }
 
 .services__title {
@@ -587,8 +592,6 @@ a {
 }
 
 .news {
-  display: flex;
-  flex-wrap: wrap;
   background-color: #fff;
   color: #000;
 }
@@ -607,19 +610,123 @@ a {
   padding-inline: 1.5rem;
 }
 
-.news-more {
-  display: inline-block;
+.news__heading {
+  align-self: flex-start;
+  margin-block-end: 28px;
+}
+
+.news__heading > h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.flex-column-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 0;
+  flex-wrap: nowrap;
+}
+
+.news-link__container {
+  order: initial;
+  flex-grow: 1;
+  flex-basis: auto;
+  margin-block-end: 20px;
+  width: 100vw;
+  text-align: center;
+}
+
+.news--link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  font-size: 1rem;
+  line-height: 1;
+  text-decoration: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.news--link::after {
+  content: "\ea3c";
+  font-family: "icomoon" !important;
+  color: inherit;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  padding-inline-start: 8px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.news--link {
   color: #000;
   font-size: 1.625rem;
   font-weight: 600;
-  margin-inline: auto;
-  margin-block: 30px;
-  text-transform: none;
 }
 
 .about {
   background-color: #323544;
   color: #fff;
+  padding-block: 50px;
+}
+
+.container__welcome__title {
+  font-size: 2.25rem;
+  font-weight: 600;
+  line-height: 1.1;
+  margin-block-end: 40px;
+}
+
+.container__welcome__p {
+  margin: 0;
+  margin-block-end: 25px;
+  line-height: 1.875rem;
+}
+
+.container__welcome__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  font-size: 1rem;
+  line-height: 1;
+  text-decoration: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.container__welcome__btn::after {
+  content: "\ea3c";
+  font-family: "icomoon" !important;
+  color: inherit;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  padding-inline-start: 8px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.container__welcome__btn {
+  padding: 10px 30px;
+  font-size: 1.25em;
+  color: #fff;
+  background-color: #272936;
+  text-transform: uppercase;
+  margin-block-end: 50px;
+  font-weight: 400;
+}
+
+.container__client__quote {
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.1rem;
 }
 
 .footer {
@@ -656,42 +763,43 @@ a {
   background-color: #212330;
   border-radius: 1em;
   position: relative;
+  cursor: pointer;
 }
 .footer--facebook::after {
   content: "\ea91";
   font-family: "icomoon" !important;
-  font-size: 26px;
+  font-size: 30px;
   color: #fff;
   position: absolute;
-  top: 15px;
-  left: 15px;
+  top: 7px;
+  left: 13px;
 }
 .footer--in::after {
   content: "\eac9";
   font-family: "icomoon" !important;
-  font-size: 26px;
+  font-size: 30px;
   color: #fff;
   position: absolute;
-  top: 15px;
-  left: 15px;
+  top: 7px;
+  left: 13px;
 }
 .footer--x::after {
   content: "\e900";
   font-family: "icomoon" !important;
-  font-size: 26px;
+  font-size: 30px;
   color: #fff;
   position: absolute;
-  top: 15px;
-  left: 15px;
+  top: 7px;
+  left: 13px;
 }
 .footer--instagram::after {
   content: "\ea92";
   font-family: "icomoon" !important;
-  font-size: 26px;
+  font-size: 30px;
   color: #fff;
   position: absolute;
-  top: 15px;
-  left: 15px;
+  top: 7px;
+  left: 13px;
 }
 .footer__menu {
   flex: 100%;
