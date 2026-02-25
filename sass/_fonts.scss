@@ -1,8 +1,7 @@
 // ICOMOON ICON FONTS
-
 @font-face {
   font-family: 'icomoon';
-  // src:  url('../assets/fonts/icomoon.eot?kjmspr');
+//   src:  url('fonts/icomoon.eot?t8xa2');
   src:  url('../assets/fonts/icomoon.eot') format('embedded-opentype'),
     url('../assets/fonts/icomoon.ttf') format('truetype'),
     url('../assets/fonts/icomoon.woff') format('woff'),
@@ -12,72 +11,59 @@
   font-display: block;
 }
 
-// [class^="icon-"], [class*=" icon-"] {
-//   /* use !important to prevent issues with browser extensions that change fonts */
-//   font-family: 'icomoon' !important;
-//   font-style: normal;
-//   font-weight: normal;
-//   font-variant: normal;
-//   text-transform: none;
-//   line-height: 1;
-
-//   /* Better Font Rendering =========== */
-//   -webkit-font-smoothing: antialiased;
-//   -moz-osx-font-smoothing: grayscale;
-// }
-
 // ======================================
-// Social media icons
+// ICONS
 // ======================================
-
-// .icon-x:before {
-//   content: "\e900";
-// }
-// .icon-facebook2:before {
-//   content: "\ea91";
-// }
-// .icon-instagram:before {
-//   content: "\ea92";
-// }
-// .icon-linkedin:before {
-//   content: "\eac9";
-// }
-
-// ======================================
-// OTHER ICONS
-// These are just kept as reference to what the font number is, define their own selectors
-// ======================================
-
-// .icon-twitter:before {
-//   content: "\e900";
-// }
-// .icon-phone:before {
-//   content: "\e942";
-// }
-// .icon-display:before {
-//   content: "\e956";
-// }
-// .icon-stats-bars2:before {
-//   content: "\e99d";
-// }
-// .icon-shield:before {
-//   content: "\e9b4";
-// }
-// .icon-menu:before {
-//   content: "\e9bd";
-// }
-// .icon-star-full:before {
-//   content: "\e9d9";
-// }
-// .icon-arrow-right2:before {
-//   content: "\ea3c";
-// }
-// .icon-checkbox-checked:before {
-//   content: "\ea52";
-// }
-// .icon-embed2:before {
-//   content: "\ea80";
-// }
+/*
+.icon-x:before {
+  content: "\e900";
+}
+.icon-facebook2:before {
+  content: "\ea91";
+}
+.icon-instagram:before {
+  content: "\ea92";
+}
+.icon-linkedin:before {
+  content: "\eac9";
+}
+.icon-twitter:before {
+  content: "\e900";
+}
+.icon-display:before {
+  content: "\e956";
+}
+.icon-phone:before {
+  content: "\e942";
+}
+.icon-display:before {
+  content: "\e956";
+}
+.icon-stats-bars2:before {
+  content: "\e99d";
+}
+.icon-shield:before {
+  content: "\e9b4";
+}
+.icon-menu:before {
+  content: "\e9bd";
+}
+.icon-star-full:before {
+  content: "\e9d9";
+}
+.icon-arrow-right2:before {
+  content: "\ea3c";
+}
+.icon-checkbox-checked:before {
+  content: "\ea52";
+}
+.icon-embed2:before {
+  content: "\ea80";
+}
+.icon-dribbble:before {
+  content: "\eaa7";
+}
+*/
 
 // TEXT FONTS
 
@@ -91,15 +77,15 @@
     font-display: swap;
 }
 
-@font-face {
-    font-family: 'Poppins';
-    src: local('Poppins Black Italic'), local('Poppins-BlackItalic'),
-        url('../assets/fonts/Poppins-BlackItalic.woff2') format('woff2'),
-        url('../assets/fonts/Poppins-BlackItalic.woff') format('woff');
-    font-weight: 900;
-    font-style: italic;
-    font-display: swap;
-}
+// @font-face {
+//     font-family: 'Poppins';
+//     src: local('Poppins Black Italic'), local('Poppins-BlackItalic'),
+//         url('../assets/fonts/Poppins-BlackItalic.woff2') format('woff2'),
+//         url('../assets/fonts/Poppins-BlackItalic.woff') format('woff');
+//     font-weight: 900;
+//     font-style: italic;
+//     font-display: swap;
+// }
 
 @font-face {
     font-family: 'Poppins';
@@ -141,25 +127,25 @@
     font-display: swap;
 }
 
-@font-face {
-    font-family: 'Poppins';
-    src: local('Poppins ExtraLight'), local('Poppins-ExtraLight'),
-        url('../assets/fonts/Poppins-ExtraLight.woff2') format('woff2'),
-        url('../assets/fonts/Poppins-ExtraLight.woff') format('woff');
-    font-weight: 200;
-    font-style: normal;
-    font-display: swap;
-}
+// @font-face {
+//     font-family: 'Poppins';
+//     src: local('Poppins ExtraLight'), local('Poppins-ExtraLight'),
+//         url('../assets/fonts/Poppins-ExtraLight.woff2') format('woff2'),
+//         url('../assets/fonts/Poppins-ExtraLight.woff') format('woff');
+//     font-weight: 200;
+//     font-style: normal;
+//     font-display: swap;
+// }
 
-@font-face {
-    font-family: 'Poppins';
-    src: local('Poppins ExtraLight Italic'), local('Poppins-ExtraLightItalic'),
-        url('../assets/fonts/Poppins-ExtraLightItalic.woff2') format('woff2'),
-        url('../assets/fonts/Poppins-ExtraLightItalic.woff') format('woff');
-    font-weight: 200;
-    font-style: italic;
-    font-display: swap;
-}
+// @font-face {
+//     font-family: 'Poppins';
+//     src: local('Poppins ExtraLight Italic'), local('Poppins-ExtraLightItalic'),
+//         url('../assets/fonts/Poppins-ExtraLightItalic.woff2') format('woff2'),
+//         url('../assets/fonts/Poppins-ExtraLightItalic.woff') format('woff');
+//     font-weight: 200;
+//     font-style: italic;
+//     font-display: swap;
+// }
 
 @font-face {
     font-family: 'Poppins';
@@ -191,25 +177,25 @@
     font-display: swap;
 }
 
-@font-face {
-    font-family: 'Poppins';
-    src: local('Poppins Light Italic'), local('Poppins-LightItalic'),
-        url('../assets/fonts/Poppins-LightItalic.woff2') format('woff2'),
-        url('../assets/fonts/Poppins-LightItalic.woff') format('woff');
-    font-weight: 300;
-    font-style: italic;
-    font-display: swap;
-}
+// @font-face {
+//     font-family: 'Poppins';
+//     src: local('Poppins Light Italic'), local('Poppins-LightItalic'),
+//         url('../assets/fonts/Poppins-LightItalic.woff2') format('woff2'),
+//         url('../assets/fonts/Poppins-LightItalic.woff') format('woff');
+//     font-weight: 300;
+//     font-style: italic;
+//     font-display: swap;
+// }
 
-@font-face {
-    font-family: 'Poppins';
-    src: local('Poppins Medium Italic'), local('Poppins-MediumItalic'),
-        url('../assets/fonts/Poppins-MediumItalic.woff2') format('woff2'),
-        url('../assets/fonts/Poppins-MediumItalic.woff') format('woff');
-    font-weight: 500;
-    font-style: italic;
-    font-display: swap;
-}
+// @font-face {
+//     font-family: 'Poppins';
+//     src: local('Poppins Medium Italic'), local('Poppins-MediumItalic'),
+//         url('../assets/fonts/Poppins-MediumItalic.woff2') format('woff2'),
+//         url('../assets/fonts/Poppins-MediumItalic.woff') format('woff');
+//     font-weight: 500;
+//     font-style: italic;
+//     font-display: swap;
+// }
 
 @font-face {
     font-family: 'Poppins';

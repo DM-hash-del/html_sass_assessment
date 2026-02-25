@@ -6,7 +6,7 @@ $bp_l: 1260px;
 // Colours
 $white: #fff;
 $black: #000;
-$text-grey: #666;
+$text-grey: #444;
 $primary_bg_clr: #323544;
 $darker_bg_clr: #272936;
 
@@ -15,26 +15,33 @@ $trustpilot-btn-clr: #00b67b;
 
 // service icons
 $service_icons: (
-  consultancy: ( 
-    bg: #f7b322,
+  "consultancy": ( 
+    "bg": #f7b322,
+    "icon": "\e956",
     ),
-  it: (
-    bg: #4183d7,
+  "it": (
+    "bg": #4183d7,
+    "icon": "\e956",
     ),
-  marketing: (
-    bg: #2ecc71,
+  "marketing": (
+    "bg": #2ecc71,
+    "icon": "\e99d",
   ),
-  telecom: (
-    bg: #d64541,
+  "telecom": (
+    "bg": #d64541,
+    "icon": "\e942",
     ),
-  web: (
-    bg: #926fb1,
+  "web": (
+    "bg": #926fb1,
+    "icon": "\ea80",
     ),
-  security: (
-    bg: #f62459,
+  "security": (
+    "bg": #f62459,
+    "icon": "\e9b4",
     ),
-  school: (
-    bg: #ce4125,
+  "school": (
+    "bg": #ce4125,
+    "icon": "\ea52",
     ),
 );
 

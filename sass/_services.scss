@@ -1,83 +1,98 @@
-.services {
+.service {
   &__title {
-    margin: 0;
-    margin-block-end: 1rem;
-
-    h2 {
-      color: $black;
-      font-size: 2.5rem;
-      font-weight: 400;
-    }
+    font-size: 2.625rem;
+    font-weight: 400;
   }
-}
-
-@each $name, $data in $service_icons {
-
-  .service__blocks__item--#{$name} {
-    flex-grow: 1;
-    margin-block-start: 30px;
-    padding: 30px;
-    box-shadow: 0 0 10px 2px lighten($black, 90%);
-    border: 1px solid rgba($text-grey, 0.4);
-    border-radius: 15px;
-    @include flex-container-column;
-
-    &--logo {
-      background-color: map-get($data, bg); // this is what the loop is for...
-      border-radius: 50%;
-      margin: 0;
-      margin-block-end: 1rem;
-    }
-    &__title {
-      font-size: 1.35rem;
-      font-weight: 400;
-      text-align: center;
-      margin: 0;
-      margin-block-end: 1rem;
-    }
-    &__description {
-      font-size: .95rem;
-      font-weight: 300;
-      text-align: center;
-      margin: 0;
-      margin-block-end: 1rem;
-    }
-    .material-symbols-rounded {
-      color: $white;
-      font-size: 2.5rem;
-      padding: 12px;
-      font-variation-settings:
-      'FILL' 0, // fill the shape with colour
-      'wght' 200, // stroke weight
-      'GRAD' 0, // bit like stroke
-      'opsz' 24; // helps the icon scale better - or something..
-    }
-  }
+  
+  &__blocks {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+    @each $name, $data in $service_icons {
       
-  .service__blocks__btn-wrap--#{$name} {
-    border-radius: 5px;
-    background-color: map-get($data, bg);
-    p {
-      color: $white;
-      font-size: 1.1rem;
-      text-transform: uppercase;
-      margin: 0;
+      &__item--#{$name} {
+        width: 100%;
+        margin-block-start: 30px;
+        padding: 30px;
+        
+        box-shadow: 0 0 10px 2px lighten($black, 90%);
+        border: 1px solid rgba($text-grey, 0.4);
+        border-radius: 15px;
+        
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+
+        // media queries go here <i think>
+        @media (min-width: $bp_s) {
+          flex: 0 0 50%;
+        }
+
+        @media (min-width: $bp_m) {
+          flex: 0 0 25%;
+        }
+
+        @media (min-width: $bp_l) {
+          margin-bottom: 40px;
+        }
+        
+        &--logo {
+          background-color: map-get($data, bg);
+          width: 65px;
+          height: 65px;
+          border-radius: 50%;
+          margin-block-end: 1rem;
+          position: relative;
+          &::after {
+            content: map-get($data, icon);
+            font-family: 'icomoon' !important;
+            color: $white;
+            font-size: 2.2rem;
+            position: absolute;
+            left: 15px;
+            top: 8px;
+            @if $name == 'web' {
+              left: 11px;
+            }
+          }
+        }
+        &__title {
+          font-size: 1.35rem;
+          font-weight: 400;
+          padding-block-end: 10px;
+          margin-block-end: 11px;
+          line-height: 35px;
+        }
+        &__description {
+          font-size: .825rem;
+          font-weight: 300;
+          text-align: center;
+          margin-block-end: 13px;
+        }
+      }
+      
+      &__btn-wrap--#{$name} {
+        @include prime-btn;
+        padding: 5px 15px;
+        font-size: 1.1rem;
+        font-weight: 100;
+        color: $white;
+        text-transform: uppercase;
+        // border-radius: 5px;
+        background-color: map-get($data, bg);
+      }
     }
   }
 }
-
-.service__blocks {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
+    
+    
 .services-more {
-  padding: 0;
-  color: $black;
+  @include arrow-right;
+  color: $text-grey;
   font-size: 1.625rem;
   font-weight: 600;
-  margin-inline: auto;
   margin-block: 30px;
-  text-transform: none;
 }
