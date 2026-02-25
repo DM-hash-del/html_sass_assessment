@@ -197,34 +197,6 @@ div {
   }
 }
 
-/*
-.btn {
-  height: auto;
-  line-height: 35px;
-  padding: 5px 15px;
-  text-transform: uppercase;
-  font-size: 1rem;
-  border-radius: 3px;
-  white-space: normal;
-
-  & > span[class^="arrow-right"]::after, span[class*=" arrow-right"]::after {
-    content: "\ea3c";
-    color: inherit;
-    font-family: 'icomoon' !important;
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
-
-    padding-inline-start: 8px;
-
-    // Better Font Rendering ===========
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    }
-}
-*/
 .service__title {
   font-size: 2.625rem;
   font-weight: 400;
@@ -285,6 +257,7 @@ div {
   padding-block-end: 10px;
   margin-block-end: 11px;
   line-height: 35px;
+  text-align: center;
 }
 .service__blocks__item--consultancy__description {
   font-size: 0.825rem;
@@ -357,6 +330,7 @@ div {
   padding-block-end: 10px;
   margin-block-end: 11px;
   line-height: 35px;
+  text-align: center;
 }
 .service__blocks__item--it__description {
   font-size: 0.825rem;
@@ -429,6 +403,7 @@ div {
   padding-block-end: 10px;
   margin-block-end: 11px;
   line-height: 35px;
+  text-align: center;
 }
 .service__blocks__item--marketing__description {
   font-size: 0.825rem;
@@ -501,6 +476,7 @@ div {
   padding-block-end: 10px;
   margin-block-end: 11px;
   line-height: 35px;
+  text-align: center;
 }
 .service__blocks__item--telecom__description {
   font-size: 0.825rem;
@@ -574,6 +550,7 @@ div {
   padding-block-end: 10px;
   margin-block-end: 11px;
   line-height: 35px;
+  text-align: center;
 }
 .service__blocks__item--web__description {
   font-size: 0.825rem;
@@ -646,6 +623,7 @@ div {
   padding-block-end: 10px;
   margin-block-end: 11px;
   line-height: 35px;
+  text-align: center;
 }
 .service__blocks__item--security__description {
   font-size: 0.825rem;
@@ -718,6 +696,7 @@ div {
   padding-block-end: 10px;
   margin-block-end: 11px;
   line-height: 35px;
+  text-align: center;
 }
 .service__blocks__item--school__description {
   font-size: 0.825rem;
@@ -749,6 +728,7 @@ div {
   font-variant: normal;
   text-transform: none;
   padding-inline-start: 8px;
+  line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -793,6 +773,7 @@ div {
   font-variant: normal;
   text-transform: none;
   padding-inline-start: 8px;
+  line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -872,6 +853,7 @@ div {
   font-variant: normal;
   text-transform: none;
   padding-inline-start: 8px;
+  line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

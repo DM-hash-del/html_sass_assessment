@@ -62,35 +62,6 @@ div {
   }
 }
 
-/*
-.btn {
-  height: auto;
-  line-height: 35px;
-  padding: 5px 15px;
-  text-transform: uppercase;
-  font-size: 1rem;
-  border-radius: 3px;
-  white-space: normal;
-
-  & > span[class^="arrow-right"]::after, span[class*=" arrow-right"]::after {
-    content: "\ea3c";
-    color: inherit;
-    font-family: 'icomoon' !important;
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
-
-    padding-inline-start: 8px;
-
-    // Better Font Rendering ===========
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    }
-}
-*/
-
 @mixin arrow-right {
   @content;
   &::after {
@@ -103,8 +74,7 @@ div {
     text-transform: none;
     padding-inline-start: 8px;
 
-    // re-introduce once typography on all sections set
-    // line-height: 1;
+    line-height: 1;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -117,10 +87,6 @@ div {
   position: relative;
   border-radius: 3px;
   cursor: pointer;
-  // re-introduce once typography on all sections set
-  // font-size: 1rem;
-  // line-height: 1;
-  // text-decoration: none;
   @content;
 }
 
