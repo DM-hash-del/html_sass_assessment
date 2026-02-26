@@ -2,12 +2,16 @@
 // SERVICES SECTION
 // =========================================================================
 .services {
+  display: flex;
+  flex-direction: column;
   padding: 50px 0;
+
   &__header{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin: 0 auto 30px;
+    align-items: center;
+    margin-bottom: 15px;
   }
   &__title{
     font-size: 2.625rem;
@@ -20,66 +24,33 @@
     font-size: 1.625rem;
     font-weight: 600;
     margin-block: 15px;
+    line-height: .425;
     @media (min-width: $bp_s) {
       font-size: 2.25rem;
     }
+    &:hover {
+      border-radius: 0%;
+      border-bottom: 3px solid currentColor;
+      margin-bottom: 12px;
+    }
   }
   &__grid{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 0 auto 0;
-
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0 30px;
     @media (min-width: $bp_s) {
-      .services-card--telecoms,
-      .services-card--web,
-      .services-card--security,
-      .services-card--training {
-        min-width: 0;
-        max-width: 345px;
-        margin: 30px 0 0;
-        flex: 0 0 50%;
+      & {
+        grid-template-columns: repeat(2, 1fr);
       }
     }
-
     @media (min-width: $bp_m) {
-      .services-card--consultancy,
-      .services-card--it,
-      .services-card--marketing {
-        min-width: 0;
-        flex: 0 0 31%;
-      }
-      .services-card--telecoms,
-      .services-card--web,
-      .services-card--security,
-      .services-card--training {
-        min-width: 0;
-        max-width: 450px;
-        flex: 0 0 50%;
+      & {
+        grid-template-columns: repeat(6, 1fr);
       }
     }
-
     @media (min-width: $bp_l) {
-      .services-card--telecoms,
-      .services-card--web,
-      .services-card--security,
-      .services-card--training {
-        min-width: 270px;
-        max-width: 270px;
-        padding: 30px 30px 30px;
-        margin: 30px 0 0;
-        flex: 0 0 22%;
-      }
-      .services-card--consultancy,
-      .services-card--it,
-      .services-card--marketing {
-        margin: 30px 0 0;
-      }
-      .services-card--telecoms > .services-card__title,
-      .services-card--web > .services-card__title,
-      .services-card--training > .services-card__title,
-      .services-card--consultancy > .services-card__title {
-        text-wrap: nowrap;
+      & {
+        grid-template-columns: repeat(12, 1fr);
       }
     }
   }
@@ -90,17 +61,15 @@
 .services-card {
   display: flex;
   flex-direction: column;
+  align-items: center;
   text-align: center;
-
-  box-shadow: 0 0 14px 6px rgba($black, 0.1);
+  box-shadow: 0 0 9px 3px rgba($black, 0.1);
   border: 1px solid rgba($text-grey, 0.4);
   border-radius: 15px;
-
   padding: 30px;
   margin: 30px auto 0;
   min-width: 100%;
-
-
+  transition: 0.5s ease;
   &__icon-bg{
     display: block;
     margin: 0 auto 17px;
@@ -124,29 +93,46 @@
     display: block;
     margin: 0 auto 10px;
     padding-bottom: 10px;
-
     font-size: 1.35rem;
     font-weight: 400;
     line-height: 35px;
+    @media (min-width: $bp_l) {
+      font-size: 20px;
+    }
   }
   &__description{
     display: block;
     margin: auto auto 13px;
-
     font-size: .825rem;
     font-weight: 300;
   }
   &__button{
     @include prime-btn;
-
-    margin: auto auto 0;
+    margin-top: auto;
     padding: 5px 15px;
     height: 47px;
-
     font-size: 1.1rem;
     font-weight: 100;
     color: $white;
     text-transform: uppercase;
+  }
+  @media (min-width: $bp_s) {
+    &:nth-child(-n+3) {
+      grid-column: span 2;
+    }
+    &:nth-child(n+4) {
+      grid-column: span 1;
+    }
+  }
+  @media (min-width: $bp_m) {
+    &:nth-child(n+4) {
+      grid-column: span 3;
+    }
+  }
+  @media (min-width: $bp_l) {
+    &:nth-child(-n+3) {
+      grid-column: span 4;
+    }
   }
 }
 
@@ -156,7 +142,6 @@
 
 // =========================================================================
 // SEPARATE LOOP ABLE TO TARGET ONLY THE ELEMENTS THAT REQUIRE CUSTOM ICONS/COLOURS
-// - Each custom element needs a custom class to be selected
 // =========================================================================
 @each $name, $data in $service_icons {
   .services-card--#{$name} {
@@ -165,12 +150,31 @@
     }
     .services-card__icon::after {
       content: map-get($data, "icon");
+      color: $white;
       @if $name == 'web' {
         left: -22px;
       }
     }
     .services-card__button {
       background-color: map-get($data, "bg");
+    }
+    &:hover {
+      background-color: map-get($data, "bg");
+      transform: translateY(-12px);
+      .services-card__icon-bg {
+        background-color: $white;
+      }
+      .services-card__title,
+      .services-card__description {
+        color: $white;
+      }
+      .services-card__button {
+        background-color: $white;
+        color: map-get($data, "bg");
+      }
+      .services-card__icon::after {
+        color: map-get($data, "bg");
+      }
     }
   }
 }

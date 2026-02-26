@@ -243,13 +243,16 @@ div {
 }
 
 .services {
+  display: flex;
+  flex-direction: column;
   padding: 50px 0;
 }
 .services__header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin: 0 auto 30px;
+  align-items: center;
+  margin-bottom: 15px;
 }
 .services__title {
   font-size: 2.625rem;
@@ -281,79 +284,51 @@ div {
   font-size: 1.625rem;
   font-weight: 600;
   margin-block: 15px;
+  line-height: 0.425;
 }
 @media (min-width: 768px) {
   .services__more {
     font-size: 2.25rem;
   }
 }
+.services__more:hover {
+  border-radius: 0%;
+  border-bottom: 3px solid currentColor;
+  margin-bottom: 12px;
+}
 .services__grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin: 0 auto 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0 30px;
 }
 @media (min-width: 768px) {
-  .services__grid .services-card--telecoms,
-  .services__grid .services-card--web,
-  .services__grid .services-card--security,
-  .services__grid .services-card--training {
-    min-width: 0;
-    max-width: 345px;
-    margin: 30px 0 0;
-    flex: 0 0 50%;
+  .services__grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 @media (min-width: 992px) {
-  .services__grid .services-card--consultancy,
-  .services__grid .services-card--it,
-  .services__grid .services-card--marketing {
-    min-width: 0;
-    flex: 0 0 31%;
-  }
-  .services__grid .services-card--telecoms,
-  .services__grid .services-card--web,
-  .services__grid .services-card--security,
-  .services__grid .services-card--training {
-    min-width: 0;
-    max-width: 450px;
-    flex: 0 0 50%;
+  .services__grid {
+    grid-template-columns: repeat(6, 1fr);
   }
 }
 @media (min-width: 1260px) {
-  .services__grid .services-card--telecoms,
-  .services__grid .services-card--web,
-  .services__grid .services-card--security,
-  .services__grid .services-card--training {
-    min-width: 270px;
-    max-width: 270px;
-    padding: 30px 30px 30px;
-    margin: 30px 0 0;
-    flex: 0 0 22%;
-  }
-  .services__grid .services-card--consultancy,
-  .services__grid .services-card--it,
-  .services__grid .services-card--marketing {
-    margin: 30px 0 0;
-  }
-  .services__grid .services-card--telecoms > .services-card__title,
-  .services__grid .services-card--web > .services-card__title,
-  .services__grid .services-card--training > .services-card__title,
-  .services__grid .services-card--consultancy > .services-card__title {
-    text-wrap: nowrap;
+  .services__grid {
+    grid-template-columns: repeat(12, 1fr);
   }
 }
 
 .services-card {
   display: flex;
   flex-direction: column;
+  align-items: center;
   text-align: center;
-  box-shadow: 0 0 14px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 9px 3px rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(68, 68, 68, 0.4);
   border-radius: 15px;
   padding: 30px;
   margin: 30px auto 0;
   min-width: 100%;
+  transition: 0.5s ease;
 }
 .services-card__icon-bg {
   display: block;
@@ -382,6 +357,11 @@ div {
   font-weight: 400;
   line-height: 35px;
 }
+@media (min-width: 1260px) {
+  .services-card__title {
+    font-size: 20px;
+  }
+}
 .services-card__description {
   display: block;
   margin: auto auto 13px;
@@ -395,13 +375,31 @@ div {
   position: relative;
   border-radius: 3px;
   cursor: pointer;
-  margin: auto auto 0;
+  margin-top: auto;
   padding: 5px 15px;
   height: 47px;
   font-size: 1.1rem;
   font-weight: 100;
   color: #fff;
   text-transform: uppercase;
+}
+@media (min-width: 768px) {
+  .services-card:nth-child(-n+3) {
+    grid-column: span 2;
+  }
+  .services-card:nth-child(n+4) {
+    grid-column: span 1;
+  }
+}
+@media (min-width: 992px) {
+  .services-card:nth-child(n+4) {
+    grid-column: span 3;
+  }
+}
+@media (min-width: 1260px) {
+  .services-card:nth-child(-n+3) {
+    grid-column: span 4;
+  }
 }
 
 .button-container {
@@ -414,9 +412,28 @@ div {
 }
 .services-card--consultancy .services-card__icon::after {
   content: "\e956";
+  color: #fff;
 }
 .services-card--consultancy .services-card__button {
   background-color: #f7b322;
+}
+.services-card--consultancy:hover {
+  background-color: #f7b322;
+  transform: translateY(-12px);
+}
+.services-card--consultancy:hover .services-card__icon-bg {
+  background-color: #fff;
+}
+.services-card--consultancy:hover .services-card__title,
+.services-card--consultancy:hover .services-card__description {
+  color: #fff;
+}
+.services-card--consultancy:hover .services-card__button {
+  background-color: #fff;
+  color: #f7b322;
+}
+.services-card--consultancy:hover .services-card__icon::after {
+  color: #f7b322;
 }
 
 .services-card--it .services-card__icon-bg {
@@ -424,9 +441,28 @@ div {
 }
 .services-card--it .services-card__icon::after {
   content: "\e956";
+  color: #fff;
 }
 .services-card--it .services-card__button {
   background-color: #4183d7;
+}
+.services-card--it:hover {
+  background-color: #4183d7;
+  transform: translateY(-12px);
+}
+.services-card--it:hover .services-card__icon-bg {
+  background-color: #fff;
+}
+.services-card--it:hover .services-card__title,
+.services-card--it:hover .services-card__description {
+  color: #fff;
+}
+.services-card--it:hover .services-card__button {
+  background-color: #fff;
+  color: #4183d7;
+}
+.services-card--it:hover .services-card__icon::after {
+  color: #4183d7;
 }
 
 .services-card--marketing .services-card__icon-bg {
@@ -434,9 +470,28 @@ div {
 }
 .services-card--marketing .services-card__icon::after {
   content: "\e99d";
+  color: #fff;
 }
 .services-card--marketing .services-card__button {
   background-color: #2ecc71;
+}
+.services-card--marketing:hover {
+  background-color: #2ecc71;
+  transform: translateY(-12px);
+}
+.services-card--marketing:hover .services-card__icon-bg {
+  background-color: #fff;
+}
+.services-card--marketing:hover .services-card__title,
+.services-card--marketing:hover .services-card__description {
+  color: #fff;
+}
+.services-card--marketing:hover .services-card__button {
+  background-color: #fff;
+  color: #2ecc71;
+}
+.services-card--marketing:hover .services-card__icon::after {
+  color: #2ecc71;
 }
 
 .services-card--telecoms .services-card__icon-bg {
@@ -444,9 +499,28 @@ div {
 }
 .services-card--telecoms .services-card__icon::after {
   content: "\e942";
+  color: #fff;
 }
 .services-card--telecoms .services-card__button {
   background-color: #d64541;
+}
+.services-card--telecoms:hover {
+  background-color: #d64541;
+  transform: translateY(-12px);
+}
+.services-card--telecoms:hover .services-card__icon-bg {
+  background-color: #fff;
+}
+.services-card--telecoms:hover .services-card__title,
+.services-card--telecoms:hover .services-card__description {
+  color: #fff;
+}
+.services-card--telecoms:hover .services-card__button {
+  background-color: #fff;
+  color: #d64541;
+}
+.services-card--telecoms:hover .services-card__icon::after {
+  color: #d64541;
 }
 
 .services-card--web .services-card__icon-bg {
@@ -454,10 +528,29 @@ div {
 }
 .services-card--web .services-card__icon::after {
   content: "\ea80";
+  color: #fff;
   left: -22px;
 }
 .services-card--web .services-card__button {
   background-color: #926fb1;
+}
+.services-card--web:hover {
+  background-color: #926fb1;
+  transform: translateY(-12px);
+}
+.services-card--web:hover .services-card__icon-bg {
+  background-color: #fff;
+}
+.services-card--web:hover .services-card__title,
+.services-card--web:hover .services-card__description {
+  color: #fff;
+}
+.services-card--web:hover .services-card__button {
+  background-color: #fff;
+  color: #926fb1;
+}
+.services-card--web:hover .services-card__icon::after {
+  color: #926fb1;
 }
 
 .services-card--security .services-card__icon-bg {
@@ -465,9 +558,28 @@ div {
 }
 .services-card--security .services-card__icon::after {
   content: "\e9b4";
+  color: #fff;
 }
 .services-card--security .services-card__button {
   background-color: #f62459;
+}
+.services-card--security:hover {
+  background-color: #f62459;
+  transform: translateY(-12px);
+}
+.services-card--security:hover .services-card__icon-bg {
+  background-color: #fff;
+}
+.services-card--security:hover .services-card__title,
+.services-card--security:hover .services-card__description {
+  color: #fff;
+}
+.services-card--security:hover .services-card__button {
+  background-color: #fff;
+  color: #f62459;
+}
+.services-card--security:hover .services-card__icon::after {
+  color: #f62459;
 }
 
 .services-card--training .services-card__icon-bg {
@@ -475,9 +587,28 @@ div {
 }
 .services-card--training .services-card__icon::after {
   content: "\ea52";
+  color: #fff;
 }
 .services-card--training .services-card__button {
   background-color: #ce4125;
+}
+.services-card--training:hover {
+  background-color: #ce4125;
+  transform: translateY(-12px);
+}
+.services-card--training:hover .services-card__icon-bg {
+  background-color: #fff;
+}
+.services-card--training:hover .services-card__title,
+.services-card--training:hover .services-card__description {
+  color: #fff;
+}
+.services-card--training:hover .services-card__button {
+  background-color: #fff;
+  color: #ce4125;
+}
+.services-card--training:hover .services-card__icon::after {
+  color: #ce4125;
 }
 
 .about {
