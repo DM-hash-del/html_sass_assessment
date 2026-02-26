@@ -123,3 +123,38 @@ div {
   flex-basis: auto;
   @content;
 }
+
+.u-show\@s {
+  display: none !important;
+  @media (min-width: $bp_s) {
+    display: block !important;
+  }
+}
+.u-show\@m {
+  display: none !important;
+  @media (min-width: $bp_m) {
+    display: block !important;
+  }
+}
+.u-show\@l {
+  display: none !important;
+  @media (min-width: $bp_l) {
+    display: block !important;
+  }
+}
+
+.u-hide\@s {
+  @media (min-width: $bp_s) {
+    display: none !important;
+  }
+}
+.u-hide\@m {
+  @media (min-width: $bp_m) {
+    display: none !important; 
+  }
+}
+.u-hide\@l {
+  @media (min-width: $bp_l) {
+    display: none !important; 
+  }
+}
