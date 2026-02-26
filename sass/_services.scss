@@ -3,7 +3,7 @@
 // - needs it's media queries
 // - needs it's custom icons and colours for each element
 // =========================================================================
-.services2 {
+.services {
   &__header{
     display: flex;
     flex-direction: row;
@@ -17,36 +17,36 @@
   &__more{
     @include prime-btn;
     @include arrow-right;
-
     color: $text-grey;
     font-size: 1.625rem;
     font-weight: 600;
     margin-block: 15px;
   }
-
   &__grid{
     display: flex;
     flex-wrap: wrap;
     margin: 0 auto 0;
+
+    
   }
 }
 
-.services2-card {
+.services-card {
   display: block;
   text-align: center;
 
-  box-shadow: 0 0 10px 2px lighten($black, 90%);
+  box-shadow: 0 0 14px 6px rgba($black, 0.1);
   border: 1px solid rgba($text-grey, 0.4);
   border-radius: 15px;
 
   padding: 30px;
   margin: 30px auto 0;
-  width: 100%;
+  min-width: 100%;
 
 
   &__icon-bg{
     display: block;
-    margin: 0 auto 0;
+    margin: 0 auto 17px;
     width: 65px;
     height: 65px;
     border-radius: 50%;
@@ -102,78 +102,62 @@
 // - Each custom element needs a custom class to be selected
 // =========================================================================
 @each $name, $data in $service_icons {
-  .services2-card--#{$name} {
-    .services2-card__icon-bg {
+  .services-card--#{$name} {
+    .services-card__icon-bg {
       background-color: map-get($data, "bg");
     }
-    .services2-card__icon::after {
+    .services-card__icon::after {
       content: map-get($data, "icon");
       @if $name == 'web' {
         left: -22px;
       }
     }
-    .services2-card__button {
+    .services-card__button {
       background-color: map-get($data, "bg");
     }
   }
 }
 // =========================================================================
-// SERVICES NEW
+// SERVICES NEW />
 // =========================================================================
 
 
 
 // .service {
-
 //   &__title {
 //     font-size: 2.625rem;
 //     font-weight: 400;
 //   }
-  
 //   &__blocks {
 //     display: flex;
 //     flex-wrap: wrap;
 //     // justify-content: center;
 //     margin: 0 auto 0;
-
-
-//     // this is the depth that needs the media queries to change layout
-//     // not the &__item--#{$name}...
 //     @media (min-width: $bp-s) {
 //       flex: 0 0 50%;
 //     }
-    
 //     @each $name, $data in $service_icons {
-      
 //       &__item--#{$name} {
 //         width: 100%;
 //         margin-block-start: 30px;
 //         padding: 30px;
-        
 //         box-shadow: 0 0 10px 2px lighten($black, 90%);
 //         border: 1px solid rgba($text-grey, 0.4);
 //         border-radius: 15px;
-        
 //         display: flex;
 //         flex-direction: column;
 //         flex-wrap: wrap;
 //         justify-content: center;
 //         align-items: center;
-
-//         // media queries here specify the item container width not layout
 //         @media (min-width: $bp_s) {
 //           max-width: 720px;
 //         }
-
 //         @media (min-width: $bp_m) {
 //           max-width: 293px;
-//           // needs some sort of loop + if conditional for some of the item container
 //         }
-
 //         @media (min-width: $bp_l) {
 //           margin-bottom: 40px;
 //         }
-        
 //         &--logo {
 //           background-color: map-get($data, bg);
 //           width: 65px;
@@ -209,7 +193,6 @@
 //           margin-block-end: 13px;
 //         }
 //       }
-      
 //       &__btn-wrap--#{$name} {
 //         @include prime-btn;
 //         padding: 5px 15px;
@@ -223,10 +206,6 @@
 //     }
 //   }
 // }
-
-
-// // Needs fixing - looks ok but doesn't technically mirror
-
 // .services-more {
 //   margin: 30px auto 0;
 // }

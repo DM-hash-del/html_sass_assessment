@@ -197,17 +197,17 @@ div {
   }
 }
 
-.services2__header {
+.services__header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin: 0 auto 30px;
 }
-.services2__title {
+.services__title {
   font-size: 2.625rem;
   font-weight: 400;
 }
-.services2__more {
+.services__more {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -215,7 +215,7 @@ div {
   border-radius: 3px;
   cursor: pointer;
 }
-.services2__more::after {
+.services__more::after {
   content: "\ea3c";
   font-family: "icomoon" !important;
   color: inherit;
@@ -228,39 +228,39 @@ div {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.services2__more {
+.services__more {
   color: #444;
   font-size: 1.625rem;
   font-weight: 600;
   margin-block: 15px;
 }
-.services2__grid {
+.services__grid {
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto 0;
 }
 
-.services2-card {
+.services-card {
   display: block;
   text-align: center;
-  box-shadow: 0 0 10px 2px rgb(229.5, 229.5, 229.5);
+  box-shadow: 0 0 14px 6px rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(68, 68, 68, 0.4);
   border-radius: 15px;
   padding: 30px;
   margin: 30px auto 0;
-  width: 100%;
+  min-width: 100%;
 }
-.services2-card__icon-bg {
+.services-card__icon-bg {
   display: block;
-  margin: 0 auto 0;
+  margin: 0 auto 17px;
   width: 65px;
   height: 65px;
   border-radius: 50%;
 }
-.services2-card__icon {
+.services-card__icon {
   position: relative;
 }
-.services2-card__icon::after {
+.services-card__icon::after {
   content: "";
   font-family: "icomoon" !important;
   font-size: 2.2rem;
@@ -269,7 +269,7 @@ div {
   left: -17px;
   top: 8px;
 }
-.services2-card__title {
+.services-card__title {
   display: block;
   margin: 0 auto 10px;
   padding-bottom: 10px;
@@ -277,13 +277,13 @@ div {
   font-weight: 400;
   line-height: 35px;
 }
-.services2-card__description {
+.services-card__description {
   display: block;
   margin: 0 auto 13px;
   font-size: 0.825rem;
   font-weight: 300;
 }
-.services2-card__button {
+.services-card__button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -304,74 +304,74 @@ div {
   padding: 5px;
 }
 
-.services2-card--consultancy .services2-card__icon-bg {
+.services-card--consultancy .services-card__icon-bg {
   background-color: #f7b322;
 }
-.services2-card--consultancy .services2-card__icon::after {
+.services-card--consultancy .services-card__icon::after {
   content: "\e956";
 }
-.services2-card--consultancy .services2-card__button {
+.services-card--consultancy .services-card__button {
   background-color: #f7b322;
 }
 
-.services2-card--it .services2-card__icon-bg {
+.services-card--it .services-card__icon-bg {
   background-color: #4183d7;
 }
-.services2-card--it .services2-card__icon::after {
+.services-card--it .services-card__icon::after {
   content: "\e956";
 }
-.services2-card--it .services2-card__button {
+.services-card--it .services-card__button {
   background-color: #4183d7;
 }
 
-.services2-card--marketing .services2-card__icon-bg {
+.services-card--marketing .services-card__icon-bg {
   background-color: #2ecc71;
 }
-.services2-card--marketing .services2-card__icon::after {
+.services-card--marketing .services-card__icon::after {
   content: "\e99d";
 }
-.services2-card--marketing .services2-card__button {
+.services-card--marketing .services-card__button {
   background-color: #2ecc71;
 }
 
-.services2-card--telecoms .services2-card__icon-bg {
+.services-card--telecoms .services-card__icon-bg {
   background-color: #d64541;
 }
-.services2-card--telecoms .services2-card__icon::after {
+.services-card--telecoms .services-card__icon::after {
   content: "\e942";
 }
-.services2-card--telecoms .services2-card__button {
+.services-card--telecoms .services-card__button {
   background-color: #d64541;
 }
 
-.services2-card--web .services2-card__icon-bg {
+.services-card--web .services-card__icon-bg {
   background-color: #926fb1;
 }
-.services2-card--web .services2-card__icon::after {
+.services-card--web .services-card__icon::after {
   content: "\ea80";
   left: -22px;
 }
-.services2-card--web .services2-card__button {
+.services-card--web .services-card__button {
   background-color: #926fb1;
 }
 
-.services2-card--security .services2-card__icon-bg {
+.services-card--security .services-card__icon-bg {
   background-color: #f62459;
 }
-.services2-card--security .services2-card__icon::after {
+.services-card--security .services-card__icon::after {
   content: "\e9b4";
 }
-.services2-card--security .services2-card__button {
+.services-card--security .services-card__button {
   background-color: #f62459;
 }
 
-.services2-card--training .services2-card__icon-bg {
+.services-card--training .services-card__icon-bg {
   background-color: #ce4125;
 }
-.services2-card--training .services2-card__icon::after {
+.services-card--training .services-card__icon::after {
   content: "\ea52";
 }
-.services2-card--training .services2-card__button {
+.services-card--training .services-card__button {
   background-color: #ce4125;
 }
 
