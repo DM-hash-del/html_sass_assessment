@@ -1,9 +1,8 @@
 // =========================================================================
-// SERVICES NEW
-// - needs it's media queries
-// - needs it's custom icons and colours for each element
+// SERVICES SECTION
 // =========================================================================
 .services {
+  padding-bottom: 50px;
   &__header{
     display: flex;
     flex-direction: row;
@@ -18,21 +17,76 @@
     @include prime-btn;
     @include arrow-right;
     color: $text-grey;
-    font-size: 1.625rem;
+    font-size: 2.25rem;
     font-weight: 600;
     margin-block: 15px;
   }
   &__grid{
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
     margin: 0 auto 0;
 
-    
+    @media (min-width: $bp_s) {
+      .services-card--telecoms,
+      .services-card--web,
+      .services-card--security,
+      .services-card--training {
+        min-width: 0;
+        max-width: 345px;
+        margin: 30px 0 0;
+        flex: 0 0 50%;
+      }
+    }
+
+    @media (min-width: $bp_m) {
+      .services-card--consultancy,
+      .services-card--it,
+      .services-card--marketing {
+        min-width: 0;
+        flex: 0 0 31%;
+      }
+      .services-card--telecoms,
+      .services-card--web,
+      .services-card--security,
+      .services-card--training {
+        min-width: 0;
+        max-width: 450px;
+        flex: 0 0 50%;
+      }
+    }
+
+    @media (min-width: $bp_l) {
+      .services-card--telecoms,
+      .services-card--web,
+      .services-card--security,
+      .services-card--training {
+        min-width: 270px;
+        max-width: 270px;
+        // max-height: 313px;
+        padding: 30px 30px 30px;
+        margin: 30px 0 0;
+        flex: 0 0 22%;
+      }
+      .services-card--consultancy,
+      .services-card--it,
+      .services-card--marketing {
+        margin: 30px 0 0;
+      }
+      .services-card--telecoms > .services-card__title,
+      .services-card--web > .services-card__title,
+      .services-card--training > .services-card__title {
+        text-wrap: nowrap;
+      }
+    }
   }
 }
-
+// =========================================================================
+// SERVICE CARDS
+// =========================================================================
 .services-card {
-  display: block;
+  display: flex;
+  flex-direction: column;
   text-align: center;
 
   box-shadow: 0 0 14px 6px rgba($black, 0.1);
@@ -74,7 +128,7 @@
   }
   &__description{
     display: block;
-    margin: 0 auto 13px;
+    margin: auto auto 13px;
 
     font-size: .825rem;
     font-weight: 300;
@@ -82,7 +136,7 @@
   &__button{
     @include prime-btn;
 
-    margin: 0 auto 0;
+    margin: auto auto 0;
     padding: 5px 15px;
     height: 47px;
 
@@ -117,103 +171,3 @@
     }
   }
 }
-// =========================================================================
-// SERVICES NEW />
-// =========================================================================
-
-
-
-// .service {
-//   &__title {
-//     font-size: 2.625rem;
-//     font-weight: 400;
-//   }
-//   &__blocks {
-//     display: flex;
-//     flex-wrap: wrap;
-//     // justify-content: center;
-//     margin: 0 auto 0;
-//     @media (min-width: $bp-s) {
-//       flex: 0 0 50%;
-//     }
-//     @each $name, $data in $service_icons {
-//       &__item--#{$name} {
-//         width: 100%;
-//         margin-block-start: 30px;
-//         padding: 30px;
-//         box-shadow: 0 0 10px 2px lighten($black, 90%);
-//         border: 1px solid rgba($text-grey, 0.4);
-//         border-radius: 15px;
-//         display: flex;
-//         flex-direction: column;
-//         flex-wrap: wrap;
-//         justify-content: center;
-//         align-items: center;
-//         @media (min-width: $bp_s) {
-//           max-width: 720px;
-//         }
-//         @media (min-width: $bp_m) {
-//           max-width: 293px;
-//         }
-//         @media (min-width: $bp_l) {
-//           margin-bottom: 40px;
-//         }
-//         &--logo {
-//           background-color: map-get($data, bg);
-//           width: 65px;
-//           height: 65px;
-//           border-radius: 50%;
-//           margin-block-end: 1rem;
-//           position: relative;
-//           &::after {
-//             content: map-get($data, icon);
-//             font-family: 'icomoon' !important;
-//             color: $white;
-//             font-size: 2.2rem;
-//             position: absolute;
-//             left: 15px;
-//             top: 8px;
-//             @if $name == 'web' {
-//               left: 11px;
-//             }
-//           }
-//         }
-//         &__title {
-//           font-size: 1.35rem;
-//           font-weight: 400;
-//           padding-block-end: 10px;
-//           margin-block-end: 11px;
-//           line-height: 35px;
-//           text-align: center;
-//         }
-//         &__description {
-//           font-size: .825rem;
-//           font-weight: 300;
-//           text-align: center;
-//           margin-block-end: 13px;
-//         }
-//       }
-//       &__btn-wrap--#{$name} {
-//         @include prime-btn;
-//         padding: 5px 15px;
-//         font-size: 1.1rem;
-//         font-weight: 100;
-//         color: $white;
-//         text-transform: uppercase;
-//         // border-radius: 5px;
-//         background-color: map-get($data, bg);
-//       }
-//     }
-//   }
-// }
-// .services-more {
-//   margin: 30px auto 0;
-// }
-
-// .services-more-a {
-//   @include arrow-right;
-//   color: $text-grey;
-//   font-size: 1.625rem;
-//   font-weight: 600;
-//   margin-block: 15px;
-// }

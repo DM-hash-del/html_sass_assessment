@@ -197,6 +197,9 @@ div {
   }
 }
 
+.services {
+  padding-bottom: 50px;
+}
 .services__header {
   display: flex;
   flex-direction: row;
@@ -230,18 +233,69 @@ div {
 }
 .services__more {
   color: #444;
-  font-size: 1.625rem;
+  font-size: 2.25rem;
   font-weight: 600;
   margin-block: 15px;
 }
 .services__grid {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   margin: 0 auto 0;
+}
+@media (min-width: 768px) {
+  .services__grid .services-card--telecoms,
+  .services__grid .services-card--web,
+  .services__grid .services-card--security,
+  .services__grid .services-card--training {
+    min-width: 0;
+    max-width: 345px;
+    margin: 30px 0 0;
+    flex: 0 0 50%;
+  }
+}
+@media (min-width: 992px) {
+  .services__grid .services-card--consultancy,
+  .services__grid .services-card--it,
+  .services__grid .services-card--marketing {
+    min-width: 0;
+    flex: 0 0 31%;
+  }
+  .services__grid .services-card--telecoms,
+  .services__grid .services-card--web,
+  .services__grid .services-card--security,
+  .services__grid .services-card--training {
+    min-width: 0;
+    max-width: 450px;
+    flex: 0 0 50%;
+  }
+}
+@media (min-width: 1260px) {
+  .services__grid .services-card--telecoms,
+  .services__grid .services-card--web,
+  .services__grid .services-card--security,
+  .services__grid .services-card--training {
+    min-width: 270px;
+    max-width: 270px;
+    padding: 30px 30px 30px;
+    margin: 30px 0 0;
+    flex: 0 0 22%;
+  }
+  .services__grid .services-card--consultancy,
+  .services__grid .services-card--it,
+  .services__grid .services-card--marketing {
+    margin: 30px 0 0;
+  }
+  .services__grid .services-card--telecoms > .services-card__title,
+  .services__grid .services-card--web > .services-card__title,
+  .services__grid .services-card--training > .services-card__title {
+    text-wrap: nowrap;
+  }
 }
 
 .services-card {
-  display: block;
+  display: flex;
+  flex-direction: column;
   text-align: center;
   box-shadow: 0 0 14px 6px rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(68, 68, 68, 0.4);
@@ -279,7 +333,7 @@ div {
 }
 .services-card__description {
   display: block;
-  margin: 0 auto 13px;
+  margin: auto auto 13px;
   font-size: 0.825rem;
   font-weight: 300;
 }
@@ -290,7 +344,7 @@ div {
   position: relative;
   border-radius: 3px;
   cursor: pointer;
-  margin: 0 auto 0;
+  margin: auto auto 0;
   padding: 5px 15px;
   height: 47px;
   font-size: 1.1rem;
