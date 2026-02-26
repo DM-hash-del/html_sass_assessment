@@ -124,6 +124,9 @@ div {
   @content;
 }
 
+// ===========================================================
+// VISIBILITY TOGGLE CLASSES
+// ===========================================================
 .u-show\@s {
   display: none !important;
   @media (min-width: $bp_s) {
