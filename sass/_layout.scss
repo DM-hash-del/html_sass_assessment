@@ -62,8 +62,12 @@ div {
   }
 }
 
+@mixin btn-container {
+  margin: 0 auto 0;
+  padding: 5px;
+}
+
 @mixin arrow-right {
-  @content;
   &::after {
     content: "\ea3c";
     font-family: "icomoon" !important;
@@ -78,6 +82,7 @@ div {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+  @content;
 }
 
 @mixin prime-btn {
