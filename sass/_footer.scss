@@ -1,123 +1,119 @@
 // Container is in _layout -> not concerned with footer specific layout/styles
 .footer {
-  // color: $white;
-  // font-size: 1rem;
+  color: $white;
+  font-size: 1rem;
   // font-family: 'Poppins' ,sans-serif;
-  border: 2px solid red;
 
   background-color: $primary_bg_clr;
   padding-top: 27px;
   position: relative;
 
-  &__row {
-    display: flex;
-    flex-wrap: wrap;
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
   }
-
-  &__info {
-
-    img {
-      width: 320px;
-      height: 65px;
-    }
-
-    h4 {
-      // font-size: 1rem;
-      // text-transform: uppercase;
-      // color: $white;
-      border: 2px solid red;
-      margin-block-end: 26px;
-      font-weight: 400;
-    }
-    
-  }
-
-  &__socials__container {
-    margin-block-end: 30px;
-  }
-
-  &__socials__link {
-    display: inline-block;
-    width: 57px;
-    height: 57px;
-    margin-inline-end: 7px;
-    background-color: #212330;
-    border-radius: 1em;
-    position: relative;
-    cursor: pointer;
-  }
-
-  @each $name, $icon in $social_icons {
-    &--#{$name}::after {
-      content: $icon;
-      font-family: 'icomoon' !important;
-      font-size: 30px;
-      color: $white;
-      position: absolute;
-      top: 7px;
-      left: 13px;
-    }
-  }
-
   &__menu {
-    flex: 100%;
-    margin-bottom: 30px;
+  display: grid;
+  // margin: 0;
+  margin-bottom: 30px;
+  }
 
-    &__heading {
-      // text-transform: uppercase;
-      // font-size: 1rem;
-      // font-weight: bold;
-      border: 2px solid red;
+  &__heading {
+    font-size: 1rem;
+    text-transform: uppercase;
+    margin: 0;
+    margin-block-end: 26px;
+    font-weight: 400;
+    line-height: 1.1;
+  }
+    
+  &__list {
+    list-style-type: none;
+    padding-inline-start: 0;
+  }
+  
+  &__item {
+    font-size: .8125rem;
+    line-height: 1.375rem;
+    font-weight: 400;
+  }
 
-      margin: 0;
-      margin-block-end: 26px;
-    }
-
-    & ul {
-      list-style-type: none;
-      padding-inline-start: 0;
-    }
-
-    & a {
-      // color: $white;
-      // font-size: .8125rem;
-      // line-height: 1.275rem;
-      border: 2px solid red;
-
-      text-decoration: none;
-    }
-
-    @media (min-width: $bp_s) {
-      flex: 50%;
-      padding: 0 15px;
-    }
-
-    @media (min-width: $bp_m) {
-      flex: 25%;
-    }
-
-    @media (min-width: $bp_l) {
-      margin-bottom: 40px;
-    }
+  
+  @media (min-width: $bp_s) {
+    flex: 50%;
+    padding: 0 15px;
+  }
+  
+  @media (min-width: $bp_m) {
+    flex: 25%;
+  }
+  
+  @media (min-width: $bp_l) {
+    margin-bottom: 40px;
   }
 }
 
-.footer__bottom {
-  background-color: #212330;
-  padding-block-start: 15px;
-  padding-block-end: 10px;
+.bottom {
+  display: flex;
+  flex-direction: column;
+  padding-top: 15px;
+  padding-bottom: 10px;
   width: 100%;
+  background-color: #212330;
+  color: $white;
 
-  &__wrap {
-    width: auto;
+  &__item {
+    padding-left: 20px;
+    padding-right: 15px;
+    font-weight: 400;
+    font-size: .8125rem;
+    line-height: 1.275;
+  }
+}
+
+
+.socials {
+  // margin-bottom: 30px;
+
+  &__company-logo {
+    width: 320px;
+    height: 65px;
+  }
+  &__heading {
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: $white;
+    margin-block-start: 24px;
+    margin-block-end: 26px;
+    font-weight: 400;
+  }
+  &__container {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 30px;
   }
   
-  & p {
-    margin: 0;
-
-    // color: $white;
-    // font-size: .8125em;
-    // font-weight: 400;
-    border: 2px solid red;
+  &__link {
+    display: inline-block;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    width: 68px;
+    height: 58px;
+    margin-inline-end: 7px;
+    background-color: #212330;
+    position: relative;
+    cursor: pointer;
+    @each $name, $icon in $social_icons {
+      &--#{$name}::after {
+        content: $icon;
+        font-family: 'icomoon' !important;
+        font-size: 30px;
+        padding: 12px 22px 16px 22px;
+        color: $white;
+        position: absolute;
+        top: -3px;
+        left: -4px;
+      }
+    }
   }
 }
