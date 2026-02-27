@@ -47,8 +47,20 @@ $service_icons: (
 
 // Footer Social Media Icons
 $social_icons: (
-  "facebook": "\ea91",
-  "in": "\eac9",
-  "x": "\e900",
-  "instagram": "\ea92",
+  "facebook": (
+    "icon": "\ea91",
+    "bg": #3b5998,
+    ),
+  "in":(
+    "icon": "\eac9",
+    "bg": #0077b5,
+    ),
+  "x": (
+    "icon": "\e900",
+    "bg": #00aced,
+    ),
+  "instagram": (
+    "icon": "\ea92",
+    "bg": #d93175,
+    ),
 );

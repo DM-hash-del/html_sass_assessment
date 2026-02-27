@@ -14,7 +14,7 @@
 
     @media (min-width: $bp_s) {
       grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: repeat(2, minmax(fit-content, 1fr));
+      // grid-template-rows: repeat(2, minmax(min-content, 1fr));
     }
     @media (min-width: $bp_m) {
       grid-template-columns: repeat(4, 1fr);
@@ -49,6 +49,9 @@
     font-size: .8125rem;
     line-height: 1.375rem;
     font-weight: 400;
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
 
@@ -116,9 +119,9 @@
     background-color: #212330;
     position: relative;
     cursor: pointer;
-    @each $name, $icon in $social_icons {
+    @each $name, $data in $social_icons {
       &--#{$name}::after {
-        content: $icon;
+        content: map-get($data, "icon");
         font-family: 'icomoon' !important;
         font-size: 30px;
         padding: 12px 22px 16px 22px;
@@ -127,9 +130,9 @@
         top: -3px;
         left: -4px;
       }
-    }
-    &:hover {
-      background-color: aliceblue;
+      &--#{$name}-hover:hover {
+        background-color: map-get($data, "bg");
+      }
     }
   }
   @media (min-width: $bp_s) {

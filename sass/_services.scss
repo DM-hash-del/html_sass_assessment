@@ -161,6 +161,7 @@
     &:hover {
       background-color: map-get($data, "bg");
       transform: translateY(-12px);
+      text-decoration: none;
       .services-card__icon-bg {
         background-color: $white;
       }

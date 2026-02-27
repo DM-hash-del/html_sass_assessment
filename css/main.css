@@ -169,6 +169,9 @@ a {
   text-decoration: none;
   color: inherit;
 }
+a:hover {
+  text-decoration: underline;
+}
 
 div {
   padding: 0;
@@ -420,6 +423,7 @@ div {
 .services-card--consultancy:hover {
   background-color: #f7b322;
   transform: translateY(-12px);
+  text-decoration: none;
 }
 .services-card--consultancy:hover .services-card__icon-bg {
   background-color: #fff;
@@ -449,6 +453,7 @@ div {
 .services-card--it:hover {
   background-color: #4183d7;
   transform: translateY(-12px);
+  text-decoration: none;
 }
 .services-card--it:hover .services-card__icon-bg {
   background-color: #fff;
@@ -478,6 +483,7 @@ div {
 .services-card--marketing:hover {
   background-color: #2ecc71;
   transform: translateY(-12px);
+  text-decoration: none;
 }
 .services-card--marketing:hover .services-card__icon-bg {
   background-color: #fff;
@@ -507,6 +513,7 @@ div {
 .services-card--telecoms:hover {
   background-color: #d64541;
   transform: translateY(-12px);
+  text-decoration: none;
 }
 .services-card--telecoms:hover .services-card__icon-bg {
   background-color: #fff;
@@ -537,6 +544,7 @@ div {
 .services-card--web:hover {
   background-color: #926fb1;
   transform: translateY(-12px);
+  text-decoration: none;
 }
 .services-card--web:hover .services-card__icon-bg {
   background-color: #fff;
@@ -566,6 +574,7 @@ div {
 .services-card--security:hover {
   background-color: #f62459;
   transform: translateY(-12px);
+  text-decoration: none;
 }
 .services-card--security:hover .services-card__icon-bg {
   background-color: #fff;
@@ -595,6 +604,7 @@ div {
 .services-card--training:hover {
   background-color: #ce4125;
   transform: translateY(-12px);
+  text-decoration: none;
 }
 .services-card--training:hover .services-card__icon-bg {
   background-color: #fff;
@@ -747,7 +757,6 @@ div {
 @media (min-width: 768px) {
   .footer__grid {
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, minmax(fit-content, 1fr));
   }
 }
 @media (min-width: 992px) {
@@ -782,6 +791,9 @@ div {
   font-size: 0.8125rem;
   line-height: 1.375rem;
   font-weight: 400;
+}
+.footer__item:hover {
+  text-decoration: underline;
 }
 
 .bottom {
@@ -861,6 +873,9 @@ div {
   top: -3px;
   left: -4px;
 }
+.socials__link--facebook-hover:hover {
+  background-color: #3b5998;
+}
 .socials__link--in::after {
   content: "\eac9";
   font-family: "icomoon" !important;
@@ -870,6 +885,9 @@ div {
   position: absolute;
   top: -3px;
   left: -4px;
+}
+.socials__link--in-hover:hover {
+  background-color: #0077b5;
 }
 .socials__link--x::after {
   content: "\e900";
@@ -881,6 +899,9 @@ div {
   top: -3px;
   left: -4px;
 }
+.socials__link--x-hover:hover {
+  background-color: #00aced;
+}
 .socials__link--instagram::after {
   content: "\ea92";
   font-family: "icomoon" !important;
@@ -891,8 +912,8 @@ div {
   top: -3px;
   left: -4px;
 }
-.socials__link:hover {
-  background-color: aliceblue;
+.socials__link--instagram-hover:hover {
+  background-color: #d93175;
 }
 @media (min-width: 768px) {
   .socials {
