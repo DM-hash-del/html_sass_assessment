@@ -675,6 +675,23 @@ strong {
   border: 2px solid red;
 }
 
+.news {
+  display: flex;
+  flex-direction: column;
+}
+.news__heading {
+  padding-top: 50px;
+}
+.news__title {
+  font-size: 2.25rem;
+  font-weight: 600;
+  color: #333645;
+}
+.news__button-container {
+  text-align: center;
+  padding-top: 50px;
+  margin-bottom: 20px;
+}
 .news__view-all-button {
   display: inline-flex;
   align-items: center;
@@ -697,7 +714,7 @@ strong {
   -moz-osx-font-smoothing: grayscale;
 }
 .news__view-all-button {
-  color: #444;
+  color: #000;
   font-size: 1.625rem;
   font-weight: 600;
   margin-block: 15px;
@@ -716,7 +733,12 @@ strong {
   position: relative;
   margin-top: 30px;
   border: 1px solid #ccc;
-  box-shadow: 0 12px 9px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 12px 20px 7px rgba(0, 0, 0, 0.1);
+  transition: transform 0.5s ease;
+}
+.article-card:hover {
+  text-decoration: none;
+  transform: translateY(-12px);
 }
 .article-card__tag {
   position: absolute;
@@ -727,11 +749,16 @@ strong {
   line-height: 1.438rem;
   padding: 0 0.5em;
   color: #fff;
-  background-color: #67809f;
   text-transform: uppercase;
 }
 .article-card__tag:hover {
   text-decoration: underline;
+}
+.article-card__tag--career {
+  background-color: #4183d7;
+}
+.article-card__tag--insight {
+  background-color: #67809f;
 }
 .article-card__media {
   background-color: #67809f;
@@ -765,9 +792,14 @@ strong {
   cursor: pointer;
   padding: 5px 15px;
   color: #fff;
-  background-color: #f7b322;
   text-transform: uppercase;
   line-height: 2.25;
+}
+.article-card__button--insight {
+  background-color: #f7b322;
+}
+.article-card__button--career {
+  background-color: #4183d7;
 }
 .article-card__footer {
   padding: 0 30px 30px 30px;
@@ -782,6 +814,7 @@ strong {
 }
 .article-card__avatar {
   display: inline-block;
+  border-radius: 50%;
 }
 .article-card__meta {
   padding-left: 20px;
@@ -789,6 +822,12 @@ strong {
   font-size: 0.875rem;
   line-height: 1.375rem;
   font-weight: 400;
+}
+.article-card__user-details {
+  font-weight: 400;
+}
+.article-card__user-details strong {
+  color: #000;
 }
 
 .footer {
