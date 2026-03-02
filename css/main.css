@@ -204,6 +204,24 @@ strong {
   }
 }
 
+@media (min-width: 768px) {
+  .u-hide\@s {
+    display: none !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .u-hide\@m {
+    display: none !important;
+  }
+}
+
+@media (min-width: 1260px) {
+  .u-hide\@l {
+    display: none !important;
+  }
+}
+
 .u-show\@s {
   display: none !important;
 }
@@ -228,24 +246,6 @@ strong {
 @media (min-width: 1260px) {
   .u-show\@l {
     display: block !important;
-  }
-}
-
-@media (min-width: 768px) {
-  .u-hide\@s {
-    display: none !important;
-  }
-}
-
-@media (min-width: 992px) {
-  .u-hide\@m {
-    display: none !important;
-  }
-}
-
-@media (min-width: 1260px) {
-  .u-hide\@l {
-    display: none !important;
   }
 }
 
@@ -679,8 +679,21 @@ strong {
   display: flex;
   flex-direction: column;
 }
+@media (min-width: 1260px) {
+  .news {
+    padding-bottom: 50px;
+  }
+}
 .news__heading {
   padding-top: 50px;
+}
+@media (min-width: 768px) {
+  .news__heading {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
 }
 .news__title {
   font-size: 2.25rem;
@@ -691,6 +704,11 @@ strong {
   text-align: center;
   padding-top: 50px;
   margin-bottom: 20px;
+}
+@media (min-width: 768px) {
+  .news__button-container {
+    padding: 0;
+  }
 }
 .news__view-all-button {
   display: inline-flex;
@@ -726,6 +744,19 @@ strong {
   margin-bottom: 12px;
   text-decoration: none;
 }
+@media (min-width: 768px) {
+  .news__grid {
+    display: grid;
+    align-items: start;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+}
+@media (min-width: 1260px) {
+  .news__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 
 .article-card {
   display: flex;
@@ -739,6 +770,16 @@ strong {
 .article-card:hover {
   text-decoration: none;
   transform: translateY(-12px);
+}
+@media (min-width: 768px) {
+  .article-card--123 {
+    display: none !important;
+  }
+}
+@media (min-width: 1260px) {
+  .article-card--123 {
+    display: block !important;
+  }
 }
 .article-card__tag {
   position: absolute;
@@ -808,12 +849,14 @@ strong {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
+  min-height: 3rem;
   padding-top: 30px;
   margin-top: 30px;
   border-top: 1px solid rgba(0, 0, 0, 0.2);
 }
 .article-card__avatar {
   display: inline-block;
+  max-height: max-content;
   border-radius: 50%;
 }
 .article-card__meta {

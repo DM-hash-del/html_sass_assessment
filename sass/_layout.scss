@@ -134,6 +134,23 @@ strong {
 // ===========================================================
 // VISIBILITY TOGGLE CLASSES
 // ===========================================================
+
+.u-hide\@s {
+  @media (min-width: $bp_s) {
+    display: none !important;
+  }
+}
+.u-hide\@m {
+  @media (min-width: $bp_m) {
+    display: none !important; 
+  }
+}
+.u-hide\@l {
+  @media (min-width: $bp_l) {
+    display: none !important; 
+  }
+}
+
 .u-show\@s {
   display: none !important;
   @media (min-width: $bp_s) {
@@ -150,21 +167,5 @@ strong {
   display: none !important;
   @media (min-width: $bp_l) {
     display: block !important;
-  }
-}
-
-.u-hide\@s {
-  @media (min-width: $bp_s) {
-    display: none !important;
-  }
-}
-.u-hide\@m {
-  @media (min-width: $bp_m) {
-    display: none !important; 
-  }
-}
-.u-hide\@l {
-  @media (min-width: $bp_l) {
-    display: none !important; 
   }
 }
