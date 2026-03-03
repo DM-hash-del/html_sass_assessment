@@ -1,1 +1,76 @@
+.banner {
+  background-image:
+    linear-gradient(to right, rgba(0,0,0.3), rgba(0,0,0,0.1)),
+    url(../assets/home-YLei.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 550px;
+  color: $white;
 
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, calc(550px / 5));
+    align-items: center;
+    @media (min-width: $bp_m){
+      
+    }
+  }
+
+  &__content {
+    grid-row: 2 / 5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @media (min-width: $bp_m) {
+      align-items: flex-start;
+    }
+  }
+
+  &__title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    line-height: 3rem;
+    margin:  0 0 1.25rem;
+    text-align: center;
+    @media (min-width: $bp_m) {
+      text-align: left;
+    }
+    @media (min-width: $bp_m) {
+      font-size: 4rem;
+      line-height: 5rem;
+    }
+  }
+  &__text {
+    font-size: 1.25rem;
+    text-align: center;
+    line-height: 1.75rem;
+    font-weight: 600;
+    margin-bottom: .375rem;
+    @media (min-width: $bp_m) {
+      text-align: left;
+    }
+    @media (min-width: $bp_m) {
+      font-size: 1.625rem;
+      line-height: 2.5rem;
+    }
+  }
+  &__button {
+    @include prime-btn;
+    @include arrow-right;
+    text-transform: uppercase;
+    background-color: #926fb1;
+    font-size: 1.25rem;
+    width: fit-content;
+    padding: 5px 20px;
+    line-height: 50px;
+    margin-top: 32px;
+    margin-bottom: 18px;
+    transition: .2s ease-in-out;
+    &:hover {
+      text-decoration: none;
+      background-color: #7e57a0;
+    }
+  }
+}

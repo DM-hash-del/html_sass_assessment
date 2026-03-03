@@ -1,0 +1,43 @@
+.header {
+  padding: 20px 0;
+  &__search-form {
+    position: relative;
+  }
+  &__phone {
+    display: inline-block;
+  }
+  &__phone--icon::after {
+    content: "\e942";
+    font-family: 'icomoon' !important;
+    font-size: 2rem;
+    color: $black;
+  }
+
+  &__search-bar {
+    display: inline-block;
+    font-size: 14px;
+    color: #555;
+    background-color: rgba(0,0,0,.1);
+    outline: 1px solid hsla(0, 0%, 100%, .2);
+    border: 2px solid rgba(0,0,0, .1);
+    transition: none;
+    width: 100%;
+    height: 47px;
+    padding: 5px 40px 5px 15px;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+  }
+
+  &__search-icon-container {
+    position: absolute;
+    height: 47px;
+    width: 47px;
+    right: 0px;
+    background-color: rgba(0,0,0, 0);
+    border: none;
+  }
+  &__search-icon::after {
+    content: "Q";
+    font-size: 2rem;
+  }
+
+}
