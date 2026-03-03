@@ -72,6 +72,7 @@ strong {
 @mixin btn-container {
   margin: 0 auto 0;
   padding: 5px;
+  @content;
 }
 
 @mixin arrow-right {

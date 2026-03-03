@@ -1,46 +1,155 @@
 .about {
-  border: 2px solid red;
-  // color: $white;
-
+  color: $white;
   background-color: $primary_bg_clr;
   padding-block: 50px;
-}
 
-.container__welcome__title {
-  // font-size: 2.25rem;
-  // font-weight: 600;
-  // line-height: 1.1;
-  border: 2px solid red;
+  &-grid {
+    @media (min-width: $bp_m) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+  }
 
-  margin-block-end: 40px;
-}
+  .welcome {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    grid-column: span 1;
 
-.container__welcome__p {
-  margin: 0;
-  margin-block-end: 25px;
+    &__title {
+      margin-top: -6px;
+      margin-bottom: 40px;
+      font-size: 2.25rem;
+      font-weight: 600;
+    }
 
-  // line-height: 1.875rem;
-  border: 2px solid red;
-}
+    &__info {
+      margin-bottom: 25px;
+      line-height: 1.875rem;
+      font-weight: 400;
+      &:first-of-type {
+        font-weight: 600;
+      }
+    }
 
-.container__welcome__btn {
-  @include prime-btn;
-  @include arrow-right;
-  padding: 10px 30px;
+    &__button {
+      @include prime-btn;
+      @include arrow-right;
+      font-size: 1.25rem;
+      background-color: #272936;
+      padding: 10px 30px;
+      margin-bottom: 50px;
+      text-transform: uppercase;
+      transition: .2s ease-in-out;
+      &:last-child {
+        margin-left: 10px;
+        @media (min-width: $bp_m) {
+          margin-left: 0;
+        }
+      }
+      &:hover {
+        text-decoration: none;
+        background-color: #121318;
+      }
+      @media (min-width: $bp_m){
+        margin-bottom: 0;
+        &:first-of-type {
+          margin-bottom: 17px;
+        }
+      }
+      @media (min-width: $bp_l) {
+        &:first-of-type {
+          margin-bottom: 0;
+        }
+        &:last-child {
+          margin-left: 10px;
+        }
+      }
+    }
+  }
 
-  // font-size: 1.25em;
-  // color: $white;
-  // text-transform: uppercase;
-  // font-weight: 400;
-  border: 2px solid red;
+  .clients {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    grid-column: span 1;
+    &__title {
+      font-size: 2.25rem;
+      font-weight: 600;
+      margin-bottom: 40px;
+      margin-right: auto;
+      flex-grow: 1;
+    }
 
-  background-color: $darker_bg_clr;
-  margin-block-end: 50px;
-}
+    &__review-stars {
+      flex: 1 0 50%;
+    }
 
-.container__client__quote {
-  // color: $white;
-  // font-weight: 600;
-  // font-size: 1.1rem;
-  border: 2px solid red;
+    &__star {
+      margin-bottom: 25px;
+      &:after {
+        content: "\e9d9";
+        font-family: 'icomoon' !important;
+        font-size: 2.5rem;
+        color: orange;
+      }
+    }
+
+    &__quote {
+      margin-top: 25px;
+      margin-bottom: 25px;
+      font-size: 1.3rem;
+      font-weight: 600;
+      font-style: italic;
+    }
+
+    &__quoter-name {
+      font-weight: 600;
+      color: #a3a8ac;
+      font-size: 1.1rem;
+      margin-bottom: 25px;
+    }
+    &__quoter-company {
+      color: $white;
+    }
+
+    &__button--google {
+      @include prime-btn;
+      @include arrow-right;
+      text-transform: uppercase;
+      font-size: 1.25rem;
+      padding: 10px 30px;
+      margin-top: 20px;
+      background-color: #4387f6;
+      transition: .2s ease-in-out;
+      &:hover {
+        text-decoration: none;
+        background-color: #166af4;
+      }
+    }
+    &__button--trustpilot {
+      @include prime-btn;
+      @include arrow-right;
+      text-transform: uppercase;
+      font-size: 1.25rem;
+      padding: 10px 30px;
+      margin-top: 20px;
+      margin-left: 10px;
+      background-color: #00b67b;
+      transition: .2s ease-in-out;
+      &:hover {
+        text-decoration: none;
+        background-color: #009b69;
+      }
+      @media (min-width: $bp_m) {
+        margin-left: 0;
+      }
+      @media (min-width: $bp_l) {
+        margin-left: 10px;
+      }
+    }
+
+  }
+
 }
