@@ -1,16 +1,110 @@
 .header {
   padding: 20px 0;
+  &__container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  &__logo-container {
+    margin-right: auto;
+  }
+  &__logo {
+    width: 100%;
+  }
   &__search-form {
     position: relative;
   }
-  &__phone {
+  &__phone-container {
     display: inline-block;
+    &--icon::after {
+      content: "\e942";
+      font-family: 'icomoon' !important;
+      font-size: 2rem;
+      color: $black;
+      @media (min-width: $bp_s) {
+        display: none;
+      }
+    }
   }
-  &__phone--icon::after {
-    content: "\e942";
+  &__button-support {
+    @include prime-btn;
+    @include btn-container;
+    padding: 5px 15px;
+    margin: 0;
+    height: 56px;
+    line-height: 46px;
+    font-size: 1.125rem;
+    text-transform: uppercase;
+    background-color: #4183d7;
+    color: $white;
+  }
+  &__button-contact {
+    @include prime-btn;
+    @include btn-container;
+    padding: 5px 15px;
+    margin: 0;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 56px;
+    line-height: 46px;
+    font-size: 1.125rem;
+    text-transform: uppercase;
+    background-color: #999aa2;
+    color: $white;
+  }
+  &__button-text::before {
+    content: "\ea3c";
     font-family: 'icomoon' !important;
-    font-size: 2rem;
-    color: $black;
+    font-size: 1.5rem;
+  }
+  &__phone:hover {
+    text-decoration: none;
+  }
+  &__burger {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+    width: 63px;
+    height: 56px;
+    background-color: #333645;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 20px;
+    transition: background-color .2s ease-in-out;
+    &:hover {
+      background-color: #22242e;
+    }
+
+    &--icon {
+      display: inline-block;
+      position: relative;
+      width: 33px;
+      height: 4px;
+      z-index: 1;
+      background-color: $white;
+
+      &::before {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        width: 33px;
+        height: 4px;
+        z-index: 1;
+        top: -10px;
+        background-color: $white;
+      }
+      &::after {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        width: 33px;
+        height: 4px;
+        z-index: 1;
+        top: 10px;
+        background-color: $white;
+      }
+    }
   }
 
   &__search-bar {
@@ -34,10 +128,63 @@
     right: 0px;
     background-color: rgba(0,0,0, 0);
     border: none;
+    cursor: pointer;
   }
   &__search-icon::after {
-    content: "Q";
-    font-size: 2rem;
+    content: "";
+    display: inline-block;
+    position: relative;
+    width: 12px;
+    height: 3px;
+    background-color: $black;
+    transform: rotate(35deg);
+    right: 5px;
+    @media (min-width: $bp_s) {
+      background-color: $white;
+    }
+  }
+  &__search-icon::before {
+    content: "";
+    display: inline-block;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border: 3px solid $black;
+    border-radius: 50%;
+    @media (min-width: $bp_s) {
+      border-color: $white;
+    }
+  }
+
+  &__search-bar--inline {
+    width: 147px;
+    height: 56px;
+    border: 1px solid #e5e5e5;
+    background-color: $white;
+    padding: 5px 10px;
+    margin-right: -5px;
+    @media (min-width: $bp_m) {
+      display: none;
+    }
+    @media (min-width: $bp_l) {
+      display: inline-block;
+      width: 240px;
+    }
+  }
+  &__search-icon-container--inline {
+    position: relative;
+    height: 56px;
+    width: 63px;
+    background-color: #999aa2;
+    padding: 0;
+    top: 3px;
+    border-radius: 4px;
+    @media (min-width: $bp_m) {
+      top: 0px;
+    }
+    @media (min-width: $bp_l) {
+      top: 3px;
+    }
   }
 
 }

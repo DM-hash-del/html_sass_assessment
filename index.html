@@ -10,20 +10,42 @@
   <!-- HEADER -->
   <div class="header">
     <div class="container">
+
       <div class="header__container">
-        <img src="assets/f-logo.png" alt="company logo" class="header__logo">
-        <div class="header__phone">
-          <a href="#"><span class="header__phone--icon"></span></a>
+        <a href="#" class="header__logo-container"><img src="assets/f-logo.png" alt="company logo" class="header__logo"></a>
+        <a href="#" class="header__button-support u-show@m"><span class="header__button-text">Support</span></a>
+        <a href="#" class="header__button-contact u-show@m"><span class="header__button-text">contact</span></a>
+
+        <div class="header__search-wrapper u-show@s">
+          <form action="#" method="get" class="header__search-form">
+            <label for="search-input"></label>
+            <input
+              type="text"
+              name="search-bar"
+              id="search-input"
+              class="header__search-bar header__search-bar--inline"
+              placeholder="Search..."
+            >
+            <button type="submit" class="header__search-icon-container header__search-icon-container--inline">
+              <span  class="header__search-icon header__search-icon--inline"></span>
+            </button>
+          </form>
+        </div>
+
+        <div class="header__phone-container">
+          <a href="#" class="header__phone"><span class="header__phone-container--icon"></span></a>
         </div>
         <div class="header__burger"><span class="header__burger--icon"></span></div>
       </div>
-      <div class="header__search-wrapper">
+
+      <div class="header__search-wrapper u-hide@s">
         <form action="#" method="get" class="header__search-form">
           <label for="search-input"></label>
           <input type="text" name="search-bar" id="search-input" class="header__search-bar" placeholder="Search...">
           <button type="submit" class="header__search-icon-container"><span  class="header__search-icon"></span></button>
         </form>
       </div>
+
     </div>
   </div>
   <!-- HEADER END -->
