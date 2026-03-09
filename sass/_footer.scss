@@ -1,10 +1,15 @@
+@use "config";
+@use "utility";
+@use "layout";
+@use "sass:map";
+
 // Container is in _layout -> not concerned with footer specific layout/styles
 .footer {
-  color: $white;
+  color: config.$white;
   font-size: 1rem;
   // font-family: 'Poppins' ,sans-serif;
 
-  background-color: $primary_bg_clr;
+  background-color: config.$primary_bg_clr;
   padding-top: 27px;
   position: relative;
 
@@ -12,14 +17,14 @@
     display: grid;
     grid-template-columns: 1fr;
 
-    @media (min-width: $bp_s) {
+    @media (min-width: config.$bp_s) {
       grid-template-columns: repeat(2, 1fr);
       // grid-template-rows: repeat(2, minmax(min-content, 1fr));
     }
-    @media (min-width: $bp_m) {
+    @media (min-width: config.$bp_m) {
       grid-template-columns: repeat(4, 1fr);
     }
-    @media (min-width: $bp_l) {
+    @media (min-width: config.$bp_l) {
       grid-template-columns: 1fr repeat(4, 200px);
       grid-template-rows: 1fr;
     }
@@ -55,6 +60,10 @@
   }
 }
 
+.link--underline {
+  @include utility.link-underline;
+}
+
 .bottom {
   display: flex;
   flex-wrap: wrap;
@@ -64,13 +73,13 @@
   padding-bottom: 10px;
   width: 100%;
   background-color: #212330;
-  color: $white;
+  color: config.$white;
 
   &__item {
     font-weight: 400;
     font-size: .8125rem;
     line-height: 1.275;
-    @media (min-width: $bp_s) {
+    @media (min-width: config.$bp_s) {
       display: inline-block;
       padding-left: 0;
       padding-right: 0;
@@ -81,7 +90,7 @@
       }
     }
   }
-  @media (min-width: $bp_s) {
+  @media (min-width: config.$bp_s) {
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: flex-start;
@@ -98,7 +107,7 @@
   &__heading {
     font-size: 1rem;
     text-transform: uppercase;
-    color: $white;
+    color: config.$white;
     margin-block-start: 24px;
     margin-block-end: 26px;
     font-weight: 400;
@@ -119,33 +128,33 @@
     background-color: #212330;
     position: relative;
     cursor: pointer;
-    @each $name, $data in $social_icons {
+    @each $name, $data in config.$link-button-types {
       &--#{$name}::after {
-        content: map-get($data, "icon");
+        content: map.get($data, "icon");
         font-family: 'icomoon' !important;
         font-size: 30px;
         padding: 12px 22px 16px 22px;
-        color: $white;
+        color: config.$white;
         position: absolute;
         top: -3px;
         left: -4px;
       }
       &--#{$name}-hover:hover {
-        background-color: map-get($data, "bg");
+        background-color: map.get($data, "bg");
       }
     }
   }
-  @media (min-width: $bp_s) {
+  @media (min-width: config.$bp_s) {
     & {
       grid-column: span 2;
     }
   }
-  @media (min-width: $bp_m) {
+  @media (min-width: config.$bp_m) {
     & {
       grid-column: span 4;
     }
   }
-  @media (min-width: $bp_l) {
+  @media (min-width: config.$bp_l) {
     & {
       grid-column: span 1;
     }

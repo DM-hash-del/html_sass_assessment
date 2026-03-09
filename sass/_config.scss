@@ -1,66 +1,268 @@
+// ==================================
+// ICON FONTS
+// ==================================
+@font-face {
+  font-family: 'icomoon';
+  src:
+    url('../assets/fonts/icomoon.ttf') format('truetype'),
+    url('../assets/fonts/icomoon.woff') format('woff'),
+    url('../assets/fonts/icomoon.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+// Example styles ============
+// [class^="icon-"], [class*=" icon-"] {
+//   font-family: 'icomoon' !important;
+//   speak: never;
+//   font-style: normal;
+//   font-weight: normal;
+//   font-variant: normal;
+//   text-transform: none;
+//   line-height: 1;
+
+//   /* Better Font Rendering =========== */
+//   -webkit-font-smoothing: antialiased;
+//   -moz-osx-font-smoothing: grayscale;
+// }
+
+
+// ==================================
+// TEXT FONTS
+// ==================================
+@font-face {
+    font-family: 'Poppins';
+    src: url('../assets/fonts/Poppins-Bold.woff2') format('woff2'),
+        url('../assets/fonts/Poppins-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../assets/fonts/Poppins-BoldItalic.woff2') format('woff2'),
+        url('../assets/fonts/Poppins-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../assets/fonts/Poppins-Medium.woff2') format('woff2'),
+        url('../assets/fonts/Poppins-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../assets/fonts/Poppins-Regular.woff2') format('woff2'),
+        url('../assets/fonts/Poppins-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../assets/fonts/Poppins-Thin.woff2') format('woff2'),
+        url('../assets/fonts/Poppins-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+// ==================================
 // Breakpoints
+// ==================================
 $bp_s: 768px;
 $bp_m: 992px;
 $bp_l: 1260px;
 
+// ==================================
 // Colours
+// ==================================
 $white: #fff;
 $black: #000;
 $text-grey: #444;
 $primary_bg_clr: #323544;
 $darker_bg_clr: #272936;
 
-$google-btn-clr: #4387f6;
-$trustpilot-btn-clr: #00b67b;
+// social media colours
+$google-clr:            #4387f6;
+$trustpilot-clr:        #00b67b;
+$facebook-clr:          #3b5998;
+$linkedin-clr:          #0077b5;
+$x-clr:                 #00aced;
+$instagram-clr:         #d93175;
 
-// service icons
-$service_icons: (
-  "consultancy": ( 
-    "bg": #f7b322,
-    "icon": "\e956",
-    ),
+// service colours
+$consultancy-clr:       #f7b322; // also used as news article button colour
+$it-support-clr:        #4183d7;
+$marketing-clr:         #2ecc71;
+$telecoms-clr:          #d64541;
+$web-development-clr:   #926fb1;
+$security-clr:          #f62459;
+$training-clr:          #ce4125;
+
+// misc colours
+$support-btn-clr:       #4183d7; // also used as news article button colour
+$contact-btn-clr:       #999aa2;
+$star-clr:              orange;
+
+// ==================================
+// CONTEXT LINKS STYLES LIKE BUTTONS
+// ==================================
+$link-button-types: (
+  // services
+  "consultancy": (
+    "bg": $consultancy-clr,
+    "color": $white,
+    "icon": "\e995",
+  ),
   "it": (
-    "bg": #4183d7,
+    "bg": $it-support-clr,
+    "color": $white,
     "icon": "\e956",
-    ),
+  ),
   "marketing": (
-    "bg": #2ecc71,
-    "icon": "\e99d",
+    "bg": $marketing-clr,
+    "color": $white,
+    "icon": "\e99b",
   ),
   "telecoms": (
-    "bg": #d64541,
+    "bg": $telecoms-clr,
+    "color": $white,
     "icon": "\e942",
-    ),
+  ),
   "web": (
-    "bg": #926fb1,
+    "bg": $web-development-clr,
+    "color": $white,
     "icon": "\ea80",
-    ),
+  ),
   "security": (
-    "bg": #f62459,
+    "bg": $security-clr,
+    "color": $white,
     "icon": "\e9b4",
-    ),
+  ),
   "training": (
-    "bg": #ce4125,
-    "icon": "\ea52",
-    ),
+    "bg": $training-clr,
+    "color": $white,
+    "icon": "\e99e",
+  ),
+  // social media
+  "facebook": (
+    "bg": $facebook-clr,
+    "icon": "\ea90",
+  ),
+  "in":(
+    "bg": $linkedin-clr,
+    "icon": "\eaca",
+  ),
+  "x": (
+    "bg": $x-clr,
+    "icon": "\e900",
+  ),
+  "instagram": (
+    "bg": $instagram-clr,
+    "icon": "\ea92",
+  ),
+  "google": (
+    "bg": $google-clr,
+  ),
+  "trustpilot": (
+    "bg": $trustpilot-clr,
+  ),
+  // internal 
+  "contact": (
+    "bg": $contact-btn-clr,
+    "icon": "\e970",
+  ),
+  "support": (
+    "bg": $support-btn-clr,
+    "icon": "\e939",
+  ),
+  "search-icon": (
+    "bg": $contact-btn-clr,
+    "icon": "\e986",
+  ),
+  "standard": (
+    "bg": $darker_bg_clr,
+  ),
 );
 
-// Footer Social Media Icons
-$social_icons: (
-  "facebook": (
-    "icon": "\ea91",
-    "bg": #3b5998,
-    ),
-  "in":(
-    "icon": "\eac9",
-    "bg": #0077b5,
-    ),
-  "x": (
-    "icon": "\e900",
-    "bg": #00aced,
-    ),
-  "instagram": (
-    "icon": "\ea92",
-    "bg": #d93175,
-    ),
+// ==================================
+// PARTNERS SCROLL BAR LOGOS
+// ==================================
+$partners: (
+  "cyber-essentials-colour": url(../assets/partners/cyber-essentials-colour.jpg),
+  "gbc-colour": url(../assets/partners/GBC-colour.png),
+  "google-partner": url(../assets/partners/google-partner.jpg),
+  "investing-in-future-growth": url(../assets/partners/investing-in-future-growth.jpg),
+  "iso-27001": url(../assets/partners/iso-27001.png),
+  "norfolk-prohelp": url(../assets/partners/norfolk_prohelp.png),
+  "norfolk-carbon-charter": url(../assets/partners/norfolk-carbon-charter.jpg),
+  "skills-of-tomorrow": url(../assets/partners/skills-of-tomorrow.jpg),
 );
+
+// ==================================
+// CLIENTS SCROLL BAR LOGOS
+// ==================================
+$clients: (
+  "beat": url(../assets/clients/beat_logo.png),
+  "black-swan": url(../assets/clients/black_swan_logo.png),
+  "crane": url(../assets/clients/crane_logo.png),
+  "girl-guides-anglia": url(../assets/clients/girl_guides_anglia.png),
+  "survey-solutions": url(../assets/clients/survey_solutions_logo.png),
+  "xupes": url(../assets/clients/xupes_logo.png),
+);
+
+// ==================================
+// ICONS
+// ==================================
+$icons: (
+  1: "\e906",
+  2: "\e910",
+  3: "\e98c",
+  4: "\e91e",
+  5: "\e924",
+  6: "\e92c",
+  7: "\e930",
+  8: "\e938",
+  9: "\e939",
+  10: "\e93a",
+  11: "\e942",
+  12: "\e945",
+  13: "\e94e",
+  14: "\e956",
+  15: "\e957",
+  16: "\e958",
+  17: "\e96b",
+  18: "\e970",
+  19: "\e977",
+  20: "\e986",
+  21: "\e98c",
+  22: "\e98f",
+  23: "\e995",
+  24: "\e99b",
+  25: "\e99e",
+  26: "\e9a6",
+  27: "\e9aa",
+  28: "\e9b2",
+  29: "\e9b4",
+  30: "\e9c1",
+  31: "\e9c4",
+  32: "\e9c9",
+  33: "\e9ca",
+  34: "\e9d9",
+  35: "\ea0c",
+  36: "\ea20",
+  37: "\ea3c",
+  38: "\ea80",
+  39: "\ea90",
+  40: "\ea92",
+  41: "\eaca",
+)
