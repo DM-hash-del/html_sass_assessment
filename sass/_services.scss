@@ -1,7 +1,12 @@
-// =========================================================================
+@use "config";
+@use "utility";
+@use "layout";
+@use "sass:map";
+
+//=========================================================================
 // SERVICES SECTION
 // =========================================================================
-.services {
+.services-wrapper {
   display: flex;
   flex-direction: column;
   padding: 50px 0;
@@ -17,15 +22,15 @@
     font-size: 2.625rem;
     font-weight: 400;
   }
-  &__more{
-    @include prime-btn;
-    @include arrow-right;
-    color: $text-grey;
+  &__header-link{
+    @include utility.prime-btn;
+    @include utility.link-arrow;
+    color: config.$text-grey;
     font-size: 1.625rem;
     font-weight: 600;
     margin-block: 15px;
     line-height: .425;
-    @media (min-width: $bp_s) {
+    @media (min-width: config.$bp_s) {
       font-size: 2.25rem;
     }
     &:hover {
@@ -34,22 +39,44 @@
       margin-bottom: 12px;
       text-decoration: none;
     }
+    @media (max-width: config.$bp_s) {
+      display: none;
+    }
   }
-  &__grid{
+  &__footer {
+    // border: 1px solid red;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+    @media (min-width: config.$bp_s) {
+      display: none;
+    }
+  }
+  &__footer-link {
+    @include utility.link-arrow {
+      margin-left: 5px;
+    };
+    @include utility.link-underline(true);
+    font-weight: 600;
+    font-size: 1.625rem;
+  }
+  &__articles{
     display: grid;
     grid-template-columns: 1fr;
     gap: 0 30px;
-    @media (min-width: $bp_s) {
+    @media (min-width: config.$bp_s) {
       & {
         grid-template-columns: repeat(2, 1fr);
       }
     }
-    @media (min-width: $bp_m) {
+    @media (min-width: config.$bp_m) {
       & {
         grid-template-columns: repeat(6, 1fr);
       }
     }
-    @media (min-width: $bp_l) {
+    @media (min-width: config.$bp_l) {
       & {
         grid-template-columns: repeat(12, 1fr);
       }
@@ -59,65 +86,71 @@
 // =========================================================================
 // SERVICE CARDS
 // =========================================================================
-.services-card {
+.services-wrapper__card {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  box-shadow: 0 0 9px 3px rgba($black, 0.1);
-  border: 1px solid rgba($text-grey, 0.4);
+  // box-shadow: 0 0 9px 3px rgba(config.$black, 0.1);
+  // border: 1px solid rgba(config.$text-grey, 0.4);
   border-radius: 15px;
-  padding: 30px;
+  // padding: 30px;
   margin: 30px auto 0;
   min-width: 100%;
-  transition: 0.5s ease;
-  &__icon-bg{
+  // transition: 0.5s ease;
+  &-icon-bg{
     display: block;
     margin: 0 auto 17px;
     width: 65px;
     height: 65px;
     border-radius: 50%;
   }
-  &__icon{
+  &-icon{
     position: relative;
-    &::after {
-      content: "";
-      font-family: 'icomoon' !important;
-      font-size: 2.2rem;
-      color: $white;
-      position: absolute;
-      left: -17px;
-      top: 8px;
-    }
+    top: 15px;
+    // &::after {
+    //   content: "HEL";
+    //   font-family: 'icomoon' !important;
+    //   font-size: 2.2rem;
+    //   color: config.$white;
+    //   position: absolute;
+    //   left: -17px;
+    //   top: 8px;
+    // }
   }
-  &__title{
+  &-title{
     display: block;
     margin: 0 auto 10px;
     padding-bottom: 10px;
     font-size: 1.35rem;
     font-weight: 400;
     line-height: 35px;
-    @media (min-width: $bp_l) {
+    @media (min-width: config.$bp_l) {
       font-size: 20px;
     }
   }
-  &__description{
+  &-exerpt-wrapper{
     display: block;
     margin: auto auto 13px;
     font-size: .825rem;
     font-weight: 300;
   }
-  &__button{
-    @include prime-btn;
-    margin-top: auto;
+  &-exerpt {
+    // border: 1px solid red;
+    font-weight: 400;
+  }
+  &-link-btn{
+    @include utility.prime-btn;
+    margin-top: 20px;
     padding: 5px 15px;
     height: 47px;
     font-size: 1.1rem;
-    font-weight: 100;
-    color: $white;
+    font-weight: normal;
+    color: config.$white;
     text-transform: uppercase;
   }
-  @media (min-width: $bp_s) {
+
+  @media (min-width: config.$bp_s) {
     &:nth-child(-n+3) {
       grid-column: span 2;
     }
@@ -125,58 +158,72 @@
       grid-column: span 1;
     }
   }
-  @media (min-width: $bp_m) {
+  @media (min-width: config.$bp_m) {
     &:nth-child(n+4) {
       grid-column: span 3;
     }
   }
-  @media (min-width: $bp_l) {
+  @media (min-width: config.$bp_l) {
     &:nth-child(-n+3) {
       grid-column: span 4;
     }
   }
 }
 
-.button-container {
-  @include btn-container;
-}
+// .button-container {
+//   @include utility.btn-container;
+// }
 
 // =========================================================================
 // SEPARATE LOOP ABLE TO TARGET ONLY THE ELEMENTS THAT REQUIRE CUSTOM ICONS/COLOURS
 // =========================================================================
-@each $name, $data in $service_icons {
-  .services-card--#{$name} {
-    .services-card__icon-bg {
-      background-color: map-get($data, "bg");
+@each $name, $data in config.$link-button-types {
+  .services-wrapper__card--#{$name} {
+    padding: 30px;
+    box-shadow: 0 0 9px 3px rgba(config.$black, 0.1);
+    border: 1px solid rgba(config.$text-grey, 0.4);
+    transition: all .25s ease-in-out;
+    border-radius: 10px;
+    min-width: 100%;
+    .services-wrapper__card-icon-bg {
+      background-color: map.get($data, "bg");
     }
-    .services-card__icon::after {
-      content: map-get($data, "icon");
-      color: $white;
-      @if $name == 'web' {
-        left: -22px;
+    .services-wrapper__card-icon {
+      @include utility.link-icon($name) {
+        font-size: 2rem;
+        color: #fff;
+      };
+    }
+    .services-wrapper__card-link-btn {
+      background-color: map.get($data, "bg");
+    }
+  }
+  .services-wrapper__card--#{$name}:hover {
+    background-color: map.get($data, "bg");
+    transform: translateY(-12px);
+    text-decoration: none;
+    .services-wrapper__card-icon-bg {
+      background-color: config.$white;
+    }
+    .services-wrapper__card-icon::before {
+      color: map.get($data, "bg");
+    }
+    .services-wrapper__card-title,
+    .services-wrapper__card-exerpt {
+      color: config.$white;
+      &:hover {
+        color: #fff;
       }
     }
-    .services-card__button {
-      background-color: map-get($data, "bg");
+    .services-wrapper__card-link-btn {
+      background-color: config.$white;
+      color: map.get($data, "bg");
     }
-    &:hover {
-      background-color: map-get($data, "bg");
-      transform: translateY(-12px);
-      text-decoration: none;
-      .services-card__icon-bg {
-        background-color: $white;
-      }
-      .services-card__title,
-      .services-card__description {
-        color: $white;
-      }
-      .services-card__button {
-        background-color: $white;
-        color: map-get($data, "bg");
-      }
-      .services-card__icon::after {
-        color: map-get($data, "bg");
-      }
-    }
+    // .services-wrapper__card-icon::after {
+    //   color: map.get($data, "bg");
+    //   &:hover {
+    //     border: 1px solid red;
+    //   }
+    // }
   }
 }

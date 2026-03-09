@@ -7,173 +7,404 @@
   <title>Full Service Digital Agency | Cambridgeshire & Norfolk | Netmatters</title>
 </head>
 <body>
-  <!-- HEADER -->
-  <div class="header">
+
+  <!-- HEADER v2 -->
+  <header>
     <div class="container">
 
-      <div class="header__container">
-        <a href="#" class="header__logo-container"><img src="assets/f-logo.png" alt="company logo" class="header__logo"></a>
-        <a href="#" class="header__button-support u-show@m"><span class="header__button-text">Support</span></a>
-        <a href="#" class="header__button-contact u-show@m"><span class="header__button-text">contact</span></a>
+      <div class="header-main">
+        <div class="header-main__logo-container">
+          <a href="#" rel="noopener noreferrer"  class="header-main__full-logo"></a>
+        </div>
+        <div class="header-main__link-container">
+          <a href="#" rel="noopener noreferrer" class="header-main__support-btn">
+            support
+          </a>
+          <a href="#" rel="noopener noreferrer" class="header-main__contact-btn">
+            contact
+          </a>
+        </div>
+        <div class="header-main__phone-container">
+          <a href="#" rel="noopener noreferrer" class="header-main__phone-icon-link"><div class="header-main__phone-icon"></div></a>
+        </div>
 
-        <div class="header__search-wrapper u-show@s">
-          <form action="#" method="get" class="header__search-form">
-            <label for="search-input"></label>
-            <input
-              type="text"
-              name="search-bar"
-              id="search-input"
-              class="header__search-bar header__search-bar--inline"
-              placeholder="Search..."
-            >
-            <button type="submit" class="header__search-icon-container header__search-icon-container--inline">
-              <span  class="header__search-icon header__search-icon--inline"></span>
-            </button>
+        <div class="header-main__search-container">
+          <form action="" method="get" class="header-main__form">
+            <input type="text" name="small-search" id="small-search" class="header-main__small-input" placeholder="Search...">
+            <button type="submit" class="header-main__search-btn"></button>
           </form>
         </div>
 
-        <div class="header__phone-container">
-          <a href="#" class="header__phone"><span class="header__phone-container--icon"></span></a>
+        <div class="header-main__burger-container">
+          <div class="header-main__burger-icon"></div>
         </div>
-        <div class="header__burger"><span class="header__burger--icon"></span></div>
       </div>
 
-      <div class="header__search-wrapper u-hide@s">
-        <form action="#" method="get" class="header__search-form">
-          <label for="search-input"></label>
-          <input type="text" name="search-bar" id="search-input" class="header__search-bar" placeholder="Search...">
-          <button type="submit" class="header__search-icon-container"><span  class="header__search-icon"></span></button>
+      <div class="header-secondary">
+        <form action="" method="get" class="header-secondary__form">
+          <label for="search" class="header-secondary__label"></label>
+          <div class="header-secondary__search-wrapper">
+            <input type="text" name="search" id="search" class="header-secondary__input">
+            <button type="submit" class="header-secondary__search-btn"></button>
+          </div>
         </form>
       </div>
 
     </div>
-  </div>
-  <!-- HEADER END -->
+  </header>
 
-  <!-- NAVIGATION -->
-  
-  <!-- NAVIGATION END-->
-
-  <!-- BANNER -->
-  <div class="banner">
+  <!-- NAVIGATION MENU v1-->
+  <nav class="nav">
     <div class="container">
-      <div class="banner__grid">
-        <div class="banner__content">
-          <h1 class="banner__title">The East Of England's Leading Technology Company</h1>
-          <p class="banner__text">Performance-driven digital and technology services<br> with complete transparency.</p>
-          <a href="#" class="banner__button">why chose us?</a>
+      <ul class="nav__wrapper">
+
+        <li class="nav__item">
+          <a href="#" rel="noopener noreferrer" class="nav__link nav__item--consultancy">
+            <span class="nav__link--small">CONSULTANCY</span> &amp; DEVELOPMENT
+          </a>
+          <ul class="nav__dropdown nav__dropdown--consultancy">
+            <div class="nav__flex container">
+              <li class="nav__dropdown-title">Our Consultancy & Development Services</li>
+              <li class="nav__li"><a href="#" rel="noopener noreferrer" class="nav__dropdown-item">Bespoke CRM</a></li>
+              <li class="nav__li"><a href="#" rel="noopener noreferrer" class="nav__dropdown-item">Mobile App Development</a></li>
+              <li class="nav__li"><a href="#" rel="noopener noreferrer" class="nav__dropdown-item">Operational Systems</a></li>
+              <li class="nav__li"><a href="#" rel="noopener noreferrer" class="nav__dropdown-item">Intranet Development</a></li>
+              <li class="nav__li"><a href="#" rel="noopener noreferrer" class="nav__dropdown-item">SAP S/4HANA Management</a></li>
+              <li class="nav__li"><a href="#" rel="noopener noreferrer" class="nav__dropdown-item">Business Automation</a></li>
+              <li class="nav__li"><a href="#" rel="noopener noreferrer" class="nav__dropdown-item">Bespoke Databases</a></li>
+              <li class="nav__li"><a href="#" rel="noopener noreferrer" class="nav__dropdown-item">Business Central Implementation</a></li>
+              <li class="nav__li"><a href="#" rel="noopener noreferrer" class="nav__dropdown-item">Customer Portal Development</a></li>
+              <li class="nav__li"><a href="#" rel="noopener noreferrer" class="nav__dropdown-item">Software Integrations</a></li>
+              <li class="nav__li"><a href="#" rel="noopener noreferrer" class="nav__dropdown-item">Sharepoint Development</a></li>
+              <li class="nav__li"><a href="#" rel="noopener noreferrer" class="nav__dropdown-item">Internet of Things (IoT) Software</a></li>
+              <li class="nav__li"><a href="#" rel="noopener noreferrer" class="nav__dropdown-item">Reporting Hub</a></li>
+            </div>
+          </ul>
+        </li>
+
+        <li class="nav__item">
+          <a href="#" rel="noopener noreferrer" class="nav__link nav__item--it">
+            <span class="nav__link--small">IT</span> SUPPORT
+          </a>
+          <ul class="nav__dropdown nav__dropdown--it">
+            <div class="nav__flex container">
+              <li class="nav__dropdown-title">Our IT Support Services</li>
+              <li class="nav__li"><a href="#" rel="noopener noreferrer" class="nav__dropdown-item">Managed IT Support</a></li>
+              <li class="nav__li"><a href="#" rel="noopener noreferrer" class="nav__dropdown-item">IT Consultancy</a></li>
+              <li class="nav__li"><a href="#" rel="noopener noreferrer" class="nav__dropdown-item">Business IT Support</a></li>
+              <li class="nav__li"><a href="#" rel="noopener noreferrer" class="nav__dropdown-item">Cloud Service Provider</a></li>
+              <li class="nav__li"><a href="#" rel="noopener noreferrer" class="nav__dropdown-item">Office 365 for Business</a></li>
+              <li class="nav__li"><a href="#" rel="noopener noreferrer" class="nav__dropdown-item">Data Backup & Disaster Recovery</a></li>
+            </div>
+          </ul>
+        </li>
+
+        <li class="nav__item">
+          <a href="#" rel="noopener noreferrer" class="nav__link nav__item--marketing">
+            <span class="nav__link--small">Digital</span> MARKETING
+          </a>
+          <ul class="nav__dropdown nav__dropdown--marketing">
+            <div class="nav__flex container">
+              <li class="nav__dropdown-title">Our Digital Marketing Services</li>
+              <li class="nav__li"><a href="#" rel="noopener noreferrer" class="nav__dropdown-item">Search Engine Optimisation (SEO)</a></li>
+              <li class="nav__li"><a href="#" rel="noopener noreferrer" class="nav__dropdown-item">Email Marketing</a></li>
+              <li class="nav__li"><a href="#" rel="noopener noreferrer" class="nav__dropdown-item">Pay Per Click Advertising (PPC)</a></li>
+              <li class="nav__li"><a href="#" rel="noopener noreferrer" class="nav__dropdown-item">Social Media Marketing</a></li>
+              <li class="nav__li"><a href="#" rel="noopener noreferrer" class="nav__dropdown-item">Conversion Rate Optimisation (CRO)</a></li>
+              <li class="nav__li"><a href="#" rel="noopener noreferrer" class="nav__dropdown-item">Content Marketing</a></li>
+            </div>
+          </ul>
+        </li>
+
+        <li class="nav__item">
+          <a href="#" rel="noopener noreferrer" class="nav__link nav__item--telecoms">
+            <span class="nav__link--small">TELECOMS</span> SERVICES
+          </a>
+          <ul class="nav__dropdown nav__dropdown--telecoms">
+            <div class="nav__flex container">
+              <li class="nav__dropdown-title">Our Telecoms Services</li>
+              <li class="nav__li"><a href="#" rel="noopener noreferrer" class="nav__dropdown-item">Business Mobile</a></li>
+              <li class="nav__li"><a href="#" rel="noopener noreferrer" class="nav__dropdown-item">Business Connectivity</a></li>
+              <li class="nav__li"><a href="#" rel="noopener noreferrer" class="nav__dropdown-item">Phone System Health Check</a></li>
+              <li class="nav__li"><a href="#" rel="noopener noreferrer" class="nav__dropdown-item">Telecoms Bill Review</a></li>
+              <li class="nav__li"><a href="#" rel="noopener noreferrer" class="nav__dropdown-item">Business Phone Systems</a></li>
+              <li class="nav__li"><a href="#" rel="noopener noreferrer" class="nav__dropdown-item">3CX Systems</a></li>
+            </div>
+          </ul>
+        </li>
+
+        <li class="nav__item">
+          <a href="#" rel="noopener noreferrer" class="nav__link nav__item--web">
+            <span class="nav__link--small">WEB</span> DESIGN
+          </a>
+          <ul class="nav__dropdown nav__dropdown--web">
+            <div class="nav__flex container">
+              <li class="nav__dropdown-title">Out Web Design Services</li>
+              <li class="nav__li"><a href="#" rel="noopener noreferrer" class="nav__dropdown-item">Bespoke Website Design</a></li>
+              <li class="nav__li"><a href="#" rel="noopener noreferrer" class="nav__dropdown-item">Branding & Design</a></li>
+              <li class="nav__li"><a href="#" rel="noopener noreferrer" class="nav__dropdown-item">eCommerce Website</a></li>
+              <li class="nav__li"><a href="#" rel="noopener noreferrer" class="nav__dropdown-item">Mobile Appl Development</a></li>
+              <li class="nav__li"><a href="#" rel="noopener noreferrer" class="nav__dropdown-item">Pay Monthly Websites</a></li>
+              <li class="nav__li"><a href="#" rel="noopener noreferrer" class="nav__dropdown-item">Web Hosting</a></li>
+            </div>
+          </ul>
+        </li>
+
+        <li class="nav__item">
+          <a href="#" rel="noopener noreferrer" class="nav__link nav__item--security">
+            <span class="nav__link--small">CYBER</span> SECURITY
+          </a>
+          <ul class="nav__dropdown nav__dropdown--security">
+            <div class="nav__flex container">
+              <li class="nav__dropdown-title">Out Cyber Security Services</li>
+              <li class="nav__li"><a href="#" rel="noopener noreferrer" class="nav__dropdown-item">Cyber Security Assessment</a></li>
+              <li class="nav__li"><a href="#" rel="noopener noreferrer" class="nav__dropdown-item">Cyber Essentials Certification</a></li>
+              <li class="nav__li"><a href="#" rel="noopener noreferrer" class="nav__dropdown-item">Cyver Security Management</a></li>
+              <li class="nav__li"><a href="#" rel="noopener noreferrer" class="nav__dropdown-item">PCI Compliance</a></li>
+              <li class="nav__li"><a href="#" rel="noopener noreferrer" class="nav__dropdown-item">Cyber Penetration Testing</a></li>
+              <li class="nav__li"><a href="#" rel="noopener noreferrer" class="nav__dropdown-item">Hacker Prevention</a></li>
+            </div>
+          </ul>
+        </li>
+
+        <li class="nav__item">
+          <a href="#" rel="noopener noreferrer" class="nav__link nav__item--training">
+            <span class="nav__link--small">DEVELOPER</span> COURSE
+          </a>
+          <ul class="nav__dropdown nav__dropdown--training">
+            <div class="nav__flex container">
+              <li class="nav__dropdown-title">Out Developer Course Services</li>
+              <li class="nav__li"><a href="#" rel="noopener noreferrer" class="nav__dropdown-item">Train For A Career In Tech</a></li>
+              <li class="nav__li"><a href="#" rel="noopener noreferrer" class="nav__dropdown-item">Skills Bootcamp</a></li>
+              <li class="nav__li"><a href="#" rel="noopener noreferrer" class="nav__dropdown-item">Scion Scheme Frequently Asked Questions</a></li>
+              <li class="nav__li"><a href="#" rel="noopener noreferrer" class="nav__dropdown-item">Scion Collaborators</a></li>
+            </div>
+          </ul>
+        </li>
+
+      </ul>
+    </div>
+  </nav>
+
+  <!-- BANNER v2 -->
+  <section class="banner-slide">
+    <div class="container">
+      <div class="banner-slide__grid">
+        <div class="banner-slide__content">
+          <h1 class="banner-slide__title">The East Of England's Leading Technology Company</h1>
+          <p class="banner-slide__exerpt">Performance-driven digital and technology services <br>with complete transparency.</p>
+          <a href="#" rel="noopener noreferrer" class="banner-slide__link-btn">why choose us</a>
         </div>
+        <!-- <div class="banner-slide-controls">
+          <span class="banner-slide-controls__pin">O</span>
+        </div> -->
       </div>
     </div>
-  </div>
-  <!-- BANNER END -->
+  </section>
 
-  <!-- SERVICES V2 -->
-  <div class="container">
+  <!-- SERRVICES v3 -->
+  <section class="services">
+    <div class="container">
+      <div class="services-wrapper">
 
-    <!--block for layout-->
-    <section class="services">
+        <div class="services-wrapper__header">
+          <h2 class="services-wrapper__title">Our Services</h2>
+          <a href="#" rel="noopener noreferrer" class="services-wrapper__header-link">View Our Work</a>
+        </div>
 
-      <!--Element of services-->
-      <div class="services__header">
-        <h2 class="services__title">Our Services</h2>  <!--Element of services-->
-        <a class="services__more u-show@s">View Our Work</a>
-      </div>
+        <div class="services-wrapper__articles">
 
-      <div class="services__grid">
+          <!-- CONSULTANCY -->
+          <article class="services-wrapper__card">
+            <a href="#" rel="noopener noreferrer" class="services-wrapper__card--consultancy">
+              <div class="services-wrapper__card-icon-bg">
+                <span class="services-wrapper__card-icon"></span>
+              </div>
+              <h3 class="services-wrapper__card-title">Consaltancy & Development</h3>
+              <div class="services-wrapper__card-exerpt-wrapper">
+                <p class="services-wrapper__card-exerpt">Bespoke software solutions & consultancy for all your business needs including integrations and reporting.</p>
+              </div>
+              <div class="services-wrapper__card-link-btn">read more</div>
+            </a>
+          </article>
 
-        <!-- consultancy -->
-        <a href="#" class="services-card services-card--consultancy">
-          <span class="services-card__icon-bg">
-            <span class="services-card__icon"></span>
-          </span>
-          <span class="services-card__title">Consultancy & Development</span>
-          <span class="services-card__description">Bespoke software solutions & consultancy for all your business needs including integrations and reporting</span>
-          <span class="services-card__button">read more</span>
-        </a>
+          <!-- IT SUPPORT -->
+          <article class="services-wrapper__card">
+            <a href="#" rel="noopener noreferrer" class="services-wrapper__card--it">
+              <div class="services-wrapper__card-icon-bg">
+                <span class="services-wrapper__card-icon"></span>
+              </div>
+              <h3 class="services-wrapper__card-title">IT Support</h3>
+              <div class="services-wrapper__card-exerpt-wrapper">
+                <p class="services-wrapper__card-exerpt">Fully managed IT support and consultancy packages tailored to meet your exact business needs.</p>
+              </div>
+              <div class="services-wrapper__card-link-btn">read more</div>
+            </a>
+          </article>
 
-        <!-- it support -->
-        <a href="#" class="services-card services-card--it">
-          <span class="services-card__icon-bg">
-            <span class="services-card__icon"></span>
-          </span>
-          <span class="services-card__title">IT Support</span>
-          <span class="services-card__description">Fully managed IT support and consultancy packages tailored to meet your exact business needs.</span>
-          <span class="services-card__button">read more</span>
-        </a>
+          <!-- DIGITAL MARKETING -->
+          <article class="services-wrapper__card">
+            <a href="#" rel="noopener noreferrer" class="services-wrapper__card--marketing">
+              <div class="services-wrapper__card-icon-bg">
+                <span class="services-wrapper__card-icon"></span>
+              </div>
+              <h3 class="services-wrapper__card-title">Digital Marketing</h3>
+              <div class="services-wrapper__card-exerpt-wrapper">
+                <p class="services-wrapper__card-exerpt">Driven brand awareness & ROI through creative digital marketing campaigns.</p>
+                <br>
+              </div>
+              <div class="services-wrapper__card-link-btn">read more</div>
+            </a>
+          </article>
 
-        <!-- digital marketing -->
-        <a href="#" class="services-card services-card--marketing">
-          <span class="services-card__icon-bg">
-            <span class="services-card__icon"></span>
-          </span>
-          <span class="services-card__title">Digital Marketing</span>
-          <span class="services-card__description">Driven brand awareness & ROI through creative digital marketing campaigns.</span>
-          <span class="services-card__button">read more</span>
-        </a>
+          <!-- TELECOMS SERVICES -->
+          <article class="services-wrapper__card">
+            <a href="#" rel="noopener noreferrer" class="services-wrapper__card--telecoms">
+              <div class="services-wrapper__card-icon-bg">
+                <span class="services-wrapper__card-icon"></span>
+              </div>
+              <h3 class="services-wrapper__card-title">Telecoms Services</h3>
+              <div class="services-wrapper__card-exerpt-wrapper">
+                <p class="services-wrapper__card-exerpt">Business telephony solutions including mobile & connectivity solutions.</p>
+              </div>
+              <div class="services-wrapper__card-link-btn">read more</div>
+            </a>
+          </article>
 
-        <!-- telecoms services -->
-        <a href="#" class="services-card services-card--telecoms">
-          <span class="services-card__icon-bg">
-            <span class="services-card__icon"></span>
-          </span>
-          <span class="services-card__title">Telecoms Services</span>
-          <span class="services-card__description">Business telephony solutions including mobile & connectivity solutions.</span>
-          <span class="services-card__button">read more</span>
-        </a>
+          <!-- WEB DESIGN -->
+          <article class="services-wrapper__card">
+            <a href="#" rel="noopener noreferrer" class="services-wrapper__card--web">
+              <div class="services-wrapper__card-icon-bg">
+                <span class="services-wrapper__card-icon"></span>
+              </div>
+              <h3 class="services-wrapper__card-title">Web Design</h3>
+              <div class="services-wrapper__card-exerpt-wrapper">
+                <p class="services-wrapper__card-exerpt">User-centric design for businesses looking to make a lasting impression.</p>
+              </div>
+              <div class="services-wrapper__card-link-btn">read more</div>
+            </a>
+          </article>
 
-        <!-- web design -->
-        <a href="#" class="services-card services-card--web">
-          <span class="services-card__icon-bg">
-            <span class="services-card__icon"></span>
-          </span>
-          <span class="services-card__title">Web Design</span>
-          <span class="services-card__description">User-centric design for businesses looking to make a lasting impression.</span>
-          <span class="services-card__button">read more</span>
-        </a>
+          <!-- CYBER SECURITY -->
+          <article class="services-wrapper__card">
+            <a href="#" rel="noopener noreferrer" class="services-wrapper__card--security">
+              <div class="services-wrapper__card-icon-bg">
+                <span class="services-wrapper__card-icon"></span>
+              </div>
+              <h3 class="services-wrapper__card-title">Cyber Security</h3>
+              <div class="services-wrapper__card-exerpt-wrapper">
+                <p class="services-wrapper__card-exerpt">Prevention, testing, consultancy & breach management services.</p>
+              </div>
+              <div class="services-wrapper__card-link-btn">read more</div>
+            </a>
+          </article>
 
-        <!-- cyber security -->
-        <a href="#" class="services-card services-card--security">
-          <span class="services-card__icon-bg">
-            <span class="services-card__icon"></span>
-          </span>
-          <span class="services-card__title">Cyber Security</span>
-          <span class="services-card__description">Prevention, testing, consultancy & breach management services.</span>
-          <span class="services-card__button">read more</span>
-        </a>
+          <!-- DEVELOPER TRAINING -->
+          <article class="services-wrapper__card">
+            <a href="#" rel="noopener noreferrer" class="services-wrapper__card--training">
+              <div class="services-wrapper__card-icon-bg">
+                <span class="services-wrapper__card-icon"></span>
+              </div>
+              <h3 class="services-wrapper__card-title">Developer Training</h3>
+              <div class="services-wrapper__card-exerpt-wrapper">
+                <p class="services-wrapper__card-exerpt">Web design & software training courses designed to secure a job in tech.</p>
+              </div>
+              <div class="services-wrapper__card-link-btn">read more</div>
+            </a>
+          </article>
 
-        <!-- developer training -->
-        <a href="#" class="services-card services-card--training">
-          <span class="services-card__icon-bg">
-            <span class="services-card__icon"></span>
-          </span>
-          <span class="services-card__title">Developer Training</span>
-          <span class="services-card__description">Web design & software training courses designed to secure a job in tech.</span>
-          <span class="services-card__button">read more</span>
-        </a>
+        </div>
 
-        <div class="button-container u-hide@s">
-          <a class="services__more">View Our Work</a>
+        <div class="services-wrapper__footer">
+          <a href="#" target="_blank" rel="noopener noreferrer" class="services-wrapper__footer-link">
+            View Our Work
+          </a>
         </div>
 
       </div>
+    </div>
+  </section>
 
+  <!-- PARTNERS SLIDE v1-->
+  <section class="partners">
+    <div class="partners__wrapper">
+      <div class="partners__item--cyber-essentials-colour"><img src="/assets/partners/cyber-essentials-colour.jpg" alt=""></div>
+      <div class="partners__item--gbc-colour"><img src="/assets/partners/GBC-colour.png" alt=""></div>
+      <div class="partners__item--google-partner"><img src="/assets/partners/google-partner.jpg" alt=""></div>
+      <div class="partners__item--investing-in-future-growth"><img src="/assets/partners/investing-in-future-growth.jpg" alt=""></div>
+      <div class="partners__item--iso-27001"><img src="/assets/partners/iso-27001.png" alt=""></div>
+      <div class="partners__item--norfolk-prohelp"><img src="/assets/partners/norfolk_prohelp.png" alt=""></div>
+      <div class="partners__item--norfolk-carbon-charter"><img src="/assets/partners/norfolk-carbon-charter.jpg" alt=""></div>
+      <div class="partners__item--skills-of-tomorrow"><img src="/assets/partners/skills-of-tomorrow.jpg" alt=""></div>
+    </div>
+  </section>
 
-    </section>
-  </div>
-  <!-- SERVICES V2-END -->
+  <!-- WELCOME TO NETMATTERS v2-->
+  <!-- <section class="welcome">
+    <div class="container">
+      <div class="welcome-wrapper">
 
-  <!-- SCROLLING BAR -->
-  <div>
-    <div style="width: 100vw; height: 160px; background-color: #626262;">
-      <div>
-        <div style="text-align: center;">IMAGES GO HERE</div>
+        <article class="welcome-wrapper__article">
+          <h2 class="welcome-wrapper__title">
+            Welcome To Netmatters
+          </h2>
+          <p class="welcome-wrapper__exerpt">
+            Netmatters is a leading 
+            <a href="#" rel="noopener noreferrer" >Bespoke Software</a>, 
+            <a href="#" rel="noopener noreferrer" >IT Support</a>, and 
+            <a href="#" rel="noopener noreferrer" >Digital Marketing</a> 
+            company based in the East of England with offices in 
+            <a href="#" rel="noopener noreferrer" >Cambridge</a>, 
+            <a href="#" rel="noopener noreferrer" >Wymondham</a>, and 
+            <a href="#" rel="noopener noreferrer" >Great Yarmouth</a>.
+          </p>
+          <p class="welcome-wrapper__exerpt">
+            We aren't tied into contracts with third-party providers, so you know that our recommendations for your business are based purely with one benefit in mind: to help improve your business with the most appropriate solutions.
+          </p>
+          <p class="welcome-wrapper__exerpt">
+            We pride ourselves on being an ethical business and have a unique business offering and cost model that ensures you get the most from our relationship in an upfront manner.
+          </p>
+          <div class="welcome-wrapper__link">
+            <a href="#" rel="noopener noreferrer" class="welcome-wrapper__link-standard">
+              why choose us?
+            </a>
+            <a href="#" rel="noopener noreferrer" class="welcome-wrapper__link-standard">
+              our culture
+            </a>
+          </div>
+        </article>
+
+        <article class="welcome-wrapper__article">
+          <h2 class="welcome-wrapper__title">
+            What Our Clients Think
+          </h2>
+          <div class="welcome-wrapper__stars">
+            <span class="welcome-wrapper__stars-icon">X</span>
+            <span class="welcome-wrapper__stars-icon">X</span>
+            <span class="welcome-wrapper__stars-icon">X</span>
+            <span class="welcome-wrapper__stars-icon">X</span>
+            <span class="welcome-wrapper__stars-icon">X</span>
+          </div>
+          <p class="welcome-wrapper__exerpt welcome-wrapper__exerpt-quote">
+            Netmatters stood out from the start. Great guys and very easy to work with. Both the build and digital marketing teams are clearly skilled -they know their stuff! They delivered a website to our (high!) expectations and went over and above to ensure we were satisfied clients - and we are!
+          </p>
+          <p class="welcome-wrapper__exerpt">
+            <span class="welcome-wrapper__exerpt-quoter">Eleanor Bishop, Head of Marketing -</span> <a href="#" rel="noopener noreferrer" class="welcome-wrapper__exerpt-quote-company">Ashcroft Partnership LLP</a>
+          </p>
+          <div class="welcome-wrapper__link">
+            <a href="#" rel="noopener noreferrer" class="welcome-wrapper__link-google">
+              google reviews
+            </a>
+            <a href="#" rel="noopener noreferrer" class="welcome-wrapper__link-trustpilot">
+              trustpilot reviews
+            </a>
+          </div>
+        </article>
+
       </div>
     </div>
-  </div>
-  <!-- SCROLLING BAR END -->
+  </section> -->
 
-  <!-- ABOUT SECTION-->
   <div class="about">
     <div class="container">
       <div class="about-grid">
@@ -184,7 +415,7 @@
           <p class="welcome__info">We pride ourselves on being an ethical business and have a unique business offering and cost model that ensures you get the most from our relationship in an upfront manner.</p>
           <a class="welcome__button" href="#">why choose us?</a>
           <a class="welcome__button" href="#">our culture</a>
-        </div> <!-- .container__welcome end-->
+        </div>
 
         <div class="clients">
           <h2 class="clients__title">What Our Clients Think</h2>
@@ -203,9 +434,8 @@
       </div>
     </div>
   </div>
-  <!-- ABOUT SECTION END-->
-  
-  <!-- NEWS SECTION -->
+
+  <!-- LATEST NEWS ~ -->
   <div class="news">
     <div class="container">
 
@@ -252,6 +482,7 @@
             <h3 class="article-card__title">
               How Can AI Benefit My Business?
             </h3>
+            <br>
             <p class="article-card__description">
               The idea of integrating AI nto your business operations may seem daunting, but there are undeniable...
             </p>
@@ -293,26 +524,75 @@
         </a>
       </div>
 
-      <div class="news__button-container">
-        <a href="#" class="news__view-all-button u-hide@s">View All</a>
+      <div class="news__button-container u-hide@s">
+        <a href="#" class="news__view-all-button ">View All</a>
       </div>
 
     </div>
   </div>
-  <!-- NEWS SECTION END -->
 
-  <!-- SCROLLING BAR -->
-  <div>
-    <div style="width: 100vw; height: 160px; background-color: #626262;">
-      <div>
-        <div style="text-align: center;">IMAGES GO HERE</div>
+  <!-- CLIENT SLIDE v1-->
+  <section class="clients-slide">
+    <div class="clients-slide__wrapper">
+
+      <div class="clients-slide__item clients-slide__item--beat">
+        <img src="/assets/clients/beat_logo.png" alt="" class="clients-slide__img">
+        <div class="clients-slide__popout">
+          <h4 class="clients-slide__popout-title">BEAT</h4>
+          <span class="clients-slide__popout-exerpt">The UK's eating discorder charity founded in 1989</span>
+          <!-- <a href="#" rel="noopener noreferrer"  class="clients__popout-link-btn">view our case study</a> -->
+        </div>
       </div>
+
+      <div class="clients-slide__item clients-slide__item--black-swan">
+        <img src="/assets/clients/black_swan_logo.png" alt="" class="clients-slide__img">
+        <div class="clients-slide__popout">
+          <h4 class="clients-slide__popout-title">Black Swan Care Group</h4>
+          <span class="clients-slide__popout-exerpt">Black Swan Care Group own and manage 21 high-quality care and residential homes with a focus on putting the needs of their residents first.</span>
+          <a href="#" rel="noopener noreferrer"  class="clients-slide__popout-link-btn">view our case study</a>
+        </div>
+      </div>
+
+      <div class="clients-slide__item clients-slide__item--crane">
+        <img src="/assets/clients/crane_logo.png" alt="" class="clients-slide__img">
+        <div class="clients-slide__popout">
+          <h4 class="clients-slide__popout-title">Crane Garden Buildings</h4>
+          <span class="clients-slide__popout-exerpt">Leading manufacturer and supplier of high-end garden rooms, summerhouses, workshops and sheds in the UK.</span>
+          <!-- <a href="#" rel="noopener noreferrer"  class="clients__popout-link-btn">view our case study</a> -->
+        </div>
+      </div>
+
+      <div class="clients-slide__item clients-slide__item--girl-guides-anglia">
+        <img src="/assets/clients/girl_guides_anglia.png" alt="" class="clients-slide__img">
+        <div class="clients-slide__popout">
+          <h4 class="clients-slide__popout-title">title</h4>
+          <span class="clients-slide__popout-exerpt">Lorem ipsum dolor, sit amet consectetur adipisicing.</span>
+          <a href="#" rel="noopener noreferrer"  class="clients-slide__popout-link-btn">view our case study</a>
+        </div>
+      </div>
+
+      <div class="clients-slide__item clients-slide__item--survey-solutions">
+        <img src="/assets/clients/survey_solutions_logo.png" alt="" class="clients-slide__img">
+        <div class="clients-slide__popout">
+          <h4 class="clients-slide__popout-title">title</h4>
+          <span class="clients-slide__popout-exerpt">Lorem ipsum dolor, sit amet consectetur adipisicing.</span>
+          <a href="#" rel="noopener noreferrer"  class="clients-slide__popout-link-btn">view our case study</a>
+        </div>
+      </div>
+
+      <div class="clients-slide__item clients-slide__item--xupes">
+        <img src="/assets/clients/xupes_logo.png" alt="" class="clients-slide__img">
+        <div class="clients-slide__popout">
+          <h4 class="clients-slide__popout-title">title</h4>
+          <span class="clients-slide__popout-exerpt">Lorem ipsum dolor, sit amet consectetur adipisicing.</span>
+          <a href="#" rel="noopener noreferrer"  class="clients-slide__popout-link-btn">view our case study</a>
+        </div>
+      </div>
+
     </div>
-  </div>
-  <!-- SCROLLING BAR END -->
+  </section>
 
-
-  <!-- FOOTER -->
+  <!-- FOOTER ~ -->
   <footer class="footer">
     <div class="container">
       <!-- grid for menu items -->
@@ -400,7 +680,5 @@
       <p class="bottom__item bottom__item--dash"><a href="#" class="link--underline">Sitemap</a></p>
     </div>
   </div>
-  <!-- FOOTER END -->
-
 </body>
 </html>

@@ -1,1 +1,14 @@
-@import 'config','fonts', 'layout', 'header', 'banner', 'services', 'about', 'news', 'footer';
+@use "config";
+@use "reset";
+@use "layout";
+@use "utility";
+
+@use "header";
+@use "nav-bar";
+@use "banner";
+@use "services";
+@use "partners";
+@use "about";
+@use "news";
+@use "clients";
+@use "footer";

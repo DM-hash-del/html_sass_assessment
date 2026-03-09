@@ -1,0 +1,75 @@
+@use "utility";
+@use "config";
+
+.clients-slide {
+  padding: 40px 0;
+    &__wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 80px;
+    overflow-x: visible;
+  }
+
+  &__wrapper > div {
+    position: relative;
+  }
+
+  &__img {
+    filter: grayscale(100%);
+    opacity: .6;
+    transition: filter .6s ease-in-out, opacity .6s ease-in-out;
+  }
+
+  &__img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+  }
+
+  &__popout {
+    display: none;
+    position: absolute;
+    bottom: 130%;
+    margin: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 280px;
+    width: 280px;
+    z-index: 10;
+
+    background-color: config.$primary_bg_clr;
+    color: config.$white;
+    font-weight: normal;
+    font-size: .8125rem;
+    padding: 20px;
+    text-align: center;
+    &-title {
+      font-size: 1.125rem;
+    }
+    &-link-btn {
+      @include utility.prime-btn{
+        padding: 15px 10px;
+        background-color: config.$consultancy-clr;
+        border-radius: 6px;
+        margin-top: 15px;
+        text-transform: uppercase;
+        @include utility.darken-bg(config.$consultancy-clr, -20%);
+      };
+      @include utility.link-arrow{
+        margin-left: 10px
+      };
+    }
+    &::after {
+      @include utility.tooltip-arrow(config.$primary_bg_clr, 40px);
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      .clients-slide__popout {
+        display: block;
+      }
+    }
+  }
+   &__item:hover &__popout {
+    display: block;
+  }
+}

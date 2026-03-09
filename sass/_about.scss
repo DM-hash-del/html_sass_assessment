@@ -1,10 +1,16 @@
+@use "config";
+@use "utility";
+@use "layout";
+@use "sass:map";
+
+
 .about {
-  color: $white;
-  background-color: $primary_bg_clr;
+  color: config.$white;
+  background-color: config.$primary_bg_clr;
   padding-block: 50px;
 
   &-grid {
-    @media (min-width: $bp_m) {
+    @media (min-width: config.$bp_m) {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 15px;
@@ -31,11 +37,16 @@
       &:first-of-type {
         font-weight: 600;
       }
+      & a {
+        @include utility.link-underline;
+      }
     }
 
     &__button {
-      @include prime-btn;
-      @include arrow-right;
+      @include utility.prime-btn;
+      @include utility.link-arrow {
+        margin-left: 10px;
+      };
       font-size: 1.25rem;
       background-color: #272936;
       padding: 10px 30px;
@@ -44,7 +55,7 @@
       transition: .2s ease-in-out;
       &:last-child {
         margin-left: 10px;
-        @media (min-width: $bp_m) {
+        @media (min-width: config.$bp_m) {
           margin-left: 0;
         }
       }
@@ -52,13 +63,13 @@
         text-decoration: none;
         background-color: #121318;
       }
-      @media (min-width: $bp_m){
+      @media (min-width: config.$bp_m){
         margin-bottom: 0;
         &:first-of-type {
           margin-bottom: 17px;
         }
       }
-      @media (min-width: $bp_l) {
+      @media (min-width: config.$bp_l) {
         &:first-of-type {
           margin-bottom: 0;
         }
@@ -111,12 +122,15 @@
       margin-bottom: 25px;
     }
     &__quoter-company {
-      color: $white;
+      @include utility.link-underline;
+      color: config.$white;
     }
 
     &__button--google {
-      @include prime-btn;
-      @include arrow-right;
+      @include utility.prime-btn;
+      @include utility.link-arrow {
+        margin-left: 10px;
+      };
       text-transform: uppercase;
       font-size: 1.25rem;
       padding: 10px 30px;
@@ -129,8 +143,10 @@
       }
     }
     &__button--trustpilot {
-      @include prime-btn;
-      @include arrow-right;
+      @include utility.prime-btn;
+      @include utility.link-arrow {
+        margin-left: 10px;
+      };
       text-transform: uppercase;
       font-size: 1.25rem;
       padding: 10px 30px;
@@ -142,10 +158,10 @@
         text-decoration: none;
         background-color: #009b69;
       }
-      @media (min-width: $bp_m) {
+      @media (min-width: config.$bp_m) {
         margin-left: 0;
       }
-      @media (min-width: $bp_l) {
+      @media (min-width: config.$bp_l) {
         margin-left: 10px;
       }
     }

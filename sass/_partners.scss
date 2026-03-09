@@ -1,0 +1,20 @@
+.partners {
+  &__wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 80px;
+    overflow-x: hidden;
+  }
+}
+
+.partners__wrapper img {
+  filter: grayscale(100%);
+  opacity: .6;
+  transition: filter .6s ease-in-out;
+}
+
+.partners__wrapper img:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+}
