@@ -156,6 +156,7 @@
     }
     &:nth-child(n+4) {
       grid-column: span 1;
+      
     }
   }
   @media (min-width: config.$bp_m) {

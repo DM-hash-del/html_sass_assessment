@@ -90,13 +90,14 @@
 }
 
 @each $name, $data in config.$link-button-types {
-  .nav__dropdown {
+  .nav__item--#{$name}:hover {
+    position: relative;
     &::after {
       // @include utility.tooltip-arrow(map.get($name, "bg"), 40px);
-      @include utility.tooltip-arrow(currentColor, 40px);
-      top: 0%;
-      left: 10%;
-      transform: translateX(-0%);
+      @include utility.tooltip-arrow(map.get($data, "bg"), 69px, 30px);
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
       display: block;
       z-index: 11;
     }
@@ -124,6 +125,7 @@
   }
 }
 
+// each dropdown section would need it's own list with unique icons to prevent duplication
 @for $i from 1 through 41 {
   .nav__li:nth-child(#{$i})::before {
     content: map.get(config.$icons, $i);
