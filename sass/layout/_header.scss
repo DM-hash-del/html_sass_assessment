@@ -1,0 +1,25 @@
+@use "../abstracts" as ab;
+
+.header-main {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 20px 0;
+  @include ab.respond(s) {
+    padding: 0;
+    padding-top: 20px;
+  }
+  @include ab.respond(m) {
+    padding-bottom: 20px;
+  }
+}
+
+.header-secondary {
+  padding-bottom: 20px;
+  @include ab.respond(s) {
+    margin-top: 11px;
+  }
+  @include ab.respond(m) {
+    display: none;
+  }
+}

@@ -1,18 +1,16 @@
-@use "config";
-@use "utility";
-@use "layout";
+@use "../abstracts" as ab;
 
 .news {
-  display: flex;
-  flex-direction: column;
-  @media (min-width: config.$bp_l) {
-    padding-bottom: 50px;
-  }
+  // display: flex;
+  // flex-direction: column;
+  // @media (min-width: ab.$bp_l) {
+  //   padding-bottom: 50px;
+  // }
 
   &__heading {
     padding-top: 50px;
     
-    @media (min-width: config.$bp_s) {
+    @include ab.respond(m) {
       display: flex;
       flex-direction: row;
       flex-wrap: nowrap;
@@ -26,19 +24,32 @@
     color: #333645;
   }
   &__button-container {
+    display: none;
     text-align: center;
     padding-top: 50px;
     margin-bottom: 20px;
-    @media (min-width: config.$bp_s) {
+
+    @include ab.respond(m) {
+      display: block;
       padding: 0;
+    }
+
+    &--bottom {
+      display: block;
+      margin-bottom: 20px;
+      width: 100%;
+      text-align: center;
+      @include ab.respond(m) {
+        display: none;
+      }
     }
   }
   &__view-all-button {
-    @include utility.prime-btn;
-    @include utility.link-arrow{
+    @include ab.prime-btn;
+    @include ab.link-arrow{
       margin-left: 15px;
     };
-    color: config.$black;
+    color: ab.$black;
     font-size: 1.625rem;
     font-weight: 600;
     margin-block: 15px;
@@ -50,14 +61,16 @@
       text-decoration: none;
     }
   }
+  // ! WTF IS THIS? BLOCK OR SECTION STYLING?
   &__grid {
-    @media (min-width: config.$bp_s) {
-      display: grid;
+    display: grid;
+    padding-bottom: 50px;
+    @include ab.respond(m) {
       align-items: start;
       grid-template-columns: repeat(2, 1fr);
       gap: 30px;
     }
-    @media (min-width: config.$bp_l) {
+    @include ab.respond(xl) {
       grid-template-columns: repeat(3, 1fr);
     }
   }
@@ -70,7 +83,7 @@
   position: relative;
   margin-top: 30px;
   border: 1px solid #ccc;
-  box-shadow: 0 12px 20px 7px rgba(config.$black, 0.1);
+  box-shadow: 0 12px 20px 7px rgba(ab.$black, 0.1);
   transition: transform .5s ease;
   
   &:hover {
@@ -78,11 +91,12 @@
     transform: translateY(-12px);
   }
 
+  // ! WTF IS THIS AGAIN?!?!
   &--123 {
-    @media (min-width: config.$bp_s) {
+    @include ab.respond(m) {
       display: none !important;
     }
-    @media (min-width: config.$bp_l) {
+    @include ab.respond(xl) {
       display: block !important;
     }
   }
@@ -95,7 +109,7 @@
     font-weight: 600;
     line-height: 1.438rem;
     padding: 0 .5em;
-    color: config.$white;
+    color: ab.$white;
     text-transform: uppercase;
     &:hover {
       text-decoration: underline;
@@ -127,6 +141,9 @@
     font-size: 1rem;
     line-height: 1.5rem;
     margin-bottom: 15px;
+    @include ab.respond(xl) {
+      min-height: 3rem;
+    }
   }
 
   &__description {
@@ -137,9 +154,9 @@
   }
 
   &__button {
-    @include utility.prime-btn;
+    @include ab.prime-btn;
     padding: 5px 15px;
-    color: config.$white;
+    color: ab.$white;
 
     text-transform: uppercase;
     line-height: 2.25;
@@ -181,9 +198,11 @@
   }
 
   &__user-details {
+    font-size: .875rem;
     font-weight: 400;
     & strong {
-      color: config.$black;
+      color: ab.$black;
+      font-weight: 600;
     }
   }
 }

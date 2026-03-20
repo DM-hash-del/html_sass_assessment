@@ -1,30 +1,33 @@
-@use "config";
-@use "utility";
-@use "layout";
+@use "../abstracts" as ab;
 @use "sass:map";
 
 // Container is in _layout -> not concerned with footer specific layout/styles
 .footer {
-  color: config.$white;
+  color: ab.$white;
   font-size: 1rem;
   // font-family: 'Poppins' ,sans-serif;
 
-  background-color: config.$primary_bg_clr;
+  background-color: ab.$primary_bg_clr;
   padding-top: 27px;
   position: relative;
+  
+  @include ab.respond(xl) {
+    padding-top: 47px;
+  }
 
+
+  // ! IS this supposed to be the section layout styling?!
   &__grid {
     display: grid;
     grid-template-columns: 1fr;
 
-    @media (min-width: config.$bp_s) {
+    @include ab.respond(m){
       grid-template-columns: repeat(2, 1fr);
-      // grid-template-rows: repeat(2, minmax(min-content, 1fr));
     }
-    @media (min-width: config.$bp_m) {
+    @include ab.respond(l){
       grid-template-columns: repeat(4, 1fr);
     }
-    @media (min-width: config.$bp_l) {
+    @include ab.respond(xl){
       grid-template-columns: 1fr repeat(4, 200px);
       grid-template-rows: 1fr;
     }
@@ -32,7 +35,6 @@
   &__menu {
   display: flex;
   flex-direction: column;
-  // margin: 0;
   margin-bottom: 30px;
   }
 
@@ -61,7 +63,7 @@
 }
 
 .link--underline {
-  @include utility.link-underline;
+  @include ab.link-underline;
 }
 
 .bottom {
@@ -73,13 +75,13 @@
   padding-bottom: 10px;
   width: 100%;
   background-color: #212330;
-  color: config.$white;
+  color: ab.$white;
 
   &__item {
     font-weight: 400;
     font-size: .8125rem;
     line-height: 1.275;
-    @media (min-width: config.$bp_s) {
+    @include ab.respond(m) {
       display: inline-block;
       padding-left: 0;
       padding-right: 0;
@@ -90,7 +92,7 @@
       }
     }
   }
-  @media (min-width: config.$bp_s) {
+  @include ab.respond(m) {
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: flex-start;
@@ -107,7 +109,7 @@
   &__heading {
     font-size: 1rem;
     text-transform: uppercase;
-    color: config.$white;
+    color: ab.$white;
     margin-block-start: 24px;
     margin-block-end: 26px;
     font-weight: 400;
@@ -115,7 +117,12 @@
   &__container {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     margin-bottom: 30px;
+    width: 150px;
+    @include ab.respond(s){
+      width: 100%;
+    }
   }
   
   &__link {
@@ -128,35 +135,85 @@
     background-color: #212330;
     position: relative;
     cursor: pointer;
-    @each $name, $data in config.$link-button-types {
-      &--#{$name}::after {
-        content: map.get($data, "icon");
-        font-family: 'icomoon' !important;
-        font-size: 30px;
-        padding: 12px 22px 16px 22px;
-        color: config.$white;
+    // @each $name, $data in ab.$social-media {
+    //   // ! Why doesn't this just use an icon mixin?!?!
+    //   &--#{$name}::after {
+    //     content: map.get($data, "icon");
+    //     font-family: 'icomoon' !important;
+    //     font-size: 30px;
+    //     padding: 12px 22px 16px 22px;
+    //     color: ab.$white;
+    //     position: absolute;
+    //     top: -3px;
+    //     left: -4px;
+    //   }
+    //   &--#{$name}-hover:hover {
+    //     background-color: map.get($data, "bg");
+    //   }
+    // }
+    &--facebook {
+      @include ab.icon(ab.$social-media, "facebook", "before") {
         position: absolute;
-        top: -3px;
-        left: -4px;
+        top: 2px;
+        left: 12px;
+        font-size: 2.5rem;
       }
-      &--#{$name}-hover:hover {
-        background-color: map.get($data, "bg");
+    }
+    &--instagram {
+      @include ab.icon(ab.$social-media, "instagram", "before") {
+        position: absolute;
+        top: 2px;
+        left: 12px;
+        font-size: 2.5rem;
+      }
+    }
+    &--x {
+      @include ab.icon(ab.$social-media, "x", "before") {
+        position: absolute;
+        top: 2px;
+        left: 12px;
+        font-size: 2.5rem;
+      }
+    }
+    &--in {
+      @include ab.icon(ab.$social-media, "in", "before") {
+        position: absolute;
+        top: 2px;
+        left: 12px;
+        font-size: 2.5rem;
       }
     }
   }
-  @media (min-width: config.$bp_s) {
+
+  // ! What's going on here with the empty & selector?!
+  @include ab.respond(m) {
     & {
       grid-column: span 2;
     }
   }
-  @media (min-width: config.$bp_m) {
+
+  @include ab.respond(l) {
     & {
       grid-column: span 4;
     }
   }
-  @media (min-width: config.$bp_l) {
+
+  @include ab.respond(xl) {
     & {
       grid-column: span 1;
     }
   }
+}
+
+.fb-bg:hover {
+  background-color: ab.$facebook-clr;
+}
+.ig-bg:hover {
+  background-color: ab.$instagram-clr;
+}
+.tw-bg:hover {
+  background-color: ab.$x-clr;
+}
+.li-bg:hover {
+  background-color: ab.$linkedin-clr;
 }

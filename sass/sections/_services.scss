@@ -1,6 +1,4 @@
-@use "config";
-@use "utility";
-@use "layout";
+@use "../abstracts" as ab;
 @use "sass:map";
 
 //=========================================================================
@@ -23,14 +21,17 @@
     font-weight: 400;
   }
   &__header-link{
-    @include utility.prime-btn;
-    @include utility.link-arrow;
-    color: config.$text-grey;
+    @include ab.prime-btn;
+    @include ab.link-arrow;
+    display: none;
+    color: ab.$text-grey;
     font-size: 1.625rem;
     font-weight: 600;
     margin-block: 15px;
     line-height: .425;
-    @media (min-width: config.$bp_s) {
+
+    @include ab.respond(m) {
+      display: block;
       font-size: 2.25rem;
     }
     &:hover {
@@ -39,26 +40,23 @@
       margin-bottom: 12px;
       text-decoration: none;
     }
-    @media (max-width: config.$bp_s) {
-      display: none;
-    }
   }
   &__footer {
-    // border: 1px solid red;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     margin-top: 25px;
-    @media (min-width: config.$bp_s) {
+
+    @include ab.respond(m) {
       display: none;
     }
   }
   &__footer-link {
-    @include utility.link-arrow {
+    @include ab.link-arrow {
       margin-left: 5px;
     };
-    @include utility.link-underline(true);
+    @include ab.link-underline(true);
     font-weight: 600;
     font-size: 1.625rem;
   }
@@ -66,17 +64,19 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: 0 30px;
-    @media (min-width: config.$bp_s) {
+
+    // ! single & WHY?!?!
+    @include ab.respond(m) {
       & {
         grid-template-columns: repeat(2, 1fr);
       }
     }
-    @media (min-width: config.$bp_m) {
+    @include ab.respond(l) {
       & {
         grid-template-columns: repeat(6, 1fr);
       }
     }
-    @media (min-width: config.$bp_l) {
+    @include ab.respond(xl) {
       & {
         grid-template-columns: repeat(12, 1fr);
       }
@@ -91,13 +91,9 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  // box-shadow: 0 0 9px 3px rgba(config.$black, 0.1);
-  // border: 1px solid rgba(config.$text-grey, 0.4);
   border-radius: 15px;
-  // padding: 30px;
   margin: 30px auto 0;
   min-width: 100%;
-  // transition: 0.5s ease;
   &-icon-bg{
     display: block;
     margin: 0 auto 17px;
@@ -108,14 +104,47 @@
   &-icon{
     position: relative;
     top: 15px;
-    // &::after {
-    //   content: "HEL";
-    //   font-family: 'icomoon' !important;
-    //   font-size: 2.2rem;
-    //   color: config.$white;
-    //   position: absolute;
-    //   left: -17px;
-    //   top: 8px;
+    // &--consultancy {
+    //   @include ab.icon (ab.$service-types, "consultancy", before){
+    //     // color: ab.$consultancy-clr;
+    //     color: #fff;
+    //   };
+    // }
+    // &--it {
+    //   @include ab.icon (ab.$service-types, "it", before){
+    //     // color: ab.$it-support-clr;
+    //     color: #fff;
+    //   };
+    // }
+    // &--marketing {
+    //   @include ab.icon (ab.$service-types, "marketing", before){
+    //     // color: ab.$marketing-clr;
+    //     color: #fff;
+    //   };
+    // }
+    // &--telecoms {
+    //   @include ab.icon (ab.$service-types, "telecoms", before){
+    //     // color: ab.$telecoms-clr;
+    //     color: #fff;
+    //   };
+    // }
+    // &--web {
+    //   @include ab.icon (ab.$service-types, "web", before){
+    //     // color: ab.$web-development-clr;
+    //     color: #fff;
+    //   };
+    // }
+    // &--security {
+    //   @include ab.icon (ab.$service-types, "security", before){
+    //     // color: ab.$security-clr;
+    //     color: #fff;
+    //   };
+    // }
+    // &--training {
+    //   @include ab.icon (ab.$service-types, "training", before){
+    //     // color: ab.$training-clr;
+    //     color: #fff;
+    //   };
     // }
   }
   &-title{
@@ -125,7 +154,8 @@
     font-size: 1.35rem;
     font-weight: 400;
     line-height: 35px;
-    @media (min-width: config.$bp_l) {
+
+    @include ab.respond(xl) {
       font-size: 20px;
     }
   }
@@ -140,58 +170,80 @@
     font-weight: 400;
   }
   &-link-btn{
-    @include utility.prime-btn;
+    @include ab.prime-btn;
     margin-top: 20px;
     padding: 5px 15px;
     height: 47px;
     font-size: 1.1rem;
     font-weight: normal;
-    color: config.$white;
+    color: ab.$white;
     text-transform: uppercase;
   }
 
-  @media (min-width: config.$bp_s) {
+  @include ab.respond(m) {
     &:nth-child(-n+3) {
       grid-column: span 2;
     }
     &:nth-child(n+4) {
       grid-column: span 1;
-      
     }
   }
-  @media (min-width: config.$bp_m) {
+  @include ab.respond(l) {
     &:nth-child(n+4) {
       grid-column: span 3;
     }
   }
-  @media (min-width: config.$bp_l) {
+  @include ab.respond(xl) {
     &:nth-child(-n+3) {
       grid-column: span 4;
     }
   }
 }
 
+// .btn--consultancy {
+//   background-color: ab.$consultancy-clr;
+// }
+// .btn--it {
+//   background-color: ab.$it-support-clr;
+// }
+// .btn--marketing {
+//   background-color: ab.$marketing-clr;
+// }
+// .btn--telecoms {
+//   background-color: ab.$telecoms-clr;
+// }
+// .btn--web {
+//   background-color: ab.$web-development-clr;
+// }
+// .btn--security {
+//   background-color: ab.$security-clr;
+// }
+// .btn--training {
+//   background-color: ab.$training-clr;
+// }
+
 // .button-container {
-//   @include utility.btn-container;
+//   @include ab.btn-container;
 // }
 
 // =========================================================================
 // SEPARATE LOOP ABLE TO TARGET ONLY THE ELEMENTS THAT REQUIRE CUSTOM ICONS/COLOURS
 // =========================================================================
-@each $name, $data in config.$link-button-types {
+@each $name, $data in ab.$service-types {
   .services-wrapper__card--#{$name} {
     padding: 30px;
-    box-shadow: 0 0 9px 3px rgba(config.$black, 0.1);
-    border: 1px solid rgba(config.$text-grey, 0.4);
+    box-shadow: 0 0 9px 3px rgba(ab.$black, 0.1);
+    border: 1px solid rgba(ab.$text-grey, 0.4);
     transition: all .25s ease-in-out;
     border-radius: 10px;
     min-width: 100%;
+    height: 100%;
     .services-wrapper__card-icon-bg {
       background-color: map.get($data, "bg");
     }
-    .services-wrapper__card-icon {
-      @include utility.link-icon($name) {
-        font-size: 2rem;
+    .services-wrapper__card-icon--#{$name} {
+      @include ab.icon(ab.$service-types, $name, before) {
+        font-size: 2.5rem;
         color: #fff;
       };
     }
@@ -204,20 +256,20 @@
     transform: translateY(-12px);
     text-decoration: none;
     .services-wrapper__card-icon-bg {
-      background-color: config.$white;
+      background-color: ab.$white;
     }
-    .services-wrapper__card-icon::before {
+    .services-wrapper__card-icon--#{$name}::before {
       color: map.get($data, "bg");
     }
     .services-wrapper__card-title,
     .services-wrapper__card-exerpt {
-      color: config.$white;
+      color: ab.$white;
       &:hover {
         color: #fff;
       }
     }
     .services-wrapper__card-link-btn {
-      background-color: config.$white;
+      background-color: ab.$white;
       color: map.get($data, "bg");
     }
     // .services-wrapper__card-icon::after {

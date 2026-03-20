@@ -1,0 +1,10 @@
+@use "../abstracts" as ab;
+
+.nav {
+  display: none;
+  position: relative;
+
+  @include ab.respond(l) {
+    display: block;
+  }
+}

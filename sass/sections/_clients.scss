@@ -1,8 +1,8 @@
-@use "utility";
-@use "config";
+@use "../abstracts" as ab;
 
 .clients-slide {
   padding: 40px 0;
+  overflow-x: hidden;
     &__wrapper {
     display: flex;
     flex-direction: row;
@@ -37,8 +37,8 @@
     width: 280px;
     z-index: 10;
 
-    background-color: config.$primary_bg_clr;
-    color: config.$white;
+    background-color: ab.$primary_bg_clr;
+    color: ab.$white;
     font-weight: normal;
     font-size: .8125rem;
     padding: 20px;
@@ -47,20 +47,20 @@
       font-size: 1.125rem;
     }
     &-link-btn {
-      @include utility.prime-btn{
+      @include ab.prime-btn{
         padding: 15px 10px;
-        background-color: config.$consultancy-clr;
+        background-color: ab.$consultancy-clr;
         border-radius: 6px;
         margin-top: 15px;
         text-transform: uppercase;
-        @include utility.darken-bg(config.$consultancy-clr, -20%);
+        @include ab.darken-bg(ab.$consultancy-clr, -20%);
       };
-      @include utility.link-arrow{
+      @include ab.link-arrow{
         margin-left: 10px
       };
     }
     &::after {
-      @include utility.tooltip-arrow(config.$primary_bg_clr, 40px);
+      @include ab.tooltip-arrow(ab.$primary_bg_clr, 40px);
       top: 100%;
       left: 50%;
       transform: translateX(-50%);

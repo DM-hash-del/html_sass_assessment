@@ -1,22 +1,11 @@
-@use "config";
-@use "utility";
-@use "layout";
-@use "sass:map";
+@use "../abstracts" as ab;
 
-
+// ! all likelyhook can remove .about from this partial
 .about {
-  color: config.$white;
-  background-color: config.$primary_bg_clr;
-  padding-block: 50px;
+  color: ab.$white;
+  background-color: ab.$primary_bg_clr;
 
-  &-grid {
-    @media (min-width: config.$bp_m) {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 15px;
-    }
-  }
-
+  // ? .welcome is a block
   .welcome {
     display: flex;
     flex-direction: row;
@@ -24,10 +13,12 @@
     grid-column: span 1;
 
     &__title {
-      // margin-top: -6px;
       margin-bottom: 40px;
       font-size: 2.25rem;
       font-weight: 600;
+      @include ab.respond(l) {
+        word-spacing: -1px;
+      }
     }
 
     &__info {
@@ -38,38 +29,49 @@
         font-weight: 600;
       }
       & a {
-        @include utility.link-underline;
+        @include ab.link-underline;
       }
     }
 
     &__button {
-      @include utility.prime-btn;
-      @include utility.link-arrow {
+      @include ab.prime-btn;
+      @include ab.link-arrow {
         margin-left: 10px;
       };
       font-size: 1.25rem;
       background-color: #272936;
       padding: 10px 30px;
-      margin-bottom: 50px;
+      margin-bottom: 17px;
       text-transform: uppercase;
+      line-height: 35px;
       transition: .2s ease-in-out;
+
       &:last-child {
-        margin-left: 10px;
-        @media (min-width: config.$bp_m) {
+        margin: 0;
+        margin-bottom: 50px;
+        @include ab.respond(s) {
+          margin-left: 10px;
+        }
+        @include ab.respond(l) {
           margin-left: 0;
+          margin-bottom: 0;
         }
       }
       &:hover {
         text-decoration: none;
         background-color: #121318;
       }
-      @media (min-width: config.$bp_m){
+
+      @include ab.respond(s) {
+        margin-bottom: 50px;
+      }
+      @include ab.respond(l) {
         margin-bottom: 0;
         &:first-of-type {
           margin-bottom: 17px;
         }
       }
-      @media (min-width: config.$bp_l) {
+      @include ab.respond(xl) {
         &:first-of-type {
           margin-bottom: 0;
         }
@@ -77,9 +79,11 @@
           margin-left: 10px;
         }
       }
+
     }
   }
 
+  // ? .clients is a block
   .clients {
     display: flex;
     flex-direction: row;
@@ -102,7 +106,7 @@
       &:after {
         content: "\e9d9";
         font-family: 'icomoon' !important;
-        font-size: 2.5rem;
+        font-size: 3rem;
         color: orange;
       }
     }
@@ -122,13 +126,13 @@
       margin-bottom: 25px;
     }
     &__quoter-company {
-      @include utility.link-underline;
-      color: config.$white;
+      @include ab.link-underline;
+      color: ab.$white;
     }
 
     &__button--google {
-      @include utility.prime-btn;
-      @include utility.link-arrow {
+      @include ab.prime-btn;
+      @include ab.link-arrow {
         margin-left: 10px;
       };
       text-transform: uppercase;
@@ -143,29 +147,31 @@
       }
     }
     &__button--trustpilot {
-      @include utility.prime-btn;
-      @include utility.link-arrow {
+      @include ab.prime-btn;
+      @include ab.link-arrow {
         margin-left: 10px;
       };
       text-transform: uppercase;
       font-size: 1.25rem;
       padding: 10px 30px;
       margin-top: 20px;
-      margin-left: 10px;
       background-color: #00b67b;
       transition: .2s ease-in-out;
       &:hover {
         text-decoration: none;
         background-color: #009b69;
       }
-      @media (min-width: config.$bp_m) {
+      @include ab.respond(s) {
+        margin-left: 8px;
+        line-height: 35px;
+      }
+      @include ab.respond(l) {
         margin-left: 0;
       }
-      @media (min-width: config.$bp_l) {
-        margin-left: 10px;
+      @include ab.respond(xl) {
+        margin-left: 8px;
+        word-spacing: -2px;
       }
     }
-
   }
-
 }

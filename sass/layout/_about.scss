@@ -1,0 +1,13 @@
+@use "../abstracts" as ab;
+
+.about {
+  padding-block: 50px;
+
+  &-grid {
+    @include ab.respond(l) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+  }
+}

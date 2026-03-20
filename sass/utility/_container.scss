@@ -1,0 +1,60 @@
+@use "../abstracts" as ab;
+
+// Content Wrapper
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  @include ab.respond(m) {
+    width: 750px;
+  }
+  @include ab.respond(l) {
+    width: 970px;
+  }
+  @include ab.respond(xl) {
+    width: 1200px;
+  }
+}
+
+// ===========================================================
+// VISIBILITY TOGGLE CLASSES
+// ! DO i REALLY WANT TO USE THESE AGAIN?!?! NAAAAAA
+// ===========================================================
+
+
+// .u-hide\@s {
+//   @media (min-width: ab.$bp_s) {
+//     display: none !important; 
+//   }
+// }
+// .u-hide\@m {
+//   @media (min-width: ab.$bp_m) {
+//     display: none !important; 
+//   }
+// }
+// .u-hide\@l {
+//   @media (min-width: ab.$bp_l) {
+//     display: none !important; 
+//   }
+// }
+
+// .u-show\@s {
+//   display: none !important;
+//   @media (min-width: ab.$bp_s) {
+//     display: block !important;
+//   }
+// }
+// .u-show\@m {
+//   display: none !important;
+//   @media (min-width: ab.$bp_m) {
+//     display: block !important;
+//   }
+// }
+// .u-show\@l {
+//   display: none !important;
+//   @media (min-width: ab.$bp_l) {
+//     display: block !important;
+//   }
+// }
