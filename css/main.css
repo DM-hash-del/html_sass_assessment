@@ -508,47 +508,67 @@ select {
 }
 
 .clients-slide {
-  padding: 40px 0;
-  overflow-x: hidden;
+  padding: 50px 0;
+  overflow-x: clip;
 }
 .clients-slide__wrapper {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
+  justify-content: center;
   gap: 80px;
-  overflow-x: visible;
+  overflow: visible;
 }
-.clients-slide__wrapper > div {
+.clients-slide__item {
   position: relative;
+  flex: 0 0 auto;
 }
 .clients-slide__img {
   filter: grayscale(100%);
   opacity: 0.6;
   transition: filter 0.6s ease-in-out, opacity 0.6s ease-in-out;
 }
-.clients-slide__img:hover {
+.clients-slide__item:hover .clients-slide__img {
   filter: grayscale(0%);
   opacity: 1;
 }
 .clients-slide__popout {
-  display: none;
   position: absolute;
-  bottom: 130%;
-  margin: 10px;
+  width: 340px;
+  padding: 20px;
+  padding-bottom: 40px;
+  bottom: 100%;
   left: 50%;
   transform: translateX(-50%);
-  max-width: 280px;
-  width: 280px;
   z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+.clients-slide__popout-box {
   background-color: #323544;
   color: #fff;
-  font-weight: normal;
-  font-size: 0.8125rem;
   padding: 20px;
   text-align: center;
+  transform: translateY(10px);
+  transition: transform 0.25s ease;
+  overflow: visible;
 }
-.clients-slide__popout-title {
-  font-size: 1.125rem;
+.clients-slide__popout-box::after {
+  content: "";
+  position: absolute;
+  top: 99%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 72px;
+  height: 35px;
+  background-color: #323544;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+.clients-slide__popout-excerpt {
+  font-size: 0.8125rem;
+  line-height: 1.375rem;
 }
 .clients-slide__popout-link-btn {
   display: inline-flex;
@@ -579,23 +599,22 @@ select {
   -moz-osx-font-smoothing: grayscale;
   margin-left: 10px;
 }
-.clients-slide__popout::after {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 0;
-  border-left: 40px solid transparent;
-  border-right: 40px solid transparent;
-  border-top: 20px solid #323544;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-}
-.clients-slide__popout::after .clients-slide__popout {
-  display: block;
-}
 .clients-slide__item:hover .clients-slide__popout {
-  display: block;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+.clients-slide__item:hover .clients-slide__popout-box {
+  transform: translateY(0);
+}
+
+.clients-slide__item--girl-guides-anglia .clients-slide__popout-link-btn {
+  background-color: #4183d7;
+}
+
+.clients-slide__item--black-swan .clients-slide__popout-link-btn {
+  background-color: #f7b322;
 }
 
 .footer {
@@ -728,9 +747,8 @@ select {
   }
 }
 .socials__link {
-  display: inline-block;
-  padding-right: 10px;
-  padding-bottom: 10px;
+  display: block;
+  padding: 12px 22px 16px 22px;
   width: 68px;
   height: 58px;
   margin-inline-end: 7px;
@@ -748,9 +766,9 @@ select {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   position: absolute;
-  top: 2px;
-  left: 12px;
-  font-size: 2.5rem;
+  top: 5px;
+  left: 18px;
+  font-size: 2rem;
 }
 .socials__link--instagram::before {
   content: "\ea92";
@@ -762,9 +780,9 @@ select {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   position: absolute;
-  top: 2px;
-  left: 12px;
-  font-size: 2.5rem;
+  top: 5px;
+  left: 18px;
+  font-size: 2rem;
 }
 .socials__link--x::before {
   content: "\e900";
@@ -776,9 +794,9 @@ select {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   position: absolute;
-  top: 2px;
-  left: 12px;
-  font-size: 2.5rem;
+  top: 5px;
+  left: 18px;
+  font-size: 2rem;
 }
 .socials__link--in::before {
   content: "\eaca";
@@ -790,9 +808,9 @@ select {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   position: absolute;
-  top: 2px;
-  left: 12px;
-  font-size: 2.5rem;
+  top: 5px;
+  left: 18px;
+  font-size: 2rem;
 }
 @media (min-width: 768px) {
   .socials {
@@ -807,6 +825,15 @@ select {
 @media (min-width: 1260px) {
   .socials {
     grid-column: span 1;
+  }
+}
+
+.fb-bg, .ig-bg {
+  margin-bottom: 7px;
+}
+@media (min-width: 576px) {
+  .fb-bg, .ig-bg {
+    margin-bottom: 0;
   }
 }
 
@@ -2117,19 +2144,29 @@ select {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
+  justify-content: space-evenly;
   gap: 80px;
   overflow-x: hidden;
+  height: 150px;
 }
 
 .partners__wrapper img {
   filter: grayscale(100%);
   opacity: 0.6;
   transition: filter 0.6s ease-in-out;
+  flex: 0 0 auto;
 }
 
 .partners__wrapper img:hover {
   filter: grayscale(0%);
   opacity: 1;
+  flex: 0 0 auto;
+}
+
+div[class^=partners__item--] {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
 }
 
 .services-wrapper {

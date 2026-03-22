@@ -126,66 +126,49 @@
   }
   
   &__link {
-    display: inline-block;
-    padding-right: 10px;
-    padding-bottom: 10px;
+    display: block;
+    padding: 12px 22px 16px 22px;
     width: 68px;
     height: 58px;
     margin-inline-end: 7px;
     background-color: #212330;
     position: relative;
     cursor: pointer;
-    // @each $name, $data in ab.$social-media {
-    //   // ! Why doesn't this just use an icon mixin?!?!
-    //   &--#{$name}::after {
-    //     content: map.get($data, "icon");
-    //     font-family: 'icomoon' !important;
-    //     font-size: 30px;
-    //     padding: 12px 22px 16px 22px;
-    //     color: ab.$white;
-    //     position: absolute;
-    //     top: -3px;
-    //     left: -4px;
-    //   }
-    //   &--#{$name}-hover:hover {
-    //     background-color: map.get($data, "bg");
-    //   }
-    // }
+
     &--facebook {
       @include ab.icon(ab.$social-media, "facebook", "before") {
         position: absolute;
-        top: 2px;
-        left: 12px;
-        font-size: 2.5rem;
+        top: 5px;
+        left: 18px;
+        font-size: 2rem;
       }
     }
     &--instagram {
       @include ab.icon(ab.$social-media, "instagram", "before") {
         position: absolute;
-        top: 2px;
-        left: 12px;
-        font-size: 2.5rem;
+        top: 5px;
+        left: 18px;
+        font-size: 2rem;
       }
     }
     &--x {
       @include ab.icon(ab.$social-media, "x", "before") {
         position: absolute;
-        top: 2px;
-        left: 12px;
-        font-size: 2.5rem;
+        top: 5px;
+        left: 18px;
+        font-size: 2rem;
       }
     }
     &--in {
       @include ab.icon(ab.$social-media, "in", "before") {
         position: absolute;
-        top: 2px;
-        left: 12px;
-        font-size: 2.5rem;
+        top: 5px;
+        left: 18px;
+        font-size: 2rem;
       }
     }
   }
 
-  // ! What's going on here with the empty & selector?!
   @include ab.respond(m) {
     & {
       grid-column: span 2;
@@ -202,6 +185,12 @@
     & {
       grid-column: span 1;
     }
+  }
+}
+.fb-bg, .ig-bg {
+  margin-bottom: 7px;
+  @include ab.respond(s) {
+    margin-bottom: 0;
   }
 }
 
