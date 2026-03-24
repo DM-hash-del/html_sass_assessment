@@ -1,11 +1,6 @@
 @use "../abstracts" as ab;
 
 .news {
-  // display: flex;
-  // flex-direction: column;
-  // @media (min-width: ab.$bp_l) {
-  //   padding-bottom: 50px;
-  // }
 
   &__heading {
     padding-top: 50px;
