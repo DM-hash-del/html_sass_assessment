@@ -36,7 +36,7 @@
   }
 
   &__support-btn {
-    @include ab.icon(ab.$internal-buttons,"support") {
+    @include ab.icon(ab.$internal-buttons, "support", before) {
       font-size: 1.25rem;
       margin-right: 4px;
       color: #fff;

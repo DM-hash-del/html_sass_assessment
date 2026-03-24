@@ -583,9 +583,6 @@ select {
   margin-top: 15px;
   text-transform: uppercase;
 }
-.clients-slide__popout-link-btn:hover {
-  background-color: rgb(216.9467248908, 150.1938864629, 7.8532751092);
-}
 .clients-slide__popout-link-btn::after {
   content: "\ea3c";
   font-family: "icomoon" !important;
@@ -892,7 +889,7 @@ select {
     margin-right: 20px;
   }
 }
-.header-main__support-btn::after {
+.header-main__support-btn::before {
   content: "\e939";
   font-family: "icomoon" !important;
   font-style: normal;
