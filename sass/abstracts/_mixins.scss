@@ -9,7 +9,7 @@
   }
 }
 
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 // all link_btn content should be lowercase characters
 @mixin link-btn ($type) {
@@ -171,7 +171,6 @@
 }
 
 
-// name is probably too specific
 @mixin burger-graphic {
   display: inline-block;
   position: relative;
