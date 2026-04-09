@@ -178,6 +178,7 @@
   height: 4px;
   z-index: 1;
   background-color: v.$white;
+  transition: all 0.3s ease;
 
   &::before {
     content: "";
@@ -188,6 +189,7 @@
     z-index: 1;
     top: -10px;
     background-color: v.$white;
+    transition: all 0.3s ease 0.1s;
   }
   &::after {
     content: "";
@@ -198,6 +200,7 @@
     z-index: 1;
     top: 10px;
     background-color: v.$white;
+    transition: all 0.3s ease 0.1s;
   }
 }
 

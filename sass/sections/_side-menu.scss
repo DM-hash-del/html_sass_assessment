@@ -1,0 +1,107 @@
+@use "../abstracts" as ab;
+@use "sass:map";
+
+.side-bar {
+  width: 274px;
+  color: ab.$white;
+  font-size: 1.125rem;
+  text-transform: uppercase;
+  background-color: #333645;
+  
+  &--mobile {
+    text-align: center;
+    padding: 21px;
+    @include ab.respond(l) {
+      display: none;
+    }
+  }
+  @include ab.respond(l) {
+      width: 350px;
+  }
+  
+  // for styling
+  height: 100dvh;
+  overflow-y: scroll;
+  box-sizing: border-box;
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+  right: 0;
+
+  &__contact {
+    padding: 19px 0 18px 0;
+    border-radius: 3px;
+    outline: 1px solid rgba(0, 0, 0, .25);
+    border: 1px solid rgba(255, 255, 255, .1);
+  }
+
+  &__menu-item {
+    padding-top: 20px;
+  }
+
+  &__sub-menu {
+    margin-top: 20px;
+  }
+
+  &__sub-menu > ul > li {
+    border-top: 1px solid rgba(0,0,0,.45);
+  }
+  
+  &__link-header {
+    display: block;
+    padding: 19px 0 18px 0;
+    border-radius: 3px;
+    outline: 1px solid rgba(0, 0, 0, .25);
+    border: 1px solid rgba(255, 255, 255, .1);
+    & > small {
+      display: block;
+      font-size: .625rem;
+    }
+  }
+  &__link-text {
+    display: block;
+    width: 100%;
+    font-size: 1rem;
+    padding: 10px;
+    border-top: 1px solid hsla(0,0%,100%,.05);
+    background-color: #262834;
+  }
+
+  &--main {
+    & .side-bar__menu-item:first-child {
+      display: none;
+      @include ab.respond(l) {
+        display: list-item;
+      }
+    }
+    & .side-bar__link-header {
+      width: 100%;
+      padding: 20px;
+      font-size: 1rem;
+    }
+    & .side-bar__link-text::before {
+      content: "\203A \203A";
+      margin-right: 15px;
+    }
+    & .side-bar__menu-item {
+      padding-top: 0;
+    }
+    & .side-bar__sub-menu {
+      margin-top: 0;
+    }
+    & .side-bar__sub-menu > ul > li span{
+      padding: 15px 20px;
+      font-size: .825rem;
+    }
+  }
+}
+
+// Loop for Services Icons
+@each $name, $data in ab.$service-types {
+  .side-bar__link-header--#{$name} {
+    @include ab.icon(ab.$service-types, $name, before) {
+      color: map.get($data, "bg");
+      font-size: 1.438rem;
+    };
+  }
+}

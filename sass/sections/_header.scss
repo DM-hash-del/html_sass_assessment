@@ -194,6 +194,16 @@
     @include ab.burger-graphic;
   }
 
+  &__burger-container--active &__burger-icon {
+    background-color: transparent;
+  }
+  &__burger-container--active &__burger-icon::before {
+    transform: translateY(10px) rotate(315deg);
+  }
+  &__burger-container--active &__burger-icon::after {
+    transform: translateY(-10px) rotate(-315deg);
+  }
+
   // SECONDARY HEADER ELEMENTS
   &__secondary {
     padding-bottom: 20px;
@@ -271,7 +281,7 @@
     &:hover .nav__link::after {
       content: "";
       position: absolute;
-      top: 97px;
+      top: 98px;
       left: 50%;
       transform: translateX(-50%);
       
@@ -280,7 +290,7 @@
       clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
       z-index: 20;
       @include ab.respond(xl) {
-        width: 174px;
+        width: 170px;
         height: 36px;
       }
     }
