@@ -3,32 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"/>
+  <link rel="stylesheet" href="css/sidr.bare.min.css">
   <link rel="stylesheet" href="css/main.css">
   <title>Full Service Digital Agency | Cambridgeshire & Norfolk | Netmatters</title>
-  <style>
-    /* .popout-staging-container {
-      box-sizing: border-box;
-      display: flex;
-      flex-direction: column;
-      flex-wrap: nowrap;
-      height: 100dvh;
-      position: fixed;
-      top: 0;
-      right: 0;
-      background-color: #15173f;
-      color: antiquewhite;
-      border: 1px solid whitesmoke;
-      z-index: 9999;
-      & > div {
-        overflow-y: scroll;
-      }
-    } */
-  </style>
 </head>
 <body>
   <!-- Popout Side-menu -->
-  <div class="popout-staging-container">
-    <div class="side-bar">
+  <div id="sidr">
+    <div id="side-menu" class="side-bar">
       <ul class="side-bar--mobile">
         <li class="side-bar__contact"><a href="#">Contact Us</a></li>
         <li class="side-bar__menu-item">
@@ -292,6 +276,7 @@
     </div>
   </dialog>
 
+  <!-- HEADER -->
   <header class="header">
     <div class="container">
       <div class="header__main">
@@ -323,8 +308,8 @@
           </form>
         </div>
 
-        <div class="header__burger-container">
-          <div class="header__burger-icon"></div>
+        <div class="header__burger-container" id="side-menu-open">
+          <a class="header__burger-icon"></a>
         </div>
       </div>
 
@@ -490,80 +475,94 @@
       
       <div class="banner-slider__track">
         
-        <div class="banner-slider__slide">
-          <div class="banner-slider__media">
-            <img class="banner-slider__image" src="assets/banner_slide_images/home-YLei.png" alt="Netmatters company building">
-          </div>
-          <div class="banner-slider__content">
-            <h2 class="banner-slider__title">The East of Englands Leading Technology Company</h2>
-            <p class="banner-slider__text">performance-driven digital and technological services with complete transparency.</p>
-            <a href="#" class="banner-slider__button">find out more</a>
-          </div>
-        </div>
-
-        <div class="banner-slider__slide">
-          <div class="banner-slider__media">
-            <img class="banner-slider__image" src="assets/banner_slide_images/home-O67Y.webp" alt="man wearing headphones">
-          </div>
-          <div class="banner-slider__content">
-            <h2 class="banner-slider__title">Bespoke Software</h2>
-            <p class="banner-slider__text">Deliverying expert bespoke software solutions across a range of industries.</p>
-            <a href="#" class="banner-slider__button">find out more</a>
+        <div>
+          <div class="banner-slider__slide">
+            <div class="banner-slider__media">
+              <img class="banner-slider__image" src="assets/banner_slide_images/home-YLei.png" alt="Netmatters company building">
+            </div>
+            <div class="banner-slider__content">
+              <h2 class="banner-slider__title">The East of Englands Leading Technology Company</h2>
+              <p class="banner-slider__text">performance-driven digital and technological services with complete transparency.</p>
+              <a href="#" class="banner-slider__button">find out more</a>
+            </div>
           </div>
         </div>
 
-        <div class="banner-slider__slide">
-          <div class="banner-slider__media">
-            <img class="banner-slider__image" src="assets/banner_slide_images/home-MSxH.webp" alt="security graphic of a lock">
+        <div>
+          <div class="banner-slider__slide">
+            <div class="banner-slider__media">
+              <img class="banner-slider__image" src="assets/banner_slide_images/home-O67Y.webp" alt="man wearing headphones">
+            </div>
+            <div class="banner-slider__content">
+              <h2 class="banner-slider__title">Bespoke Software</h2>
+              <p class="banner-slider__text">Deliverying expert bespoke software solutions across a range of industries.</p>
+              <a href="#" class="banner-slider__button">find out more</a>
+            </div>
           </div>
-          <div class="banner-slider__content">
-            <h2 class="banner-slider__title">Cyber Security</h2>
-            <p class="banner-slider__text">Keeping businesses and their customers sensitive information protected.</p>
-            <a href="#" class="banner-slider__button">find out more</a>
+        </div>
+        
+        <div>
+          <div class="banner-slider__slide">
+            <div class="banner-slider__media">
+              <img class="banner-slider__image" src="assets/banner_slide_images/home-MSxH.webp" alt="security graphic of a lock">
+            </div>
+            <div class="banner-slider__content">
+              <h2 class="banner-slider__title">Cyber Security</h2>
+              <p class="banner-slider__text">Keeping businesses and their customers sensitive information protected.</p>
+              <a href="#" class="banner-slider__button">find out more</a>
+            </div>
           </div>
         </div>
 
-        <div class="banner-slider__slide">
-          <div class="banner-slider__media">
-            <img class="banner-slider__image" src="assets/banner_slide_images/home-K0pn.webp" alt="Engineer speaking in a meeting">
-          </div>
-          <div class="banner-slider__content">
-            <h2 class="banner-slider__title">Web Design</h2>
-            <p class="banner-slider__text">For businesses looking to make a strong and effective first impression.</p>
-            <a href="#" class="banner-slider__button">find out more</a>
-          </div>
-        </div>
-
-        <div class="banner-slider__slide">
-          <div class="banner-slider__media">
-            <img class="banner-slider__image" src="assets/banner_slide_images/home-J8Xx.webp" alt="Person dialing number on phone.">
-          </div>
-          <div class="banner-slider__content">
-            <h2 class="banner-slider__title">Telecoms Services</h2>
-            <p class="banner-slider__text">A new approach to connectivity, see how we can help your business.</p>
-            <a href="#" class="banner-slider__button">find out more</a>
+        <div>
+          <div class="banner-slider__slide">
+            <div class="banner-slider__media">
+              <img class="banner-slider__image" src="assets/banner_slide_images/home-K0pn.webp" alt="Engineer speaking in a meeting">
+            </div>
+            <div class="banner-slider__content">
+              <h2 class="banner-slider__title">Web Design</h2>
+              <p class="banner-slider__text">For businesses looking to make a strong and effective first impression.</p>
+              <a href="#" class="banner-slider__button">find out more</a>
+            </div>
           </div>
         </div>
 
-        <div class="banner-slider__slide">
-          <div class="banner-slider__media">
-            <img class="banner-slider__image" src="assets/banner_slide_images/home-6yTp.webp" alt="Engineers working at their desks.">
-          </div>
-          <div class="banner-slider__content">
-            <h2 class="banner-slider__title">Digital Marketing</h2>
-            <p class="banner-slider__text">Generating your business through results-driven marketing activities.</p>
-            <a href="#" class="banner-slider__button">find out more</a>
+        <div>
+          <div class="banner-slider__slide">
+            <div class="banner-slider__media">
+              <img class="banner-slider__image" src="assets/banner_slide_images/home-J8Xx.webp" alt="Person dialing number on phone.">
+            </div>
+            <div class="banner-slider__content">
+              <h2 class="banner-slider__title">Telecoms Services</h2>
+              <p class="banner-slider__text">A new approach to connectivity, see how we can help your business.</p>
+              <a href="#" class="banner-slider__button">find out more</a>
+            </div>
           </div>
         </div>
 
-        <div class="banner-slider__slide">
-          <div class="banner-slider__media">
-            <img class="banner-slider__image" src="assets/banner_slide_images/home-gay8.webp" alt="Engineer assembling a computer.">
+        <div>
+          <div class="banner-slider__slide">
+            <div class="banner-slider__media">
+              <img class="banner-slider__image" src="assets/banner_slide_images/home-6yTp.webp" alt="Engineers working at their desks.">
+            </div>
+            <div class="banner-slider__content">
+              <h2 class="banner-slider__title">Digital Marketing</h2>
+              <p class="banner-slider__text">Generating your business through results-driven marketing activities.</p>
+              <a href="#" class="banner-slider__button">find out more</a>
+            </div>
           </div>
-          <div class="banner-slider__content">
-            <h2 class="banner-slider__title">IT Support</h2>
-            <p class="banner-slider__text">Fast and cost-effective IT support services for your business.</p>
-            <a href="#" class="banner-slider__button">Find out more</a>
+        </div>
+
+        <div>
+          <div class="banner-slider__slide">
+            <div class="banner-slider__media">
+              <img class="banner-slider__image" src="assets/banner_slide_images/home-gay8.webp" alt="Engineer assembling a computer.">
+            </div>
+            <div class="banner-slider__content">
+              <h2 class="banner-slider__title">IT Support</h2>
+              <p class="banner-slider__text">Fast and cost-effective IT support services for your business.</p>
+              <a href="#" class="banner-slider__button">Find out more</a>
+            </div>
           </div>
         </div>
 
@@ -1007,6 +1006,7 @@
       <p class="bottom__item bottom__item--dash"><a href="#" class="link--underline">Sitemap</a></p>
     </div>
   </div>
+  <div class="site-overlay"></div>
   <script>
     let modal = document.querySelector("#cookies-dialog");
     let cookiesAcceptBtn = document.querySelector('.cookies__accept');
@@ -1024,7 +1024,8 @@
       cookieSettingsBtn.style.display = "block";
     }
   </script>
-  <script src="JS/jquery-4.0.0.min.js"></script>
+  <!-- <script src="JS/jquery-4.0.0.min.js"></script> -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="JS/jquery.sidr.min.js"></script>
   <script src="JS/jquery.sticky.js"></script>
   <script src="JS/slick.min.js"></script>

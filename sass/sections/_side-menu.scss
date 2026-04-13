@@ -1,12 +1,39 @@
 @use "../abstracts" as ab;
 @use "sass:map";
 
+// breakpoints to keep side menu and sidr in sync
+$side-menu-width-s: 274px;
+
+body.menu-open {
+  overflow: hidden;
+  @include ab.respond(l) {
+    right: 350px;
+  }
+}
+
+.sidr {
+  width: $side-menu-width-s;
+  @include ab.respond(l) {
+    width: 350px;
+  }
+  &.sidr-right {
+    right: -274px; // negative variables or just hard coded
+    @include ab.respond(l) {
+      right: -350px;
+    }
+  }
+  z-index: 9999;
+}
+
 .side-bar {
-  width: 274px;
+  width: $side-menu-width-s;
+  height: 100dvh;
+  overflow-y: scroll;
   color: ab.$white;
   font-size: 1.125rem;
   text-transform: uppercase;
   background-color: #333645;
+  // z-index: 9999;
   
   &--mobile {
     text-align: center;
@@ -18,15 +45,6 @@
   @include ab.respond(l) {
       width: 350px;
   }
-  
-  // for styling
-  height: 100dvh;
-  overflow-y: scroll;
-  box-sizing: border-box;
-  z-index: 9999;
-  position: fixed;
-  top: 0;
-  right: 0;
 
   &__contact {
     padding: 19px 0 18px 0;

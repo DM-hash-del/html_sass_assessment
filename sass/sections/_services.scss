@@ -22,7 +22,9 @@
   }
   &__header-link{
     @include ab.prime-btn;
-    @include ab.link-arrow;
+    @include ab.link-arrow {
+      margin-left: 5px;
+    };
     display: none;
     color: ab.$text-grey;
     font-size: 1.625rem;
