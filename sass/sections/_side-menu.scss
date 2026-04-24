@@ -1,5 +1,6 @@
 @use "../abstracts" as ab;
 @use "sass:map";
+@use "sass:color";
 
 // breakpoints to keep side menu and sidr in sync
 $side-menu-width-s: 274px;
@@ -71,6 +72,7 @@ body.menu-open {
     border-radius: 3px;
     outline: 1px solid rgba(0, 0, 0, .25);
     border: 1px solid rgba(255, 255, 255, .1);
+    background-color: #333645;
     & > small {
       display: block;
       font-size: .625rem;
@@ -122,4 +124,8 @@ body.menu-open {
       font-size: 1.438rem;
     };
   }
+}
+
+.side-bar__menu-item:hover .side-bar__link-header {
+  background-color: color.adjust(#333645, $lightness: 10%);
 }

@@ -452,11 +452,18 @@ select {
 
 .banner-slider {
   overflow-x: hidden;
+  max-height: 550px;
+}
+.banner-slider__container {
+  max-height: 550px;
+  overflow-y: hidden;
+  scrollbar-width: none;
 }
 .banner-slider__slide {
   display: grid;
   position: relative;
   min-height: 550px;
+  max-height: 550px;
 }
 .banner-slider__media {
   position: relative;
@@ -482,6 +489,7 @@ select {
   position: relative;
   z-index: 4;
   max-width: 100%;
+  max-height: 550px;
   margin-inline: auto;
   display: flex;
   flex-direction: column;
@@ -506,6 +514,7 @@ select {
     margin-bottom: 0.5rem;
     font-size: 4rem;
     line-height: 5rem;
+    text-align: left;
   }
 }
 .banner-slider__text {
@@ -611,6 +620,9 @@ select {
   right: 0;
   height: 35px;
 }
+.clients__item:hover .clients__image {
+  filter: grayscale(0);
+}
 .clients__description {
   position: absolute;
   display: none;
@@ -681,6 +693,7 @@ select {
   width: auto !important;
   max-width: 200px;
   filter: grayscale(1);
+  transition: filter 0.6s ease-in-out;
 }
 
 .clients__item:hover .clients__description {
@@ -2417,6 +2430,9 @@ div[class^=partners__item--] {
   align-items: center;
   margin-inline-end: 50px;
 }
+div[class^=partners__item--] > img {
+  padding-inline: 20px;
+}
 
 .services-wrapper {
   display: flex;
@@ -3047,6 +3063,7 @@ body.menu-open {
   border-radius: 3px;
   outline: 1px solid rgba(0, 0, 0, 0.25);
   border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: #333645;
 }
 .side-bar__link-header > small {
   display: block;
@@ -3177,6 +3194,10 @@ body.menu-open {
   -moz-osx-font-smoothing: grayscale;
   color: #ce4125;
   font-size: 1.438rem;
+}
+
+.side-bar__menu-item:hover .side-bar__link-header {
+  background-color: rgb(72.675, 76.95, 98.325);
 }
 
 .container {

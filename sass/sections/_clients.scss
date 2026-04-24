@@ -25,6 +25,9 @@
       right: 0;
       height: 35px;
     }
+    &:hover .clients__image {
+      filter: grayscale(0);
+    }
   }
 
   &__description {
@@ -90,6 +93,7 @@
     width: auto !important;
     max-width: 200px;
     filter: grayscale(1);
+    transition: filter .6s ease-in-out;
   }
 }
 

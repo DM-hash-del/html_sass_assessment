@@ -28,4 +28,7 @@ div[class^="partners__item--"] {
   display: flex;
   align-items: center;
   margin-inline-end: 50px;
+  & > img {
+    padding-inline: 20px;
+  }
 }
