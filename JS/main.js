@@ -1,6 +1,7 @@
 $(document).ready(function() {
 
   // side menu popout
+  // apply transition to main, on body breaks sticky header
   $("#side-menu-open").sidr({
     name: "sidr",
     side: "right",
@@ -8,12 +9,12 @@ $(document).ready(function() {
     onOpen: function() {
       $(".header__burger-container").addClass("header__burger-container--active");
       $(".site-overlay").addClass("site-overlay--active");
-      $("body").addClass("menu-open");
+      $("main").addClass("menu-open");
     },
     onClose: function() {
       $(".header__burger-container").removeClass("header__burger-container--active");
       $(".site-overlay").removeClass("site-overlay--active");
-      $("body").removeClass("menu-open");
+      $("main").removeClass("menu-open");
     },
   });
 
@@ -34,42 +35,73 @@ $(document).ready(function() {
     arrows: false,
   });
 
+  $(".partners__wrapper").slick({
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2500,
+    dots: false,
+    infinite: true,
+    variableWidth: true,
+    arrows: false,
+    pauseOnHover: true,
+    speed: 200,
+  });
+
+  $(".clients__slick-container").slick({
+    infinite: true,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2500,
+    speed: 250,
+    variableWidth: true,
+    arrows: false,
+    pauseOnHover: true,
+    
+    swipe: false,
+    draggable: false,
+    touchMove: false,
+  });
+
   // sticky header logic
-  // fires a lot - debounce
   const $header = $(".header");
-  const headerHeight = $header.outerHeight();
+  let headerHeight = $header.outerHeight();
   let lastScrollTop = 0;
-  let isSticky = false;
+  // let isSticky = false;
+
+  $(window).on("resize", function() {
+    headerHeight = $header.outerHeight();
+    $header.css("top", `-${headerHeight}px`);
+  })
+  $header.css("top", `-${headerHeight}px`);
 
   $(window).on("scroll", function() {
     let scrolltop = $(window).scrollTop();
     let scrollingDown = scrolltop > lastScrollTop;
 
-    if (scrolltop <=  headerHeight) {
-      if (isSticky && scrolltop === 0) {
-        $header.removeClass("is-hidden");
-        $header.unstick();
-        isSticky = false;
-      }
-      lastScrollTop = scrolltop;
-      return;
-    }
-    
-    $header.toggleClass("is-hidden", scrollingDown);
+    // if (scrolltop > headerHeight) {
+    //   if (scrollingDown) {
+    //     $header.removeClass("is-visible");
+    //   } else {
+    //     $header.addClass("is-visible");
+    //   }
+    // } else if (scrolltop <= headerHeight) {
+    //   $header.removeClass("is-visible");
+    // }
 
-    if (scrollingDown) {
-      if (isSticky) {
-        setTimeout(() => {
-          $header.unstick();
-          isSticky = false;
-        }, 300)
-      }
-    } else {
-      if (!isSticky) {
-        $header.sticky({topSpacing: 0, zIndex: 100});
-        isSticky = true;
+    if (scrolltop <= 0) {
+      $header.addClass("at-top").removeClass("is-visible");
+      // no idea why this works but it does - prevent jitter at top
+      $header.removeClass("at-top");
+    } else if (scrolltop > headerHeight) {
+      $header.removeClass("at-top");
+
+      if (scrollingDown && scrolltop > headerHeight) {
+        $header.removeClass("is-visible");
+      } else {
+        $header.addClass("is-visible");
       }
     }
+
     lastScrollTop = scrolltop;
   })
 

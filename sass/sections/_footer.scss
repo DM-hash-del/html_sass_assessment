@@ -128,7 +128,7 @@
   &__link {
     display: block;
     padding: 12px 22px 16px 22px;
-    width: 68px;
+    width: 58px;
     height: 58px;
     margin-inline-end: 7px;
     background-color: #212330;
@@ -138,32 +138,32 @@
     &--facebook {
       @include ab.icon(ab.$social-media, "facebook", "before") {
         position: absolute;
-        top: 5px;
-        left: 18px;
+        top: 7px;
+        left: 14px;
         font-size: 2rem;
       }
     }
     &--instagram {
       @include ab.icon(ab.$social-media, "instagram", "before") {
         position: absolute;
-        top: 5px;
-        left: 18px;
+        top: 7px;
+        left: 14px;
         font-size: 2rem;
       }
     }
     &--x {
       @include ab.icon(ab.$social-media, "x", "before") {
         position: absolute;
-        top: 5px;
-        left: 18px;
+        top: 7px;
+        left: 14px;
         font-size: 2rem;
       }
     }
     &--in {
       @include ab.icon(ab.$social-media, "in", "before") {
         position: absolute;
-        top: 5px;
-        left: 18px;
+        top: 7px;
+        left: 14px;
         font-size: 2rem;
       }
     }

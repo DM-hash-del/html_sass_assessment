@@ -26,7 +26,7 @@
       margin-left: 5px;
     };
     display: none;
-    color: ab.$text-grey;
+    color: #333645;
     font-size: 1.625rem;
     font-weight: 600;
     margin-block: 15px;
@@ -169,6 +169,8 @@
   }
   &-exerpt {
     // border: 1px solid red;
+    font-size: .8125rem;
+    line-height: 1.375rem;
     font-weight: 400;
   }
   &-link-btn{

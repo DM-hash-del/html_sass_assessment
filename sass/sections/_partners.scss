@@ -6,7 +6,7 @@
     justify-content: space-evenly;
     gap: 80px;
     overflow-x: hidden;
-    height: 150px;
+    padding-block: 50px;
   }
 }
 
@@ -27,4 +27,5 @@ div[class^="partners__item--"] {
   flex: 0 0 auto;
   display: flex;
   align-items: center;
+  margin-inline-end: 50px;
 }

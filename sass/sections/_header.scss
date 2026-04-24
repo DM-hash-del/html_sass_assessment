@@ -2,24 +2,34 @@
 @use "sass:map";
 @use "sass:color";
 
-// dont need this?!
+
+
+// sticky above :window 
 // .header.is-visible {
-//   transform: translateY(0);
+//   transform: translateY(100%);
 // }
-// .header:not(.is-visible) {
-//   transform: translateY(-100%);
-// }
-.header.is-hidden {
-  transform: translateY(-100%);
+
+/* When this class is added, the sticky point becomes the actual top of the screen */
+.header.is-visible {
+  top: 0 !important;
 }
+
+/* This handles the 'natural' state when you are at the very top of the page */
+.header.at-top {
+  position: relative;
+  top: 0 !important;
+}
+
 // ===========================
 // PRIMARY & SECONDARY HEADER
 // ===========================
 .header {
   background-color: #fff;
-  position: relative;
+  position: sticky;
   z-index: 10000;
-  transition: transform .3s ease-in-out;
+  // transition: transform .3s ease-in-out;
+  top: -100px;
+  transition: top .3s ease-in-out;
 
   &__main {
     display: flex;
@@ -35,15 +45,19 @@
 
   &__logo-container {
     margin-right: auto;
+    @include ab.respond(xl) {
+      width: 370px;
+      padding: 0 15px;
+    }
   }
   
   &__full-logo {
     display: block;
     width: 100%;
-    @include ab.respond(m) {
-      // width: 344px;
-      padding: 0 15px;
-    }
+    // @include ab.respond(m) {
+    //   // width: 344px;
+    //   padding: 0 15px;
+    // }
   }
 
   &__link-container {
