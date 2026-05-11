@@ -942,7 +942,7 @@ select {
   flex-direction: row;
   flex-wrap: wrap;
   margin-bottom: 30px;
-  width: 150px;
+  width: 240px;
 }
 @media (min-width: 576px) {
   .socials__container {
@@ -952,12 +952,17 @@ select {
 .socials__link {
   display: block;
   padding: 12px 22px 16px 22px;
-  width: 58px;
+  width: 109px;
   height: 58px;
   margin-inline-end: 7px;
   background-color: #212330;
   position: relative;
   cursor: pointer;
+}
+@media (min-width: 576px) {
+  .socials__link {
+    width: 58px;
+  }
 }
 .socials__link--facebook::before {
   content: "\ea90";
