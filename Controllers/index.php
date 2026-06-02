@@ -22,7 +22,7 @@ $pdo = new PDO($dsn, $user, $pass);
 // Set error mode to throw exceptions so you know if something breaks
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-echo "Connected successfully!";
+// echo "Connected successfully!";
 
 $news = $pdo->query('SELECT * FROM news;')->fetchAll(PDO::FETCH_ASSOC);
 // dd($news[1]['body']);
