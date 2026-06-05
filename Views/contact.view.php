@@ -1,5 +1,5 @@
-<?php require 'Views/Partials/head.php'; ?>
-<?php require 'Views/Partials/header.php'; ?>
+<?php require base_path('./Views/Partials/head.php'); ?>
+<?php require base_path('./Views/Partials/header.php'); ?>
 
 
 <main>
@@ -97,8 +97,8 @@
       <!-- contact form -->
         <div class="contact-container">
 
-        <div class="contact-form">
-          <form action="" method="POST">
+        <div class="contact-form" id="contact-form">
+          <form action="/contact" method="POST">
             <div class="contact-form__validation-message" <?php echo !$isSuccess ? 'style="display: none;"' : ''; ?>>
               <div>
                 <p>Your message has been sent</p>
@@ -188,9 +188,11 @@
   let accordian = document.querySelector('.contact-accordian__container');
   let accordianBtn = document.querySelector('.contact-accordian__header');
   accordianBtn.addEventListener('click', () => {
-    accordian.getBoundingClientRect().height < 31 ? accordian.style.height = '420px' : accordian.style.height = '30px'
+    accordian.getBoundingClientRect().height < 31 ?
+     accordian.style.height = '420px' :
+     accordian.style.height = '30px'
   })
 </script>
 
-<?php require 'Views/Partials/footer.php' ?>
-<?php require 'Views/Partials/foot.php' ?>
+<?php require base_path('Views/Partials/footer.php') ?>
+<?php require base_path('Views/Partials/foot.php') ?>

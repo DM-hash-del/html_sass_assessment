@@ -1,0 +1,19 @@
+I think the telephone is spose to be required as on the old website it is showing red
+
+this x (status message) doesnt have a click option
+
+this (status message) doesnt disapear on refresh
+
+no error messages appear because it is treated as a sucess so i have clean my cache
+
+clearing cache doesnt remove the success state
+
+also the redirect on failed submit is at the top of page and on success it moves down under the form i would reccomend having the redirect to the top of the form
+
+server side validation isn't represented on the page
+
+contact us button in side meny doesnt link to the contact page for phones#
+
+max-height: max-content doesn't work on firefix
+
+incorrect avatar

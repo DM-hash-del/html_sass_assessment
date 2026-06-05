@@ -158,7 +158,7 @@
       }
     }
     &__validation-message {
-      display: none;
+      // display: none;
       color: green;
       background-color: #ffffff;
       padding: 5px 15px;
@@ -302,8 +302,8 @@
 
   &-accordian {
     overflow-y: hidden;
-    height: 31px;
     &__container {
+      height: 31px;
       transition: height .3s ease-in;
     }
     

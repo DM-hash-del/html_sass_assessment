@@ -1,32 +1,32 @@
 <?php
 
-// dd(BASE_PATH);
-
 // $host = 'localhost';
 // $db   = 'netmatters_mirror';
 // $user = 'root';
 // $pass = '';
+
 $charset = 'utf8mb4';
 
-$host = $_ENV['HOST'];
+$host = $_ENV['DB_HOST'];
 $db   = $_ENV['DB_NAME'];
-$user = $_ENV['USER'];
-$pass = $_ENV['PASSWORD'];
+$user = $_ENV['DB_USER'];
+$pass = $_ENV['DB_PASSWORD'];
 
-// The Data Source Name (DSN) specifies the driver, host, database, and charset
-$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
-
-// This creates the connection
-$pdo = new PDO($dsn, $user, $pass);
-
-// Set error mode to throw exceptions so you know if something breaks
-$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-// echo "Connected successfully!";
-
-$news = $pdo->query('SELECT * FROM news;')->fetchAll(PDO::FETCH_ASSOC);
-// dd($news[1]['body']);
-
-
-
-require 'Views/index.view.php';
+// if no connection can be made route to index.view.php without DB data
+try {
+  $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
+  $pdo = new PDO($dsn, $user, $pass);
+  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  
+  $news = $pdo->query('SELECT * FROM news;')->fetchAll(PDO::FETCH_ASSOC);
+  
+  view('index.view.php', [
+    'news' => $news
+  ]);
+  die();
+} catch (\Throwable $th) {
+  // load without DB connection?
+  require view('index.view.php', [
+    'news' => 'No News to Display.'
+  ]);
+}

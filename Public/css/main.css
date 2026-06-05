@@ -892,7 +892,6 @@ select {
   outline: 0;
 }
 .contact-form__validation-message {
-  display: none;
   color: green;
   background-color: #ffffff;
   padding: 5px 15px;
@@ -1029,9 +1028,9 @@ select {
 }
 .contact-accordian {
   overflow-y: hidden;
-  height: 31px;
 }
 .contact-accordian__container {
+  height: 31px;
   transition: height 0.3s ease-in;
 }
 .contact-accordian__header {

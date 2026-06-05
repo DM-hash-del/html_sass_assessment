@@ -1,5 +1,5 @@
-<?php require 'Views/Partials/head.php'; ?>
-<?php require 'Views/Partials/header.php'; ?>
+<?php require base_path('./Views/Partials/head.php'); ?>
+<?php require base_path('./Views/Partials/header.php'); ?>
 
 <main>
 <!-- BANNER SLIDER -->
@@ -285,7 +285,7 @@
 
       <div class="news__grid">
         <?php if (!empty($news) && is_array($news)): ?>
-          <?php foreach ($news as $item):
+          <?php foreach ($news as $key => $item):
             $title = htmlspecialchars($item['title'] ?? $item['headline'] ?? 'Untitled');
             $content = $item['body'] ?? $item['excerpt'] ?? $item['content'] ?? '';
             #$excerpt = htmlspecialchars(strlen($content) > 160 ? substr($content, 0, 157) . '...' : $content);
@@ -298,7 +298,7 @@
             $avatar = htmlspecialchars($avatarPath);
             $dateRaw = $item['published_date'] ?? $item['date'] ?? $item['created_at'] ?? null;
             $date = $dateRaw ? date('jS F Y', strtotime($dateRaw)) : '';
-            $modifierClass = '';
+            $modifierClass = $key !== 2 ? '': 'article-card--123';
           ?>
           <a href="#" class="article-card <?php echo $modifierClass; ?>">
             <div class="article-card__media">
@@ -518,5 +518,5 @@
   </div>
 </main>
 
-<?php require 'Views/Partials/footer.php' ?>
-<?php require 'Views/Partials/foot.php' ?>
+<?php require base_path('Views/Partials/footer.php') ?>
+<?php require base_path('Views/Partials/foot.php') ?>
