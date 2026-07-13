@@ -20,7 +20,7 @@ try {
   
   $news = $pdo->query('SELECT * FROM news;')->fetchAll(PDO::FETCH_ASSOC);
   
-  view('index.view.php', [
+    view('index.view.php', [
     'news' => $news
   ]);
   die();
