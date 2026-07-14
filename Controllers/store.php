@@ -1,12 +1,15 @@
 <?php
 
-$config = require base_path('config.php');
+// mySQL stuff eh eh
+// $config = require base_path('config.php');
 
-$host = $config['database']['host'] ?? 'localhost';
-$db = $config['database']['name'] ?? null;
-$user = $config['database']['user'] ?? null;
-$pass = $config['database']['password'] ?? null;
-$charset = 'utf8mb4';
+// $host = $config['database']['host'] ?? 'localhost';
+// $db = $config['database']['name'] ?? null;
+// $user = $config['database']['user'] ?? null;
+// $pass = $config['database']['password'] ?? null;
+// $charset = 'utf8mb4';
+
+
 
 $errors = [];
 $formData = [];
@@ -25,6 +28,7 @@ $formData = [
     'message' => trim($_POST['message'] ?? ''),
     'marketing_option' => isset($_POST['marketing_option']) ? 1 : 0,
 ];
+
 
 if (empty($formData['name'])) {
     $errors['name'] = true;
@@ -46,11 +50,16 @@ if (empty($formData['message'])) {
 
 if (empty($errors)) {
     try {
-        $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
-        $pdo = new PDO($dsn, $user, $pass);
+        // $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
+        // $pdo = new PDO($dsn, $user, $pass);
+        // $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        $db = BASE_PATH . 'Database/database.sqlite';
+        $pdo = new PDO("sqlite:$db");
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $stmt = $pdo->prepare('INSERT INTO contact_form (name, company_name, email, telephone_number, message, marketing_option) VALUES (?, ?, ?, ?, ?, ?)');
+        // $stmt = $pdo->prepare('INSERT INTO contact_form (name, company_name, email, telephone_number, message, marketing_option) VALUES (?, ?, ?, ?, ?, ?)');
+        $stmt = $pdo->prepare('INSERT INTO contact (name, company_name, email, telephone_number, message, marketing_option) VALUES (?, ?, ?, ?, ?, ?)');
         $stmt->execute([
             $formData['name'],
             $formData['company_name'],
@@ -63,6 +72,7 @@ if (empty($errors)) {
         header('Location: /contact?success=1#contact-form');
         exit;
     } catch (Throwable $e) {
+        die($e->getMessage());
         $errors['database'] = 'There was an error saving your message. Please try again later.';
     }
 }

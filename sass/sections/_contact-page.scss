@@ -190,13 +190,6 @@
           margin-block-end: 5px;
           color: #333645;
           font-weight: 600;
-          &::after {
-            content: " *";
-            color: red;
-          }
-          &:nth-of-type(2)::after {
-            content: "";
-          }
         }
         input {
           width: 100%;
@@ -219,10 +212,6 @@
         margin-block-end: 5px;
         color: #333645;
         font-weight: 600;
-        &::after {
-          content: " *";
-          color: red;
-        }
       }
       & textarea {
         min-height: 100px;
@@ -238,10 +227,6 @@
         flex-wrap: nowrap;
         gap: 2rem;
         margin-block-end: 15px;
-        & > input[type="checkbox"] {
-          flex: 1 0 10px;
-          align-self: flex-start;
-        }
         & > div > p {
           color: #333645;
           font-weight: 600;
@@ -323,4 +308,16 @@
       }
     }
   }
+}
+
+.required {
+  color: red;
+}
+
+input[name="marketing_option"] {
+  flex: 1 0 auto;
+  align-self: flex-start;
+  width: 40px;
+  height: 40px;
+  margin-block-start: 1rem;
 }

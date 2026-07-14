@@ -17,3 +17,11 @@ contact us button in side meny doesnt link to the contact page for phones#
 max-height: max-content doesn't work on firefix
 
 incorrect avatar
+
+=================================================
+-Github link supplied doesnt appear to have php. Reviewed files from server
+instead. = done
+-There doesnt appear to be a limit so only top 3 articles display, or an order so the
+latest is first = not done
+-Checkbox slightly off = done
+-Company name is indicated as required but isnt validated as required = done

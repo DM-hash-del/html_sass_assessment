@@ -107,7 +107,7 @@
             </div>
             <div class="contact-form__details-container">
               <div class="contact__element">
-                <label for="name">Your Name</label>
+                <label for="name">Your Name<span class="required"> *</span></label>
                 <input type="text" name="name" id="name" value="<?php echo htmlspecialchars($formData['name'] ?? ''); ?>" <?php echo isset($errors['name']) ? 'style="border-color: red;"' : ''; ?>>
               </div>
               <div class="contact__element">
@@ -115,17 +115,17 @@
                 <input type="text" name="company" id="company" value="<?php echo htmlspecialchars($formData['company_name'] ?? ''); ?>">
               </div>
               <div class="contact__element">
-                <label for="email">Your Email</label>
+                <label for="email">Your Email<span class="required"> *</span></label>
                 <input type="text" name="email" id="email" value="<?php echo htmlspecialchars($formData['email'] ?? ''); ?>" <?php echo isset($errors['email']) ? 'style="border-color: red;"' : ''; ?>>
               </div>
               <div class="contact__element">
-                <label for="telephone">Your Telephone Number</label>
+                <label for="telephone">Your Telephone Number<span class="required"> *</span></label>
                 <input type="text" name="telephone" id="telephone" value="<?php echo htmlspecialchars($formData['telephone_number'] ?? ''); ?>" <?php echo isset($errors['telephone']) ? 'style="border-color: red;"' : ''; ?>>
               </div>
             </div>
 
             <div class="contact-form__message-container">
-              <label for="message">Message</label>
+              <label for="message">Message<span class="required"> *</span></label>
               <textarea name="message" id="message" rows="10" <?php echo isset($errors['message']) ? 'style="border-color: red;"' : ''; ?>><?php echo htmlspecialchars($formData['message'] ?? ''); ?></textarea>
             </div>
 

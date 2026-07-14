@@ -284,6 +284,7 @@
       </div>
 
       <div class="news__grid">
+        <!-- DB columns: id, title, body, author, image_path, category, avatar, published_date -->
         <?php if (!empty($news) && is_array($news)): ?>
           <?php foreach ($news as $key => $item):
             $title = htmlspecialchars($item['title'] ?? $item['headline'] ?? 'Untitled');
