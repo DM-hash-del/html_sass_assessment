@@ -16,7 +16,7 @@ function base_path($path)
 
 function abort($errorCode = 404) {
   http_response_code($errorCode);
-  require base_path("views/{$errorCode}.php");
+  require base_path("Views/{$errorCode}.php");
   die();
 }
 
