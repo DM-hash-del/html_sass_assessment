@@ -102,7 +102,12 @@
             <div class="contact-form__validation-message" <?php echo !$isSuccess ? 'style="display: none;"' : ''; ?>>
               <div>
                 <p>Your message has been sent</p>
-                <span>X</span>
+                <button type="button" class="contact-form__validation-close" aria-label="Close">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                  </svg>
+                </button>
               </div>
             </div>
             <div class="contact-form__details-container">
@@ -131,7 +136,9 @@
 
             <div class="contact-form__marketing-container">
               <div>
-                <input type="checkbox" name="marketing_option" value="1" <?php echo ($formData['marketing_option'] ?? 0) ? 'checked' : ''; ?>>
+                <label for="marketing-checkbox">
+                  <input class="contact-form__marketing-checkbox" id="marketing-checkbox" type="checkbox" name="marketing_option" value="1" <?php echo ($formData['marketing_option'] ?? 0) ? 'checked' : ''; ?>>
+                </label>
                 <div>
                   <p>Please tick this box if you wish to recieve marketing information from us. Please see out <a href="#">Privacy Policy</a> for more information on how we keep your data safe.</p>
                 </div>
@@ -164,7 +171,12 @@
           <div class="contact-accordian">
             <div class="contact-accordian__container">
               <h4 class="contact-accordian__header">
-                <p>Out of Hours IT Support<em>^</em></p>
+                <button type="button" class="contact-accordian__toggle" aria-expanded="false">
+                  <span>Out of Hours IT Support</span>
+                  <svg class="chevron" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </button>
               </h4>
               
               <div class="contact-accordian__details">
@@ -185,13 +197,17 @@
   </div>
 </main>
 <script>
-  let accordian = document.querySelector('.contact-accordian__container');
-  let accordianBtn = document.querySelector('.contact-accordian__header');
-  accordianBtn.addEventListener('click', () => {
-    accordian.getBoundingClientRect().height < 31 ?
-     accordian.style.height = '420px' :
-     accordian.style.height = '30px'
-  })
+  const container = document.querySelector('.contact-accordian__container');
+  const btn = document.querySelector('.contact-accordian__toggle');
+
+  btn.addEventListener('click', () => {
+    const open = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!open));
+    container.style.height = open ? '30px' : container.scrollHeight + 'px';
+  });
+  document.querySelector('.contact-form__validation-close')?.addEventListener('click', function () {
+    this.closest('.contact-form__validation-message').style.display = 'none';
+  });
 </script>
 
 <?php require base_path('Views/Partials/footer.php') ?>

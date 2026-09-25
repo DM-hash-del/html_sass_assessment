@@ -220,12 +220,14 @@
       }
     }
     &__marketing-container {
+      margin-block-start: 10px;
       padding-inline: 15px ;
       & > div {
         display: flex;
         flex-direction: row;
+        align-items: flex-start;
         flex-wrap: nowrap;
-        gap: 2rem;
+        gap: 1rem;
         margin-block-end: 15px;
         & > div > p {
           color: #333645;
@@ -236,6 +238,32 @@
             text-decoration: underline;
           }
         }
+      }
+    }
+    &__marketing-checkbox {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 32px;
+      height: 32px;
+      margin: 0;
+      flex-shrink: 0;
+      border: 3px solid #22242e;
+      border-radius: 5px;
+      background: transparent;
+      cursor: pointer;
+
+      &:checked {
+        background-color: #22242e;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='5 12 10 17 19 7'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 24px;
+        border-radius: 5px;
+      }
+
+      &:focus-visible {
+        border: 3px solid #22242e;
+        outline-offset: 2px;
       }
     }
     &__submission-container {
@@ -288,12 +316,29 @@
   &-accordian {
     overflow-y: hidden;
     &__container {
-      height: 31px;
+      height: 30px;
+      overflow: hidden;
       transition: height .3s ease-in;
     }
-    
-    &__header {
+    &__toggle {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      width: 100%;
+      padding: 0;
+      border: 0;
+      background: none;
       cursor: pointer;
+      font: inherit;
+      color: inherit;
+      text-align: left;
+      & .chevron {
+        flex-shrink: 0;
+        transition: transform 0.2s ease;
+      }
+    }
+    &__header {
+      display: flex;
       font-size: 1rem;
       line-height: 1.875rem;
       margin-bottom: 25px;
@@ -310,14 +355,34 @@
   }
 }
 
+.contact-form form input.contact-form__marketing-checkbox:focus,
+.contact-form form input.contact-form__marketing-checkbox:focus-visible {
+  border: 3px solid #22242e;
+  border-radius: 5px;
+  box-shadow: none;
+  outline: none;
+}
+
+.contact-accordian__toggle[aria-expanded="true"] .chevron {
+  transform: rotate(180deg);
+}
+
 .required {
   color: red;
 }
 
-input[name="marketing_option"] {
-  flex: 1 0 auto;
-  align-self: flex-start;
-  width: 40px;
-  height: 40px;
-  margin-block-start: 1rem;
+.chevron[aria-expanded="true"] {
+  transform: rotate(180deg);
+}
+.chevron {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.contact-form__validation-close {
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  color: inherit;
 }
